@@ -1,7 +1,10 @@
 const controller = {
     homePage(req, res){
-        res.render('index');
+        res.render('index', {
+            headTitle: 'Blog rando',
+        });
     },
+
 };
 
 

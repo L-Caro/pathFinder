@@ -1,0 +1,56 @@
+/* === Header === */
+
+
+
+
+
+
+
+
+
+/* === Media Query === */
+@media screen and (max-width: 767px) {  /* Jusqu'à 767px */
+
+    /* === Header === */
+.header__nav {
+    background-image: url(../images/header/banniereMini.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    max-height: 20vh;
+    width: 100vw;
+}
+}
+
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+@media screen and (min-width: 768px) {      /* Entre 768px et 1023px */
+
+    /* === Header === */
+    .header__nav {
+            background-image: url(../images/header/banniere.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            max-height: 35vh;
+            width: 100vw;
+        }
+
+}
+
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+@media screen and (min-width: 1200px) {      /* A partir de 1024px */
+
+/* === Header === */
+    .header__nav {
+        background-image: url(../images/header/banniereBig.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 40vh;
+        max-height: 40vh;
+        width: 100vw;
+    }
+}

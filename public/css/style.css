@@ -1,9 +1,53 @@
 /* === Header === */
 
+/* gestion du nav up(pas encore fait) */
+.header__nav-up > ul { 
+    display: flex;
+    height: 20vh;
+}
 
 
+.header__nav-down { /* partie basse du nav */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;   /* Hauteur du menu */
+}
 
+.header__nav__down-button { /* Les 2 boutons exterieurs */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.2em; /* Permet de centrer la pancarte (le pied decentre tout) */
+}
 
+.header__nav__down-button > a {
+    position: absolute; /* Permet de mettre au même endroit que la pancarte */
+    z-index: 1; /* Permet de faire passer par dessus la pancarte */
+    padding-top: 1.1em; /* Pour centrer par rapport à l'image */
+    padding-right: .1em;    /* Pourcentrer par rapport à l'image */
+    font-family: 'Signika Negative', sans-serif;    /* Police */
+    font-size: 1.2em;   /* Taille de la police */
+    font-weight: 700;   /* Police en gras */
+    color: rgb(33, 13, 14); /* Couleur de la police */
+    text-decoration: none; /* Retire le trait du lien */
+}
+
+.header__nav__down-button > img {
+    margin-bottom: -4em;    /* Centrage de la pancarte */
+    max-width: 180px;   /* Taille de la pancarte */
+    max-height: 120px;  /* Taille de la pancarte */
+}
+
+.search-button { /* Bouton recherche */
+    height: 7vh;    /* Hauteur du bouton*/
+    width: 40vw;    /* Largeur du bouton */
+    max-width: 500px;;  /* Largeur max du bouton */
+    border-radius: 20px;    /* Bords arrondis */
+    font-family: 'Signika Negative', sans-serif;    /* Police */
+    text-align: center; /* Placeholder centré */
+    opacity: 0.8;   /* Opacité */
+}
 
 
 
@@ -12,14 +56,17 @@
 @media screen and (max-width: 767px) {  /* Jusqu'à 767px */
 
     /* === Header === */
-.header__nav {
-    background-image: url(../images/header/banniereMini.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 40vh;
-    max-height: 20vh;
-    width: 100vw;
-}
+    .header__container {
+        background-image: url(../images/header/banniereBig.jpg);
+        background-size: cover;
+        background-position: bottom;
+        height: 40vh;
+        max-height: 30vh;
+        width: 100vw;
+    }
+    .header__nav-down {
+        display: none;
+    }
 }
 
 /* =============================================================== */
@@ -28,10 +75,10 @@
 @media screen and (min-width: 768px) {      /* Entre 768px et 1023px */
 
     /* === Header === */
-    .header__nav {
+    .header__container {
             background-image: url(../images/header/banniere.jpg);
             background-size: cover;
-            background-position: center;
+            background-position: bottom;
             height: 40vh;
             max-height: 35vh;
             width: 100vw;
@@ -45,12 +92,12 @@
 @media screen and (min-width: 1200px) {      /* A partir de 1024px */
 
 /* === Header === */
-    .header__nav {
-        background-image: url(../images/header/banniereBig.jpg);
+    .header__container {
+        background-image: url(../images/header/banniereMini.jpg);
         background-size: cover;
-        background-position: center;
+        background-position: bottom;
         height: 40vh;
-        max-height: 40vh;
+        max-height: 35vh;
         width: 100vw;
     }
 }

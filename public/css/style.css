@@ -1,75 +1,66 @@
 /* === Header === */
 
-/* gestion du nav up(pas encore fait) */
+/* == partie haute du nav (pas encore fait) == */
 .header__nav-up > ul { 
     display: flex;
     height: 20vh;
 }
 
-.header__nav-down { /* partie basse du nav */
-    position: relative;
-    height: 15vh;   /* Hauteur du menu */
-    border: 2px solid red;
+/* == partie basse du nav == */
+.header__nav-down { 
+    display: flex;
+    flex-direction: row; /* Positionne les pancarte cote à cote */
+    height: 15vh;   /* Hauteur du menu (35-20 de la partie haute) */
 }
 
-/* == Menus pancartes == */
+/* == Pancartes == */
 .header-box1, .header-box2, .header-box3, .header-box4 {
     display: flex;
-    flex-direction: column-reverse;
-    position: absolute;
-    height: 15vh;
-    width: 9vw;
-    max-width: 120px;
-    border: 2px solid green;
+    justify-content: center; /* Centre les contenus de chaque box */
+    align-items: flex-end; /* Positionne les box tout en bas de leur emplacement */
+    height: 15vh; /* Hauteur des boxs */
+    width: 15vw; /* Largeur des boxs */
 }
-.header-box1 {
-    left: 3vw;
-}
-.header-box2 {
-    left: 18vw;
-}
-.header-box3 {
-    left: 73vw;
-}
-.header-box4 {
-    left: 88vw;
-}
-.header__nav__down-button > a {
-    position: absolute;
-    z-index: 1;
-    width: 9vw;
-    max-width: 120px;
-    text-align: center;
+.header__nav__down-button > a { /* Texte des pancartes */
+    position: absolute; /*permet de pouvoir positionner la boite de texte en bas */
+    display: flex; /* Permet de centrer le texte dans la boite.. */
+    justify-content: center; /* ..horizontalement */
+    align-items: center; /* ..verticalement */
+    z-index: 1; /* Affiche le texte par dessus la pancarte */
+    width: 15vw; /* Largeur de la boite texte (= celle de la pancarte) */
+    /* Largeur max de la boite texte (= celle de la pancarte) */
     font-family: 'Signika Negative', sans-serif;    /* Police */
     font-weight: 700;   /* Police en gras */
     color: rgb(33, 13, 14); /* Couleur de la police */
     text-decoration: none; /* Retire le trait du lien */
-    border: 2px solid yellow;
-
 }
-.header__nav__down-button > img {
-    position: absolute;
-    width: 9vw;
-    max-width: 120px;
-    border: 2px solid blue;
-
+.header__nav__down-search-buttons {
+    position: relative; /* Pour pouvoir positionner le bouron rechercher */
 }
-
+.header__nav__down-search {
+    display: flex;  /* Permet le positionnement du bandeau recherche .. */
+    justify-content: center; /* ..horizontalement */
+    align-items: flex-end; /* ..verticalement */
+    margin-bottom: 1vh; /* Positionne un peu au dessus du bas du nav */
+    width: 40vw;    /* Largeur du bouton */
+}
 /* == Menu recherche == */
 .search-button { /* Bouton recherche */
-    position: absolute;
-    bottom: 2vh;
-    left: 30%;
-    height: 5.5vh;    /* Hauteur du bouton*/
-    width: 40vw;    /* Largeur du bouton */
-    /* max-width: 500px;;  Largeur max du bouton */
+    height: 4vh;    /* Hauteur du bouton*/
+    width: 30vw;    /* Largeur du bouton */
+    max-width: 700px;  /* Largeur max du bouton */
     border-radius: 20px;    /* Bords arrondis */
     font-family: 'Signika Negative', sans-serif;    /* Police */
     text-align: center; /* Placeholder centré */
     opacity: 0.8;   /* Opacité */
 }
-
-
+.search-submit {
+    position: absolute; /* Positionne le bouton par rapport au parent .. */
+    right: 0; /* .. à sa bordure droite */
+    border: 0.1px solid; /* Bordure du bouton */
+    border-radius: 50%; /* Arrondi le bouton */
+    opacity: 0.6;   /* Opacité */
+}
 
 
 /* === Media Query === */
@@ -78,11 +69,10 @@
     /* === Header === */
     .header__container {
         background-image: url(../images/header/banniereBig.jpg);
-        background-size: cover;
-        background-position: bottom;
-        height: 40vh;
-        max-height: 30vh;
-        width: 100vw;
+        background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
+        background-position: bottom; /* fixe le fond par le bas */
+        height: 30vh; /* Hauteur du fond d'écran */
+        width: 100vw; /* Largeur de toute la page */
     }
     .header__nav-down, .header__nav-up {
         display: none;
@@ -97,19 +87,24 @@
     /* === Header === */
     .header__container {
             background-image: url(../images/header/banniere.jpg);
-            background-size: cover;
-            background-position: bottom;
-            height: 40vh;
-            max-height: 35vh;
-            width: 100vw;
+            background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
+            background-position: bottom; /* fixe le fond par le bas */
+            height: 35vh; /* Hauteur du fond d'écran */
+            width: 100vw; /* Largeur de toute la page */
         }
         .header__nav__down-button > a {
-            padding-top: 2vh;
-            height: 7vh;
+            height: 6vh;  /* Hauteur de la boite texte */
             font-size: 0.9em;   /* Taille de la police */
         }
         .header__nav__down-button > img {
+        min-width: 100px; /* Taille mini des pancartes */
         max-height: 6vh;  /* Taille de la pancarte */
+        }
+        .search-submit {
+        height: 4vh;/* Taille de la pancarte */
+        width: 4vw; /* Taille de la pancarte */
+        max-width: 40px; /* Taille max de la pancarte */
+        justify-content: center;
         }
 }
 
@@ -121,19 +116,18 @@
 /* === Header === */
     .header__container {
         background-image: url(../images/header/banniereMini.jpg);
-        background-size: cover;
-        background-position: bottom;
-        height: 40vh;
-        max-height: 35vh;
-        width: 100vw;
+        background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
+        background-position: bottom; /* fixe le fond par le bas */
+        height: 35vh; /* Hauteur du fond d'écran */
+        width: 100vw; /* Largeur de toute la page */
     }
     .header__nav__down-button > a {
-        padding-top: 1.7vh;
-        height: 9vh;
+        height: 9vh; /* Hauteur de la boite texte */
         font-size: 1.2em;   /* Taille de la police */
 
     }
     .header__nav__down-button > img {
+    min-width: 120px; /* Taille mini des pancartes */
     max-height: 9vh;  /* Taille de la pancarte */
     }
 }

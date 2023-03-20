@@ -21,6 +21,7 @@
     height: 15vh; /* Hauteur des boxs */
     width: 15vw; /* Largeur des boxs */
 }
+
 .header__nav__down-button > a { /* Texte des pancartes */
     position: absolute; /*permet de pouvoir positionner la boite de texte en bas */
     display: flex; /* Permet de centrer le texte dans la boite.. */
@@ -34,6 +35,9 @@
     color: rgb(33, 13, 14); /* Couleur de la police */
     text-decoration: none; /* Retire le trait du lien */
 }
+.header__nav__down-button > img {
+    /* position: absolute; */
+    }
 .header__nav__down-search-buttons {
     position: relative; /* Pour pouvoir positionner le bouron rechercher */
 }
@@ -104,7 +108,6 @@
         height: 4vh;/* Taille de la pancarte */
         width: 4vw; /* Taille de la pancarte */
         max-width: 40px; /* Taille max de la pancarte */
-        justify-content: center;
         }
 }
 

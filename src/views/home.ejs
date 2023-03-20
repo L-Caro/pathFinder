@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+    <p>Heelloooo</p>
+    <p>menu inscription connexion</p>
+    <p>logo reseaux (3)</p>
+    <p>retour au Portfolio</p>
+
+    liste de toutes
+    Tri par type (famil, rando, trail)
+    Recherche par mots clés
+    Tri par massif
+    tri par difficulté
+
+<ul>
+    <li> <%= trek.id %> </li>
+    <li><%= trek.name %></li>
+    <li><%= trek.time_length %> heures</li>
+    <li><%= trek.distance / 1000 %> kilometers</li>
+    <li><%= trek.resume %></li>
+    <li><%= trek.description %></li>
+    <li> <a href="<%= trek.gpx %>">Telecharger le gpx</a> </li>
+    <li><%= trek.denivele %> D+</li>
+    <li><%= trek.max_height %>mètres max</li>
+    <li><%= trek.min_height %>mètres min</li>
+    <li><%= trek.difficulty.name %></li>
+    <li><%= trek.summit.name %></li>
+    <li><%= trek.start_point %></li>
+    <li><%= trek.gps_coordonate%></li>
+    <li><%= trek.boucle %></li>
+    <% for (const tag of trek.tags) { %>
+    <li><%= tag.name %></li>
+    <% } %>
+</ul>
+
+<%- include('partials/footer') %>

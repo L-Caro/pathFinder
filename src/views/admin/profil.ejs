@@ -1,0 +1,16 @@
+<%- include("../partials/header") %>
+
+<main>
+  <h1">Mon profil</h1>
+
+  <label for="firstname">Prénom</label>
+  <input type="text" disabled id="firstname" value="<%= user.firstname %>">
+
+  <label for="lastname">Nom</label>
+  <input type="text" disabled id="lastname" value="<%= user.lastname %>">
+
+  <label for="email">Email</label>
+  <input type="text" disabled id="email" value = "<%= user.email %>">
+</main>
+
+<%- include("../partials/footer") %>

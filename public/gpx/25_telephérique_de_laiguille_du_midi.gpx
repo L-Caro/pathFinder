@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" creator="AllTrails.com" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name><![CDATA[Téléphérique de l'Aiguille du Midi]]></name>
+    <desc><![CDATA[]]></desc>
+    <link href="http://www.alltrails.com">
+      <text>AllTrails, LLC</text>
+    </link>
+    <bounds minlat="45.87948" minlon="6.8701" maxlat="45.91808" maxlon="6.88725"/>
+  </metadata>
+  <wpt lat="45.91808" lon="6.8701">
+    <name><![CDATA[Tram Base Station]]></name>
+    <desc><![CDATA[Here is where you will load the tram. It holds quite a few people. In the winter time, you will be bumping up against skiers and snowboards with their gear.]]></desc>
+  </wpt>
+  <wpt lat="45.90162" lon="6.88509">
+    <name><![CDATA[Plan de l'Aiguille Mid-Station]]></name>
+    <desc><![CDATA[In the winter time, this is a great place to start backcountry skiing. In the summer time you'll want to continue on to the top.]]></desc>
+  </wpt>
+  <wpt lat="45.87929" lon="6.88733">
+    <name><![CDATA[Summit Station]]></name>
+    <desc><![CDATA[You may feel the altitude at the summit station. This is where Glen Plake and Scott Schmidt famously dropped off the bridge to ski from the top. Make sure to continue on through the tunnel (which is all ice in the winter) out to where skiers start their descent of the Mer De Glace glacier.  ]]></desc>
+  </wpt>
+  <trk>
+    <name><![CDATA[Téléphérique de l'Aiguille du Midi]]></name>
+    <src>AllTrails</src>
+    <trkseg>
+      <trkpt lat="45.91808" lon="6.8701">
+        <ele>1025.14</ele>
+      </trkpt>
+      <trkpt lat="45.90173" lon="6.88491">
+        <ele>2288.16</ele>
+      </trkpt>
+      <trkpt lat="45.87948" lon="6.88725">
+        <ele>3688.94</ele>
+      </trkpt>
+      <trkpt lat="45.90173" lon="6.88491">
+        <ele>2288.16</ele>
+      </trkpt>
+      <trkpt lat="45.90173" lon="6.88491">
+        <ele>2288.16</ele>
+      </trkpt>
+      <trkpt lat="45.91808" lon="6.8701">
+        <ele>1025.14</ele>
+      </trkpt>
+      <trkpt lat="45.91808" lon="6.8701">
+        <ele>1025.14</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -24,6 +24,7 @@
     "email-validator": "^2.0.4",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.29.3",

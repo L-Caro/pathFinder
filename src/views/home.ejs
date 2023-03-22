@@ -1,40 +1,36 @@
 <%- include('partials/header') %>
 
-    <p>Heelloooo</p>
-    <p>menu inscription connexion</p>
-    <p>logo reseaux (3)</p>
-    <p>retour au Portfolio</p>
+    <div class="divers">
+        <p>Heelloooo</p>
+        <p>menu inscription connexion</p>
+        <p>logo reseaux (3)</p>
+        <p>retour au Portfolio</p>
+        <p>Lien github</p>
+        liste de toutes
+        proposer une rando?
+        Tri par type (famil, rando, trail)
+        Recherche par mots clés
+        Tri par massif
+        tri par difficulté
+    </div>
 
-    liste de toutes
-    Tri par type (famil, rando, trail)
-    Recherche par mots clés
-    Tri par massif
-    tri par difficulté
+<div class="container">
+    <% treks.forEach(trek => { %>
+        <article class="trek">
+            <a href="/trek/<%= trek.id %>"><img class="trek_background" src="/images/assets/couverture/<%= trek.id %>.jpg" alt="cover">
+                <div class="trek_content">
+                    <p class="trek_name"><%= trek.name %></p>
+                    <p class="trek_difficult <%= trek.difficulty.name %>"><%= trek.difficulty.name %></p>
+                    <!-- <p class="trek_tag">Type de sortie: <%= trek.tags[0].name %></> -->
+                    <ul class="trek_other">
+                        <li><%= trek.distance / 1000%> km 📏</li>
+                        <li><%= trek.time_length %> ⏱️</li>
+                    </ul>
+                    </div>
+            </a>
+        </article>
+    <% }) %>
 
-<ul>
-    <li> <%= trek.id %> </li>
-    <li><%= trek.name %></li>
-    <li><%= trek.time_length %> heures</li>
-    <li><%= trek.distance / 1000 %> kilometers</li>
-    <li><%= trek.resume %></li>
-    <li><%= trek.description %></li>
-    <li> <a href="<%= trek.gpx %>">Telecharger le gpx</a> </li>
-    <li><%= trek.denivele %> D+</li>
-    <li><%= trek.max_height %>mètres max</li>
-    <li><%= trek.min_height %>mètres min</li>
-    <li><%= trek.difficulty.name %></li>
-    <li><%= trek.summit.name %></li>
-    <li><%= trek.start_point %></li>
-    <li><%= trek.gps_coordonate%></li>
-    <li><%= trek.boucle %></li>
-    <% for (const tag of trek.tags) { %>
-    <li><%= tag.name %></li>
-    <% } %>
-</ul>
-
-
-    <% for (const photo of photos) { %>
-        <img src="/images/assets/4/XS/<%= photo %>" alt="">
-    <% } %>
+</div>
 
 <%- include('partials/footer') %>

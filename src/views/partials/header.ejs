@@ -8,13 +8,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/body.css" />
     <% if (locals.meta) { %>
     <title>Rando : <%= headTitle %></title>
     <% } else { %>
@@ -52,33 +53,20 @@
       <!-- === Fin de à inserer === -->
 
       <nav class="header__nav-down">
-        <div class="header__nav__down-button header-box1">
-          <a href="#">Rubrique 1</a>
-          <img class="" src="./images/header/panneau1_1.png" alt="" />
-        </div>
-        <div class="header__nav__down-button header-box2">
-          <a href="#">Rubrique 2</a>
-          <img class="" src="./images/header/panneau1_1.png" alt="" />
-        </div>
-        <div class="header__nav__down-search">
-          <div class="header__nav__down-search-buttons">
-            <input
-              class="search-button"
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Rechercher une rando"
-            />
-            <button class="search-submit" type="submit">✔️</button>
+          <a class="header__nav-down__link" href="#">Toutes les randos</a>
+          <a class="header__nav-down__link" href="#">Chercher par tag</a>
+          <div class="header__nav__down-search">
+            <div class="header__nav__down-search-buttons">
+              <input
+                class="search-button"
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Rechercher une rando"/>
+              <button class="search-submit" type="submit">✔️</button>
+            </div>
           </div>
-        </div>
-        <div class="header__nav__down-button header-box3">
-          <a href="#">Rubrique 3</a>
-          <img class="" src="./images/header/panneau1_1.png" alt="" />
-        </div>
-        <div class="header__nav__down-button header-box4">
-          <a href="#">Rubrique 4</a>
-          <img class="" src="./images/header/panneau1_1.png" alt="" />
-        </div>
+          <a class="header__nav-down__link" href="#">Mes randos</a>
+          <a class="header__nav-down__link" href="#">Ajouter une rando</a>
       </nav>
     </header>

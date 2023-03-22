@@ -1,99 +1,91 @@
+body {
+    font-family: 'BioRhyme', serif;
+    font-family: 'Signika Negative', serif;
+}
+
 /* === Header === */
 
 /* == partie haute du nav (pas encore fait) == */
 .header__nav-up > ul { 
     display: flex;
-    height: 20vh;
+    height: 15vh;
 }
 
 /* == partie basse du nav == */
 .header__nav-down { 
+    border: 2px solid yellow;
+    margin-top: 10vh;
     display: flex;
-    flex-direction: row; /* Positionne les pancarte cote à cote */
-    height: 15vh;   /* Hauteur du menu (35-20 de la partie haute) */
+    flex-direction: row; /* Positionne les liens cote à cote */
+    justify-content: space-evenly; /* Espace les liens sur la largeur */
+    height: 5vh;   /* Hauteur du menu */
+    font-size: 0.8em;
 }
-
-/* == Pancartes == */
-.header-box1, .header-box2, .header-box3, .header-box4 {
-    display: flex;
-    justify-content: center; /* Centre les contenus de chaque box */
-    align-items: flex-end; /* Positionne les box tout en bas de leur emplacement */
-    height: 15vh; /* Hauteur des boxs */
-    width: 15vw; /* Largeur des boxs */
-}
-
-.header__nav__down-button > a { /* Texte des pancartes */
-    position: absolute; /*permet de pouvoir positionner la boite de texte en bas */
-    display: flex; /* Permet de centrer le texte dans la boite.. */
-    justify-content: center; /* ..horizontalement */
-    align-items: center; /* ..verticalement */
-    z-index: 1; /* Affiche le texte par dessus la pancarte */
-    width: 15vw; /* Largeur de la boite texte (= celle de la pancarte) */
-    /* Largeur max de la boite texte (= celle de la pancarte) */
-    font-family: 'Signika Negative', sans-serif;    /* Police */
-    font-weight: 700;   /* Police en gras */
-    color: rgb(33, 13, 14); /* Couleur de la police */
-    text-decoration: none; /* Retire le trait du lien */
-}
-.header__nav__down-button > img {
-    /* position: absolute; */
-    }
-.header__nav__down-search-buttons {
-    position: relative; /* Pour pouvoir positionner le bouron rechercher */
-}
-.header__nav__down-search {
-    display: flex;  /* Permet le positionnement du bandeau recherche .. */
-    justify-content: center; /* ..horizontalement */
-    align-items: flex-end; /* ..verticalement */
-    margin-bottom: 1vh; /* Positionne un peu au dessus du bas du nav */
-    width: 40vw;    /* Largeur du bouton */
+.header__nav-down__link {
+    border: 2px solid black;
+    padding-top: 1vh;
+    width: calc((100vw - min(700px, 40vh)) / 4);
+    text-align: center;
+      text-align: middle;
 }
 /* == Menu recherche == */
+.header__nav__down-search {
+    border: 2px solid red;
+    position: relative;
+    height: 5vh;
+    width: 40vw;    /* Largeur du bouton */
+    max-width: 700px;
+}
 .search-button { /* Bouton recherche */
+    border: 2px solid green;
+    width: 100%;   /* Largeur du bouton */
     height: 4vh;    /* Hauteur du bouton*/
-    width: 30vw;    /* Largeur du bouton */
-    max-width: 700px;  /* Largeur max du bouton */
     border-radius: 20px;    /* Bords arrondis */
     font-family: 'Signika Negative', sans-serif;    /* Police */
     text-align: center; /* Placeholder centré */
     opacity: 0.8;   /* Opacité */
 }
 .search-submit {
-    position: absolute; /* Positionne le bouton par rapport au parent .. */
-    right: 0; /* .. à sa bordure droite */
+    border: 2px solid pink;
+    position: absolute;
+    right: 0;
     border: 0.1px solid; /* Bordure du bouton */
     border-radius: 50%; /* Arrondi le bouton */
-    opacity: 0.6;   /* Opacité */
-}
+    opacity: 0.8;   /* Opacité */
+} 
+
 
 
 /* === Media Query === */
-@media screen and (max-width: 767px) {  /* Jusqu'à 767px */
+@media screen and (max-width: 771px) {  /* Jusqu'à 767px */
 
     /* === Header === */
     .header__container {
         background-image: url(../images/header/banniereBig.jpg);
         background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
         background-position: bottom; /* fixe le fond par le bas */
-        height: 30vh; /* Hauteur du fond d'écran */
+        height: 25vh; /* Hauteur du fond d'écran */
         width: 100vw; /* Largeur de toute la page */
     }
     .header__nav-down, .header__nav-up {
         display: none;
+    }
+    .header__nav__down-button > a {
+    padding: 2%;
     }
 }
 
 /* =============================================================== */
 /* =============================================================== */
 /* =============================================================== */
-@media screen and (min-width: 768px) {      /* Entre 768px et 1023px */
+@media screen and (min-width: 772px) {      /* Entre 768px et 1023px */
 
     /* === Header === */
     .header__container {
             background-image: url(../images/header/banniere.jpg);
             background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
             background-position: bottom; /* fixe le fond par le bas */
-            height: 35vh; /* Hauteur du fond d'écran */
+            height: 25vh; /* Hauteur du fond d'écran */
             width: 100vw; /* Largeur de toute la page */
         }
         .header__nav__down-button > a {
@@ -109,6 +101,9 @@
         width: 4vw; /* Taille de la pancarte */
         max-width: 40px; /* Taille max de la pancarte */
         }
+        .header__nav__down-button > a {
+        padding: 2.5%;
+        }
 }
 
 /* =============================================================== */
@@ -121,7 +116,7 @@
         background-image: url(../images/header/banniereMini.jpg);
         background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
         background-position: bottom; /* fixe le fond par le bas */
-        height: 35vh; /* Hauteur du fond d'écran */
+        height: 25vh; /* Hauteur du fond d'écran */
         width: 100vw; /* Largeur de toute la page */
     }
     .header__nav__down-button > a {
@@ -133,4 +128,14 @@
     min-width: 120px; /* Taille mini des pancartes */
     max-height: 9vh;  /* Taille de la pancarte */
     }
+    .header__nav__down-button > a {
+    padding: 3%;
+    }
+}
+
+
+@media screen and (min-width: 1500px) {
+    .header__nav__down-button > a {
+        padding: 4%;
+        }
 }

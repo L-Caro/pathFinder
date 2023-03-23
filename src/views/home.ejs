@@ -6,25 +6,24 @@
         <p>logo reseaux (3)</p>
         <p>retour au Portfolio</p>
         <p>Lien github</p>
-        liste de toutes
-        proposer une rando?
+       
         Tri par type (famil, rando, trail)
         Recherche par mots clés
         Tri par massif
         tri par difficulté
     </div>
 
-<div class="container">
+<div class="container-home">
     <% treks.forEach(trek => { %>
-        <article class="trek">
-            <a href="/trek/<%= trek.id %>"><img class="trek_background" src="/images/assets/couverture/<%= trek.id %>.jpg" alt="cover">
-                <div class="trek_content">
-                    <p class="trek_name"><%= trek.name %></p>
-                    <p class="trek_difficult <%= trek.difficulty.name %>"><%= trek.difficulty.name %></p>
-                    <p class="trek_length">📏 <%= trek.distance / 1000%> km </>
-                    <p class="trek_time"><%= trek.time_length %> ⏱️</>
-                    <p class="trek_resume"><%= trek.resume %> </p>
-                    <p class="trek_summit"><%= trek.summit.name %></p>
+        <article class="trek-home">
+            <a href="/trek/<%= trek.id %>"><img class="trek-home_background" src="/images/assets/miniature/<%= trek.id %>.jpg" alt="cover">
+                <div class="trek-home_content">
+                    <p class="trek-home_name"><%= trek.name %></p>
+                    <p class="trek-home_difficult <%= trek.difficulty.name %>"><%= trek.difficulty.name %></p>
+                    <p class="trek-home_length">📏 <%= trek.distance / 1000%> km </>
+                    <p class="trek-home_time"><%= trek.time_length %> ⏱️</>
+                    <p class="trek-home_resume"><%= trek.resume %> </p>
+                    <p class="trek-home_summit"><%= trek.summit.name %></p>
                 </div>
             </a>
         </article>

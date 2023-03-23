@@ -1,0 +1,72 @@
+.container-trek {
+    display: flex;
+    flex-direction: column;
+    margin: 80px auto;
+    border: 2px solid black;
+    width: 80%;
+    max-width: 900px;
+}
+
+/* === header === */
+.trek_header {
+    position: relative;
+    height: 300px;
+}
+.trek_header-img {
+    min-height: 300px;
+    max-height: 300px;
+    width: 100%;
+    /* object-fit: fill; */
+}
+.trek_header-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.header_tag {
+    /* display: flex; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style: none;
+}
+.header_favorite-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+}
+
+/* === Main === */
+.trek_main {
+    position: relative;
+    border: 2px solid red;
+}
+.trek_main-left {
+    padding: 2%;
+    width: 70%;
+    border: 2px solid blue;;
+}
+.trek_main-left-head {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+.trek_main-left_title-description {
+    text-decoration: underline;
+}
+.trek_main-left_description {
+    text-align: justify;
+}
+
+/* === Aside === */
+.trek_main-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5% 1%;
+    width: 30%;
+    border: 2px solid green;
+}

@@ -1,29 +1,45 @@
 <%- include('partials/header') %>
 
-<ul>
-    <li><%= trek.id %> </li>
-    <li><%= trek.name %></li>
-    <li><%= trek.time_length %> heures</li>
-    <li><%= trek.distance / 1000 %> kilometers</li>
-    <li><%= trek.resume %></li>
-    <li><%= trek.description %></li>
-    <li> <a href="<%= trek.gpx %>">Telecharger le gpx</a> </li>
-    <li><%= trek.denivele %> D+</li>
-    <li><%= trek.max_height %>mètres max</li>
-    <li><%= trek.min_height %>mètres min</li>
-    <li><%= trek.difficulty.name %></li>
-    <li><%= trek.summit.name %></li>
-    <li><%= trek.start_point %></li>
-    <li><%= trek.gps_coordonate%></li>
-    <li><%= trek.boucle %></li>
-    <% for (const tag of trek.tags) { %>
-    <li><%= tag.name %></li>
-    <% } %>
-</ul>
+<div class="container-trek">
+    <div class="trek_header">
+        <img class="trek_header-img" src="/images/assets/couverture/<%= trek.id %>.jpg" alt="">
+        <ul class="header_tag">
+            <% for (const tag of trek.tags) { %>
+                <li class="<%= tag.name %>"><%= tag.name %></>
+            <% } %>
+        </ul>
+        <div class="trek_header-text">
+            <p class="header-text_title"><%= trek.name %></p>
+            <p class="header-text_difficulty"><%= trek.difficulty.name %></p>
+            <p class="header-text_localisation"><%= trek.start_point %> / <%= trek.summit.name %></p>
+        </div>
+        <div class="header_favorite-icon"><img src="/images/trek/bookmark_empty.png" alt="" srcset=""></div>
+    </div>
+    <div class="trek_main">
+        <div class="trek_main-left">
+            <div class="trek_main-left-head">
+                <p class="main-left-head_length"><%= trek.distance / 1000%> km</p>
+                <p class="main-left-head_denivele"><%= trek.time_length %></p>
+                <p class="main-left-head_boucle">Type de trajet: <%= trek.boucle.toLowerCase() %></p>
+            </div>
+            <p class="trek_main-left_title-description">Description :</p>
+            <p class="trek_main-left_description"><%= trek.description %></p>
+        </div>
+        <aside class="trek_main-right">
+            <p class="trek_main-right_gps"><%= trek.gps_coordonate %></p>
+            <p class="trek_main-right_denivel"><%= trek.denivele %></p>
+            <p class="trek_main-right_min"><%= trek.min_height %></p>
+            <p class="trek_main-right_max"><%= trek.max_height %></p>
+            <a class="trek_main-right_gpx-link" href="<%= trek.gpx %>">Telecharger le gpx</a> </li>
+            <img class="trek_main-right_map">
+        </aside>
+    </div>
+    <div class="trek_foot">
+        <% for (const photo of photos) { %>
+            <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img src="/images/assets/<%= trek.id %>/S/<%= photo %>" alt=""></a>
+        <% } %>
+    </div>
+</div>
 
-
-    <% for (const photo of photos) { %>
-        <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img src="/images/assets/<%= trek.id %>/S/<%= photo %>" alt=""></a>
-    <% } %>
 
 <%- include('partials/footer') %>

@@ -21,12 +21,11 @@
                 <div class="trek_content">
                     <p class="trek_name"><%= trek.name %></p>
                     <p class="trek_difficult <%= trek.difficulty.name %>"><%= trek.difficulty.name %></p>
-                    <!-- <p class="trek_tag">Type de sortie: <%= trek.tags[0].name %></> -->
-                    <ul class="trek_other">
-                        <li><%= trek.distance / 1000%> km 📏</li>
-                        <li><%= trek.time_length %> ⏱️</li>
-                    </ul>
-                    </div>
+                    <p class="trek_length">📏 <%= trek.distance / 1000%> km </>
+                    <p class="trek_time"><%= trek.time_length %> ⏱️</>
+                    <p class="trek_resume"><%= trek.resume %> </p>
+                    <p class="trek_summit"><%= trek.summit.name %></p>
+                </div>
             </a>
         </article>
     <% }) %>

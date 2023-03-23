@@ -1,0 +1,184 @@
+.divers {
+    margin-top: 80px;
+}
+/* === Organisation des articles === */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2%;
+    justify-content: center;
+}
+
+/* === Gestion de l'article === */
+article {
+    position: relative;
+    margin: 1%;
+    overflow: hidden; /* Cache le résumé */
+    max-width: 650px;
+    height: 250px;
+}
+article:hover .trek_resume {
+    bottom: 0; /* Quand on survole l'image, le résumé prend sa place à bottom: 0 au lieu de -90 */
+}
+
+/* === Gestion du contenu === */
+/* == Image d'arriere plan == */
+.trek_background {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+/* == Contenu générique == */
+.trek_content {
+    color: white;
+    text-shadow: 2px 2px 2px rgba(206,89,55,0);
+}
+/* == Résumé de l'article == */
+.trek_resume {
+    position: absolute;
+    left: 0;
+    bottom: -90px; /* Caché à -90 par défaut */
+    padding: 10px;
+    width: 100%;
+    height: 90px;
+    transition: bottom 0.3s ease-in-out; /* Transition de l'apparition du résumé */
+    pointer-events: none; /* Permet de toujours avoir la main sur l'image pour son opacité */
+    background-color: black;
+    opacity: 0.6;
+    font-size: 0.7em;
+}
+/* == Titre == */
+.trek_name {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%); /* Permet de redécaler de la moitié de sa taille vers la gauche pour avoir un centrage parfait */
+    padding: 5px 10px;
+    pointer-events: none; /* Désactive les événements de souris sur le texte */
+    background-color: beige;
+    border: 3px solid rgb(42, 42, 42);
+    border-radius: 20px;
+    opacity: 0.7;
+    text-align: center;
+    color:rgb(42, 42, 42);
+    font-family: 'bioRhyme';
+}
+/* == Durée de la rando == */
+.trek_time {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px 10px;
+    width: 50%;
+    pointer-events: none;
+    background-color: rgb(0, 126, 172);
+    border-radius: 0 0 8px 0;
+    opacity: 0.8;
+    text-align: right;
+}
+/* == Distance de la rando == */
+.trek_length {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 10px;
+    width: 50.1%;
+    pointer-events: none;
+    background-color: rgb(0, 126, 172);
+    border-radius: 0px 0 0 8px;
+    opacity: 0.8;
+    text-align: left;
+}
+/* == Difficulté == */
+.trek_difficult {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 10px;
+    width: 30%;
+    pointer-events: none;
+    border-radius: 8px 0 8px 0;
+    opacity: 0.8;
+    text-align: center;
+}
+/* = Gestion des couleurs de difficulté = */
+.facile {
+    background-color: rgb(0, 200, 0);
+}
+.Facile {
+    background-color: green;
+}
+.Intermédiaire {
+    background-color: orange;
+}
+.Difficile {
+    background-color: red;
+}
+.difficile {
+    background-color: rgb(68, 68, 68);
+}
+/* == Massif == */
+.trek_summit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    width: 30%;
+    pointer-events: none;
+    background-color: rosybrown;
+    border-radius: 0 8px 0 8px;
+    opacity: 0.8;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* === Media Query === */
+@media screen and (max-width: 775px) {      /* Jusqu'à 767px */
+    article {
+        width: 90%;
+        margin-bottom: 20px; /* Espacement vertical des articles */
+    }
+    .trek_content {
+        font-size: 0.7em;
+    }
+    .trek_resume {
+        display: none; /* On cache le résumé pour la version mobile */
+    }
+}
+
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+@media screen and (min-width: 768px) {      /* A partir de 768px */
+    article {
+        width: 47%;
+        min-width: 480px;
+    }
+    .trek_content {
+        font-size: 0.9em;
+    }
+    .trek_background {
+        opacity: 0.7;   /* Opacité seulement pour les versions desktop */
+        transition: opacity 0.3s ease-in-out; /* Transition de l'opacité qui repasse à 1 */
+    }
+    .trek_background:hover {
+        opacity: 1
+    }
+    .trek_time, .trek_length {
+        display: none;  /* On masque la durée et la distance pour les versions desktop */
+    }
+}
+
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+@media screen and (min-width: 1200px) {      /* A partir de 1024px */
+.trek_content {
+    font-size: 1.1em;
+}
+}

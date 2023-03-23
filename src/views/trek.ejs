@@ -23,7 +23,7 @@
 
 
     <% for (const photo of photos) { %>
-        <img src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="">
+        <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img src="/images/assets/<%= trek.id %>/S/<%= photo %>" alt=""></a>
     <% } %>
 
 <%- include('partials/footer') %>

@@ -5,7 +5,7 @@
         <img class="trek_header-img" src="/images/assets/couverture/<%= trek.id %>.jpg" alt="">
         <ul class="header_tag">
             <% for (const tag of trek.tags) { %>
-                <li class="<%= tag.name %>"><%= tag.name %></>
+                <li class="<%= tag.name %>"><%= tag.name %></li>
             <% } %>
         </ul>
         <div class="trek_header-text">
@@ -16,29 +16,43 @@
         <div class="header_favorite-icon"><img src="/images/trek/bookmark_empty.png" alt="" srcset=""></div>
     </div>
     <div class="trek_main">
-        <div class="trek_main-left">
-            <div class="trek_main-left-head">
-                <p class="main-left-head_length"><%= trek.distance / 1000%> km</p>
-                <p class="main-left-head_denivele"><%= trek.time_length %></p>
-                <p class="main-left-head_boucle">Type de trajet: <%= trek.boucle.toLowerCase() %></p>
-            </div>
-            <p class="trek_main-left_title-description">Description :</p>
-            <p class="trek_main-left_description"><%= trek.description %></p>
-        </div>
         <aside class="trek_main-right">
-            <p class="trek_main-right_gps"><%= trek.gps_coordonate %></p>
-            <p class="trek_main-right_denivel"><%= trek.denivele %></p>
-            <p class="trek_main-right_min"><%= trek.min_height %></p>
-            <p class="trek_main-right_max"><%= trek.max_height %></p>
-            <a class="trek_main-right_gpx-link" href="<%= trek.gpx %>">Telecharger le gpx</a> </li>
-            <img class="trek_main-right_map">
+            <a class="main-right_link" href="/trek/<%= trek.id %>/photos">Voir toutes les photos</a>
+
+                <% for (const photo of photos) { %>
+                        <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img class="main-right_photo" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt=""></a>
+
+                <% } %>
+
         </aside>
+        <div class="trek_main-left">
+            <div class="trek_main-text">
+                <div class="trek_main-left-head">
+                    <p class="main-left-head_length ssd"><%= trek.distance / 1000%> km</p>
+                    <p class="main-left-head_denivele sss"><%= trek.time_length %></p>
+                    <p class="main-left-head_boucle ssd">Type de trajet: <%= trek.boucle.toLowerCase() %></p>
+                    <p class="trek_foot_denivele ssd"><%= trek.denivele %></p>
+                    <p class="trek_foot_min ssd"><%= trek.min_height %></p>
+                    <p class="trek_foot_max ssd"><%= trek.max_height %></p>
+                </div>
+                <p class="trek_main-left_title-description">Description :</p>
+                <p class="trek_main-left_description"><%= trek.description %></p>
+            </div>
+            <div class="trek_main-foot">
+                <p class="trek_foot_gps"><%= trek.gps_coordonate %></p>
+                <a class="trek_foot_gpx-link" href="<%= trek.gpx %>">Telecharger le gpx</a> </li>
+                
+
+            </div>
+            <div class="main-foot_map">
+                <!-- <iframe src="<%= trek.map %>" allowfullscreen style="border: 0;width: 100%; height: 540px;" scrolling="no"></iframe> -->
+                <iframe src="https://www.visugpx.com/g1M87XvUXq?iframe" allowfullscreen style="border: 0;width: 100%; height: 540px;" scrolling="no"></iframe>
+               
+            </div>
+        </div>
     </div>
-    <div class="trek_foot">
-        <% for (const photo of photos) { %>
-            <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img src="/images/assets/<%= trek.id %>/S/<%= photo %>" alt=""></a>
-        <% } %>
-    </div>
+
+
 </div>
 
 

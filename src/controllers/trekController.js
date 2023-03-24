@@ -29,6 +29,7 @@ const trekController = {
                     console.trace(err);
                     return res.status(500).send('Erreur lors de la récupération des photos')
                 }
+                console.log(JSON.stringify(trek, null, 2));
             res.render('trek', { trek, photos: files }); // Envoie à la page EJS de la variable files| Trek c'est les infos écrites
         });
         } catch (error) {

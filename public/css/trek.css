@@ -1,22 +1,21 @@
+body {
+    font-family: 'BioRhyme, sans serif';
+}
 .container-trek {
     display: flex;
     flex-direction: column;
     margin: 80px auto;
     border: 2px solid black;
     width: 80%;
-    max-width: 900px;
+    max-width: 1500px;
 }
 
 /* === header === */
 .trek_header {
     position: relative;
-    height: 300px;
 }
 .trek_header-img {
-    min-height: 300px;
-    max-height: 300px;
     width: 100%;
-    /* object-fit: fill; */
 }
 .trek_header-text {
     position: absolute;
@@ -37,36 +36,151 @@
     width: 40px;
 }
 
-/* === Main === */
-.trek_main {
-    position: relative;
-    border: 2px solid red;
-}
-.trek_main-left {
-    padding: 2%;
-    width: 70%;
-    border: 2px solid blue;;
-}
-.trek_main-left-head {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid gray;
-}
-.trek_main-left_title-description {
-    text-decoration: underline;
-}
-.trek_main-left_description {
-    text-align: justify;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === Media Query === */
+@media screen and (max-width: 775px) {      /* Jusqu'à 775px */
+
 }
 
-/* === Aside === */
-.trek_main-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5% 1%;
-    width: 30%;
-    border: 2px solid green;
+/* =============================================================== */
+@media screen and (min-width: 776px) {      /* A partir de 776px */
+    body {
+        background-color: grey;
+    }
+
+/* === container principal === */
+    .trek_main {
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: 1.3em;
+    }
+
+/* === Photos === */
+    .trek_main-right {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: stretch;
+        padding: 1%;
+    }
+    .main-right_link {
+        display: none;
+    }
+    .main-right_photo {
+        padding: 10px;
+    }
+
+/* === Boite description et carte GPX */
+    .trek_main-left {
+        display: flex;
+        flex-direction: column;
+        padding: 0 3%;
+    }
+/* == Description == */
+    .trek_main-left-head {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px;
+        margin-bottom: 10px;
+        font-size: 1em;
+        border-bottom: 1px solid rgb(6, 6, 6);
+    }
+    .trek_main-left_title-description {
+        text-decoration: underline;
+        padding-bottom: 10px;
+    }
+    .trek_main-left_description {
+        text-align: justify;
+        margin-bottom: 30px;
+    }
+    .trek_main-foot {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+/* == Carte GPX == */
+    .main-foot_map {
+        width: 100%;
+    }
+}
+
+/* =============================================================== */
+@media screen and (min-width: 1200px) {      /* A partir de 1200px */
+
+/* === container principal === */
+    .trek_main {
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 1.3em;
+    }
+
+/* === photos === */
+    .trek_main-right {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        overflow: hidden;
+    }
+    .main-right_link {
+        display: block;
+        margin: 10px 40px;
+        color: rgb(22, 35, 2);
+        font-size: 1.3em;
+        text-align: center;
+    }
+    .main-right_photo {
+        margin: 5px auto;
+        border-radius: 10px;
+    }
+    
+/* === Boite description et carte GPX */
+    .trek_main-left {
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+        width: 60%;
+        height: 100%; /* Permet de finir le contour de .trek_main apres ce bloc grace à la fonction js */
+        border-right: 1px solid black;
+    }
+    .trek_main-left-head {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 0.8em;
+        border-bottom: 1px solid rgb(6, 6, 6);
+    }
+/*  == Description == */
+    .trek_main-left_title-description {
+        text-decoration: underline;
+        padding-bottom: 10px;
+    }
+    .trek_main-left_description {
+        text-align: justify;
+    }
+    .trek_main-foot {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+        font-size: 1em;
+    }
 }

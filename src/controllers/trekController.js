@@ -6,6 +6,7 @@ const trekController = {
     async renderOneTrek(req, res) {
         const id = req.params.id;
         const trek = await Trek.findByPk(id, {
+            attributes: ['id', 'name', 'time_length', 'distance', 'max_height', 'min_height', 'denivele', 'start_point', 'gps_coordonate', 'gpx', 'description', 'resume', 'boucle', 'map'],
             include: [
                 {
                     association: 'difficulty',
@@ -29,7 +30,6 @@ const trekController = {
                     console.trace(err);
                     return res.status(500).send('Erreur lors de la récupération des photos')
                 }
-                console.log(JSON.stringify(trek, null, 2));
             res.render('trek', { trek, photos: files }); // Envoie à la page EJS de la variable files| Trek c'est les infos écrites
         });
         } catch (error) {

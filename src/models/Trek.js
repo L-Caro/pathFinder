@@ -56,7 +56,10 @@ Trek.init({
     type: DataTypes.STRING,
     allowNull: false,
    },
-
+   map : {
+    type: DataTypes.TEXT,
+    allowNull: false,
+   }
 }, {
   sequelize,
   tableName: 'trek', 

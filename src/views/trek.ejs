@@ -13,17 +13,16 @@
             <p class="header-text_difficulty"><%= trek.difficulty.name %></p>
             <p class="header-text_localisation"><%= trek.start_point %> / <%= trek.summit.name %></p>
         </div>
-        <div class="header_favorite-icon"><img src="/images/trek/bookmark_empty.png" alt="" srcset=""></div>
+        <div class="header_favorite-icon"><img src="/images/trek/bookmark_empty.png" alt="favori" srcset=""></div>
     </div>
     <div class="trek_main">
         <aside class="trek_main-right">
             <a class="main-right_link" href="/trek/<%= trek.id %>/photos">Voir toutes les photos</a>
-
+            <div class="main-right_photos">
                 <% for (const photo of photos) { %>
-                        <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img class="main-right_photo" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt=""></a>
-
+                    <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img class="main-right_photo" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="Photo rando"></a>
                 <% } %>
-
+            </div>
         </aside>
         <div class="trek_main-left">
             <div class="trek_main-text">
@@ -40,14 +39,12 @@
             </div>
             <div class="trek_main-foot">
                 <p class="trek_foot_gps"><%= trek.gps_coordonate %></p>
-                <a class="trek_foot_gpx-link" href="<%= trek.gpx %>">Telecharger le gpx</a> </li>
-                
+                <a class="trek_foot_gpx-link" href="<%= trek.gpx %>">Telecharger le gpx</a>
+                <a class="trek_foot_gpx-link" href="<%= trek.gpx %>"><img src="/images/assets/qr/<%= trek.id %>.png" alt="qr code"></a>
 
             </div>
             <div class="main-foot_map">
-                <!-- <iframe src="<%= trek.map %>" allowfullscreen style="border: 0;width: 100%; height: 540px;" scrolling="no"></iframe> -->
-                <iframe src="https://www.visugpx.com/g1M87XvUXq?iframe" allowfullscreen style="border: 0;width: 100%; height: 540px;" scrolling="no"></iframe>
-               
+                <iframe src="<%= trek.map %>" allowfullscreen style="border: 0;width: 100%; height: 540px;" scrolling="no"></iframe>               
             </div>
         </div>
     </div>

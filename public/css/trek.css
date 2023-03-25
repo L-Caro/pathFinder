@@ -78,7 +78,8 @@ body {
     .trek_main-right {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        align-items: stretch;
+        justify-items: center;
+        align-items: center;
         padding: 1%;
     }
     .main-right_link {
@@ -100,7 +101,7 @@ body {
         grid-template-columns: repeat(3, 1fr);
         padding: 20px;
         margin-bottom: 10px;
-        font-size: 1em;
+        font-size: 0.9em;
         border-bottom: 1px solid rgb(6, 6, 6);
     }
     .trek_main-left_title-description {
@@ -166,7 +167,7 @@ body {
         grid-template-columns: repeat(3, 1fr);
         margin-bottom: 10px;
         padding: 5px;
-        font-size: 0.8em;
+        font-size: 0.85em;
         border-bottom: 1px solid rgb(6, 6, 6);
     }
 /*  == Description == */

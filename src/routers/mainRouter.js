@@ -10,7 +10,7 @@ router.get('/', mainController.homePage);
 
 router.get('/trek/:id', trekController.renderOneTrek);
 
-// router.get('/controller3', controller3.renderPageController3);
+router.get('/trek/:id/photos', trekController.renderTrekPhotos);
 
 
 

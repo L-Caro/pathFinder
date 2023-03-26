@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<div class="container-photos">
+    <h1 class="photos_title"><%= trek.name %></h1>
+    <div class="photos_tag_and_back">
+        <a class="photos_back" href="/trek/<%= trek.id %>">Retour au déscriptif</a>
+        <div class="photos_tags">
+            <% trek.tags.forEach(tag => { %>
+                <p class="photos_tag <%= tag.name %>"><img class="photo_icone " src="/images/tags/<%= tag.name %>.png">  <%= tag.name %></p>
+                <% }) %>
+        </div>
+    </div>
+    <div class="photos_photos">
+        <% for (const photo of photos) { %>
+            <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img class="photos_photo" src="/images/assets/<%= trek.id %>/M/<%= photo %>" alt="Photo rando"></a>
+        <% } %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

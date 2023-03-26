@@ -37,6 +37,32 @@ const trekController = {
             res.status(500).render("error/500");
         }
     },
+    async renderTrekPhotos(req, res) {
+        const id = req.params.id;
+        const trek = await Trek.findByPk(id, {
+            attributes: ['id', 'name'],
+            include: [
+                {
+                    association: 'tags',
+                    attributes: ['name'],
+                    through: { attributes: [] },
+                }
+            ]
+        });
+        try {
+            const photosfields = path.join(__dirname, `../../public/images/assets/${id}/M`); // id en dynamique
+            fs.readdir(photosfields, (err, files) => {
+                if (err) {
+                    console.trace(err);
+                    return res.status(500).send('Erreur lors de la récupération des photos')
+                }
+            res.render('trekPhotos', { trek, photos: files }); // Envoie à la page EJS de la variable files| Trek c'est les infos écrites
+        });
+        } catch (error) {
+            console.trace(error);
+            res.status(500).render("error/500");
+        }
+    },
 };
 
 

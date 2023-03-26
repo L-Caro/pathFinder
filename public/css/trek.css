@@ -1,5 +1,6 @@
 body {
-    font-family: 'BioRhyme, sans serif';
+    font-family: 'Open Sans', sans-serif;
+    background-color: grey;
 }
 .container-trek {
     display: flex;
@@ -10,7 +11,7 @@ body {
     max-width: 1500px;
 }
 
-/* === header === */
+/* === Header === */
 .trek_header {
     position: relative;
 }
@@ -36,164 +37,185 @@ body {
     width: 40px;
 }
 
+/* ==== Main ==== */
+/* === Container principal */
+.trek_main {
+    display: flex;
+}
 
+/* === Boite description, coordonnées GPS et carte GPX */
+.trek_main-text {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+/* == En tête == */
+.trek_main-text-head {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    border-bottom: 1px solid rgb(6, 6, 6);
+}
+/* == Description == */
+.trek_main-text_title-description {
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+.trek_main-text_description {
+    text-align: justify;
+}
+/* == coordonnées GPS et fichier GPX */
+.trek_main-foot {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 15px 0;
+}
 
+/* === Gestion des icones déscriptifs avec leur texte === */
+/* == Position du texte == */
+.main-text-head_length,
+.main-text-head_time-length,
+.main-text-head_boucle,
+.main-text-head_denivele,
+.main-text-head_min,
+.main-text-head_max,
+.trek_foot_gps,
+.trek_foot_gpx-link {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    align-items: center;
+}
+.trek_foot_gpx-link {
+    align-items: center;
+    color: black;
+}
+/* == Icone == */
+.main-text-head_length > img,
+.main-text-head_time-length > img,
+.main-text-head_boucle > img,
+.main-text-head_denivele > img,
+.main-text-head_min > img,
+.main-text-head_max > img,
+.trek_foot_gps > img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+.trek_foot_gpx-img {
+    width: 50px;
+    height: 50px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* === Photos */
+.main_photos {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 1%;
+}
+.main_photos_link {
+    display: block;
+    margin: 10px 0;
+    color: rgb(22, 35, 2);
+    font-size: 1.3em;
+    text-align: center;
+}
+.main_photos_photo {
+    padding: 10px;
+}
 
 
 
 
 /* === Media Query === */
 @media screen and (max-width: 775px) {      /* Jusqu'à 775px */
+/* === container principal === */
+.trek_main {
+    flex-direction: column;
+}
 
+/* === Boite description, coordonnées GPS et carte GPX */
+/* == Description == */
+.trek_main-text_description {
+/* Gère le scroll sur la description pour ne pas avoir un texte immense */
+    height: 400px; 
+    overflow: auto;
+    border-bottom: 1px solid black;
+}
+/* == Carte GPX == */
+.trek_foot_qr-link {
+    display: none;
+}
+
+/* === Photos === */
+.trek_main_photos {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+}
+.main_photos {
+    grid-template-columns: repeat(1, 1fr);
+}
+.main_photos a:nth-of-type(n+6) {
+    display: none;
+}
 }
 
 /* =============================================================== */
 @media screen and (min-width: 776px) {      /* A partir de 776px */
-    body {
-        background-color: grey;
-    }
-
 /* === container principal === */
-    .trek_main {
-        display: flex;
-        flex-direction: column-reverse;
-        font-size: 1.3em;
-    }
+.trek_main {
+    flex-direction: column;
+}
 
 /* === Photos === */
-    .trek_main-right {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-        align-items: center;
-        padding: 1%;
-    }
-    .main-right_link {
-        display: none;
-    }
-    .main-right_photo {
-        padding: 10px;
-    }
-
-/* === Boite description et carte GPX */
-    .trek_main-left {
-        display: flex;
-        flex-direction: column;
-        padding: 0 3%;
-    }
-/* == Description == */
-    .trek_main-left-head {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: 20px;
-        margin-bottom: 10px;
-        font-size: 0.9em;
-        border-bottom: 1px solid rgb(6, 6, 6);
-    }
-    .trek_main-left_title-description {
-        text-decoration: underline;
-        padding-bottom: 10px;
-    }
-    .trek_main-left_description {
-        text-align: justify;
-        margin-bottom: 30px;
-    }
-    .trek_main-foot {
-        display: flex;
-        justify-content: space-evenly;
-        margin-bottom: 10px;
-        font-size: 1.1em;
-    }
-/* == Carte GPX == */
-    .main-foot_map {
-        width: 100%;
-    }
+.main_photos_link {
+    display: none;
+}
+.main_photos {
+    grid-template-columns: repeat(2, 1fr);
+}
+.main_photos a:nth-of-type(n+4) {
+    display: grid;
+}
 }
 
 /* =============================================================== */
 @media screen and (min-width: 1200px) {      /* A partir de 1200px */
 
 /* === container principal === */
-    .trek_main {
-        display: flex;
-        flex-direction: row-reverse;
-        font-size: 1.3em;
-    }
+.trek_main {
+    flex-direction: row;
+}
+
+/* === Boite description, coordonnées GPS et carte GPX */
+.trek_main-text {
+    width: 100%;
+    height: 100%; /* Permet de finir le contour de .trek_main apres ce bloc grace à la fonction js */
+}
+/* == En tête == */
+.trek_main-text-head {
+    font-size: 1.1em;
+}
 
 /* === photos === */
-    .trek_main-right {
-        display: flex;
-        flex-direction: column;
-        width: 40%;
-    }
-    .main-right_link {
-        display: block;
-        margin: 10px 40px;
-        color: rgb(22, 35, 2);
-        font-size: 1.3em;
-        text-align: center;
-    }
-    .main-right_photo {
-        margin: 2px auto;
-        border-radius: 10px;
-    }
-    /* .trek_main-right a:nth-of-type(n+6) {
-        display: none;
-    } */
-    .main-right_photos {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        height: 100%;
-        overflow: hidden;
-    }
-    .main-right_photos a:nth-of-type(n+5) {
-        display: none;
-    }
-
-/* === Boite description et carte GPX */
-    .trek_main-left {
-        display: flex;
-        flex-direction: column;
-        padding: 2%;
-        width: 60%;
-        height: 100%; /* Permet de finir le contour de .trek_main apres ce bloc grace à la fonction js */
-        border-right: 1px solid black;
-    }
-    .trek_main-left-head {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        margin-bottom: 10px;
-        padding: 5px;
-        font-size: 0.85em;
-        border-bottom: 1px solid rgb(6, 6, 6);
-    }
-/*  == Description == */
-    .trek_main-left_title-description {
-        text-decoration: underline;
-        padding-bottom: 10px;
-    }
-    .trek_main-left_description {
-        text-align: justify;
-    }
-    .trek_main-foot {
-        display: flex;
-        justify-content: space-evenly;
-        margin-bottom: 40px;
-        font-size: 1em;
-    }
+.trek_main_photos {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+.main_photos {
+    grid-template-columns: repeat(1, 1fr);
+    /* height: 100%;  En questionnement: Les 4 photos espacées sur la hauteur ou assemblées en haut avec un possible grand trou */
+    overflow: hidden;
+}
+.main_photos_link {
+display: block;
+}
+.main_photos a:nth-of-type(n+5) {
+    display: none;
+}
 }

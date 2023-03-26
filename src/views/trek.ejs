@@ -16,37 +16,37 @@
         <div class="header_favorite-icon"><img src="/images/trek/bookmark_empty.png" alt="favori" srcset=""></div>
     </div>
     <div class="trek_main">
-        <aside class="trek_main-right">
-            <a class="main-right_link" href="/trek/<%= trek.id %>/photos">Voir toutes les photos</a>
-            <div class="main-right_photos">
-                <% for (const photo of photos) { %>
-                    <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img class="main-right_photo" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="Photo rando"></a>
-                <% } %>
-            </div>
-        </aside>
-        <div class="trek_main-left">
+        <div class="trek_main-text">
             <div class="trek_main-text">
-                <div class="trek_main-left-head">
-                    <p class="main-left-head_length ssd"><%= trek.distance / 1000%> km</p>
-                    <p class="main-left-head_denivele sss"><%= trek.time_length %></p>
-                    <p class="main-left-head_boucle ssd">Type de trajet: <%= trek.boucle.toLowerCase() %></p>
-                    <p class="trek_foot_denivele ssd"><%= trek.denivele %></p>
-                    <p class="trek_foot_min ssd"><%= trek.min_height %></p>
-                    <p class="trek_foot_max ssd"><%= trek.max_height %></p>
+                <div class="trek_main-text-head">
+                    <p class="main-text-head_length"><img src="/images/trek/distance.png" alt="regle"><%= trek.distance / 1000%> km</p>
+                    <p class="main-text-head_time-length"><img src="/images/trek/chronometre.png" alt="regle"><%= trek.time_length %></p>
+                    <p class="main-text-head_boucle"><img src="/images/trek/boucle.png" alt="boucle"> <%= trek.boucle.toLowerCase() %></p>
+                    <p class="main-text-head_denivele"><img src="/images/trek/denivele.png" alt="dénivelé"><%= trek.denivele %>m</p>
+                    <p class="main-text-head_min"><img src="/images/trek/min_altitude.png" alt="altitude mini"><%= trek.min_height %>m</p>
+                    <p class="main-text-head_max"><img src="/images/trek/max_altitude.png" alt="altitude maxi"><%= trek.max_height %>m</p>
                 </div>
-                <p class="trek_main-left_title-description">Description :</p>
-                <p class="trek_main-left_description"><%= trek.description %></p>
+                <p class="trek_main-text_title-description">Description :</p>
+                <p class="trek_main-text_description"><%= trek.description %></p>
             </div>
             <div class="trek_main-foot">
-                <p class="trek_foot_gps"><%= trek.gps_coordonate %></p>
-                <a class="trek_foot_gpx-link" href="<%= trek.gpx %>">Telecharger le gpx</a>
-                <a class="trek_foot_gpx-link" href="<%= trek.gpx %>"><img src="/images/assets/qr/<%= trek.id %>.png" alt="qr code"></a>
+                <p class="trek_foot_gps"><img src="/images/trek/gps.png" alt="gps"><%= trek.gps_coordonate %></p>
+                <a class="trek_foot_gpx-link" href="<%= trek.gpx %>"><img class="trek_foot_gpx-img" src="/images/trek/download.png" alt="download">Fichier gpx</a>
+                <a class="trek_foot_qr-link"><img src="/images/assets/qr/<%= trek.id %>.png" alt="qr code"></a>
 
             </div>
             <div class="main-foot_map">
                 <iframe src="<%= trek.map %>" allowfullscreen style="border: 0;width: 100%; height: 540px;" scrolling="no"></iframe>               
             </div>
         </div>
+        <aside class="trek_main_photos">
+            <a class="main_photos_link" href="/trek/<%= trek.id %>/photos">Voir toutes les photos</a>
+            <div class="main_photos">
+                <% for (const photo of photos) { %>
+                    <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img class="main_photos_photo" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="Photo rando"></a>
+                <% } %>
+            </div>
+        </aside>
     </div>
 
 

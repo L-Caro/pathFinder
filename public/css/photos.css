@@ -1,0 +1,147 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* === Container principal === */
+.container-photos {
+    width: 80%;
+    max-width: 1500px;
+    margin: 80px auto;
+}
+
+/* === En tête === */
+.photos_title {
+    display: block;
+    text-align: center;
+    padding-bottom: 3%;
+}
+/* === Tags et retour */
+.photos_tag_and_back {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3%;
+}
+/* == Retour == */
+.photos_back {
+    padding: 5px 10px;
+    background-color: #595959;
+    border: 4px solid #FFFFFF;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
+    color: #FFFFFF;
+    font-size: 1.3em;
+    text-decoration: none;
+}
+.photos_back:hover {
+    padding: 5px 10px;
+    background-color: #343434;
+    box-shadow: 1px 1px 4px #777777;
+    -webkit-box-shadow: 1px 1px 4px #777777;
+    -moz-box-shadow: 1px 1px 4px #777777;
+}
+/* == Tags == */
+.photos_tags {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+.photos_tag {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 15px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 9px;
+    background-color: rgb(5, 93, 5);
+}
+.photo_icone {
+    align-items: center;
+    padding-right: 5px;
+    width: 20px;
+    height: 20px;
+}
+/* == Détail des tags == */
+.Cascade, .Lac {
+    background-color: rgb(17, 126, 235);
+}
+.Neige {
+    background-color: white;
+}
+.Couché {
+    background-color: goldenrod;
+}
+.Bivouac {
+    background-color: rgb(45, 45, 45);
+}
+.fou {
+    background-color: rgb(84, 55, 174);
+}
+
+/* === Bloc photos */
+.photos_photos {
+    display: grid;
+    align-items: center;
+    padding-bottom: 10%;
+}
+.photos_photo {
+    width: 90%;
+    border-radius: 10px;
+    margin: 2% auto;
+}
+
+
+/* === Media Query === */
+@media screen and (max-width: 775px) {      /* Jusqu'à 775px */
+/* === En tête === */
+    .photos_tag_and_back {
+        flex-direction: column-reverse;
+    }
+    .photos_title {
+        font-size: 2em;
+    }
+    .photos_tag, .photos_back {
+        font-size: 1.1em;
+    }
+}
+
+/* =============================================================== */
+@media screen and (min-width: 776px) {      /* A partir de 776px */
+/* === En tête === */
+    .photos_tag_and_back {
+        justify-content: space-between;
+        padding-right: 10%;
+    }
+    .photos_title {
+        font-size: 2.5em;
+    }
+    .photos_tag, .photos_back {
+        font-size: 1.1em;
+    }
+/* === Bloc photos */
+    .photos_photos {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =============================================================== */
+@media screen and (min-width: 1200px) {      /* A partir de 1200px */
+/* === En tête === */
+    .photos_tag, .photos_back {
+        font-size: 1.4em;
+    }
+/* === Bloc photos */
+    .photos_photos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+
+

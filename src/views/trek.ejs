@@ -21,7 +21,7 @@
                 <div class="trek_main-text-head">
                     <p class="main-text-head_length"><img src="/images/trek/distance.png" alt="regle"><%= trek.distance / 1000%> km</p>
                     <p class="main-text-head_time-length"><img src="/images/trek/chronometre.png" alt="regle"><%= trek.time_length %></p>
-                    <p class="main-text-head_boucle"><img src="/images/trek/boucle.png" alt="boucle"> <%= trek.boucle.toLowerCase() %></p>
+                    <p class="main-text-head_boucle"><img src="/images/trek/boucle.png" alt="boucle"> <%= trek.boucle %></p>
                     <p class="main-text-head_denivele"><img src="/images/trek/denivele.png" alt="dénivelé"><%= trek.denivele %>m</p>
                     <p class="main-text-head_min"><img src="/images/trek/min_altitude.png" alt="altitude mini"><%= trek.min_height %>m</p>
                     <p class="main-text-head_max"><img src="/images/trek/max_altitude.png" alt="altitude maxi"><%= trek.max_height %>m</p>
@@ -43,7 +43,12 @@
             <a class="main_photos_link" href="/trek/<%= trek.id %>/photos">Voir toutes les photos</a>
             <div class="main_photos">
                 <% for (const photo of photos) { %>
-                    <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img class="main_photos_photo" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="Photo rando"></a>
+                    <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img class="main_photos_photo desktop-link" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="Photo rando"></a>
+                <% } %>
+            </div>
+            <div class="main_photos-bis">
+                <% for (const photo of photos) { %>
+                    <a href="/images/assets/<%= trek.id %>/M/<%= photo %>"><img class="main_photos_photo mobile-link" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="Photo rando"></a>
                 <% } %>
             </div>
         </aside>

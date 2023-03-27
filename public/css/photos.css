@@ -85,7 +85,7 @@ body {
 }
 
 /* === Bloc photos */
-.photos_photos {
+.photos_photos, .photos_photos-bis {
     display: grid;
     align-items: center;
     padding-bottom: 10%;

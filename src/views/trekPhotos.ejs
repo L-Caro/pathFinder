@@ -3,10 +3,10 @@
 <div class="container-photos">
     <h1 class="photos_title"><%= trek.name %></h1>
     <div class="photos_tag_and_back">
-        <a class="photos_back" href="/trek/<%= trek.id %>">Retour au déscriptif</a>
+        <a class="photos_back" href="/trek/<%= trek.id %>">Retour au descriptif</a>
         <div class="photos_tags">
             <% trek.tags.forEach(tag => { %>
-                <p class="photos_tag <%= tag.name %>"><img class="photo_icone " src="/images/tags/<%= tag.name %>.png">  <%= tag.name %></p>
+                <p class="tag trek_tag <%= tag.name %>"><img class="tag_icone trek_tag_icone" src="/images/tags/<%= tag.name %>.png">  <%= tag.name %></p>
                 <% }) %>
         </div>
     </div>

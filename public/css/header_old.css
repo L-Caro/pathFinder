@@ -1,0 +1,138 @@
+.header__container {
+    height: 20vh;
+    background-image: url(../images/header/2.jpg);
+    /* background-color: #363457; */
+}
+
+/* == partie haute du nav (pas encore fait) == */
+.header__nav-up > ul { 
+    display: flex;
+    height: 10vh;
+}
+
+/* == partie basse du nav == */
+.header__nav-down { 
+    border: 2px solid yellow;
+    display: flex;
+    flex-direction: row; /* Positionne les liens cote à cote */
+    justify-content: space-evenly; /* Espace les liens sur la largeur */
+    height: 10vh;   /* Hauteur du menu */
+    font-size: 0.8em;
+}
+.header__nav-down__link {
+    border: 2px solid black;
+    padding-top: 1vh;
+    width: calc((100vw - min(700px, 40vh)) / 4);
+    text-align: center;
+      text-align: middle;
+}
+/* == Menu recherche == */
+.header__nav__down-search {
+    border: 2px solid red;
+    position: relative;
+    height: 5vh;
+    width: 40vw;    /* Largeur du bouton */
+    max-width: 700px;
+}
+.search-button { /* Bouton recherche */
+    border: 2px solid green;
+    width: 100%;   /* Largeur du bouton */
+    height: 4vh;    /* Hauteur du bouton*/
+    border-radius: 20px;    /* Bords arrondis */
+    text-align: center; /* Placeholder centré */
+    opacity: 0.8;   /* Opacité */
+}
+.search-submit {
+    border: 2px solid pink;
+    position: absolute;
+    right: 0;
+    border: 0.1px solid; /* Bordure du bouton */
+    border-radius: 50%; /* Arrondi le bouton */
+    opacity: 0.8;   /* Opacité */
+} 
+
+
+
+/* === Media Query === */
+@media screen and (max-width: 771px) {  /* Jusqu'à 767px */
+
+    /* === Header === */
+    .header__container {
+        /* background-image: url(../images/header/banniereBig.jpg); */
+        background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
+        background-position: top; /* fixe le fond par le bas */
+        height: 25vh; /* Hauteur du fond d'écran */
+        width: 100vw; /* Largeur de toute la page */
+    }
+    .header__nav-down, .header__nav-up {
+        display: none;
+    }
+    .header__nav__down-button > a {
+    padding: 2%;
+    }
+}
+
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+@media screen and (min-width: 772px) {      /* Entre 768px et 1023px */
+
+    /* === Header === */
+    .header__container {
+            /* background-image: url(../images/header/banniere.jpg); */
+            background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
+            background-position: top; /* fixe le fond par le bas */
+            height: 25vh; /* Hauteur du fond d'écran */
+            width: 100vw; /* Largeur de toute la page */
+        }
+        .header__nav__down-button > a {
+            height: 6vh;  /* Hauteur de la boite texte */
+            font-size: 0.9em;   /* Taille de la police */
+        }
+        .header__nav__down-button > img {
+        min-width: 100px; /* Taille mini des pancartes */
+        max-height: 6vh;  /* Taille de la pancarte */
+        }
+        .search-submit {
+        height: 4vh;/* Taille de la pancarte */
+        width: 4vw; /* Taille de la pancarte */
+        max-width: 40px; /* Taille max de la pancarte */
+        }
+        .header__nav__down-button > a {
+        padding: 2.5%;
+        }
+}
+
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+@media screen and (min-width: 1200px) {      /* A partir de 1024px */
+
+/* === Header === */
+    .header__container {
+        /* background-image: url(../images/header/banniereMini.jpg); */
+        background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
+        background-position: top; /* fixe le fond par le bas */
+        height: 25vh; /* Hauteur du fond d'écran */
+        width: 100vw; /* Largeur de toute la page */
+    }
+    .header__nav__down-button > a {
+        height: 9vh; /* Hauteur de la boite texte */
+        font-size: 1.2em;   /* Taille de la police */
+
+    }
+    .header__nav__down-button > img {
+    min-width: 120px; /* Taille mini des pancartes */
+    max-height: 9vh;  /* Taille de la pancarte */
+    }
+    .header__nav__down-button > a {
+    padding: 3%;
+    }
+}
+
+
+@media screen and (min-width: 1500px) {
+    .header__nav__down-button > a {
+        padding: 4%;
+        }
+}

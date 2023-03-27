@@ -1,0 +1,25 @@
+
+/* == Menu recherche == */
+.header__nav__down-search {
+    border: 2px solid red;
+    position: relative;
+    height: 5vh;
+    width: 40vw;    /* Largeur du bouton */
+    max-width: 700px;
+}
+.search-button { /* Bouton recherche */
+    border: 2px solid green;
+    width: 100%;   /* Largeur du bouton */
+    height: 4vh;    /* Hauteur du bouton*/
+    border-radius: 20px;    /* Bords arrondis */
+    text-align: center; /* Placeholder centré */
+    opacity: 0.8;   /* Opacité */
+}
+.search-submit {
+    border: 2px solid pink;
+    position: absolute;
+    right: 0;
+    border: 0.1px solid; /* Bordure du bouton */
+    border-radius: 50%; /* Arrondi le bouton */
+    opacity: 0.8;   /* Opacité */
+} 

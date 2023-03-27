@@ -1,52 +1,72 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
-/* === Header === */
-
-/* == partie haute du nav (pas encore fait) == */
-.header__nav-up > ul { 
+.header__container {
     display: flex;
-    height: 15vh;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 99vw; /* Largeur de toute la page */
+    height: 12vh;
+    background-color: #242325;
+    color : burlywood;
+    font-weight: 700;
+}
+.header_up, .header_down {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-/* == partie basse du nav == */
-.header__nav-down { 
-    border: 2px solid yellow;
-    margin-top: 10vh;
+.header__left, .header__right {
     display: flex;
-    flex-direction: row; /* Positionne les liens cote à cote */
-    justify-content: space-evenly; /* Espace les liens sur la largeur */
-    height: 5vh;   /* Hauteur du menu */
-    font-size: 0.8em;
+    align-items: center;
+    margin: 0 1%;
+    width: 45%;
+    height: 6vh;
 }
-.header__nav-down__link {
-    border: 2px solid black;
-    padding-top: 1vh;
-    width: calc((100vw - min(700px, 40vh)) / 4);
+.header__left { 
+    justify-content: left;
+}
+.header__right {
+    justify-content: right;
+}
+
+.header__link {
+    display: flex;
+    margin: 0 2%;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 80%;
+    border: 1px solid burlywood;
     text-align: center;
-      text-align: middle;
 }
+.header__link:visited {
+color: burlywood;
+}
+
+
+.header_down {
+    height: 6vh;
+    border-top: 1px dotted burlywood; ;
+}
+
+
+
 /* == Menu recherche == */
-.header__nav__down-search {
-    border: 2px solid red;
+.header__search {
     position: relative;
-    height: 5vh;
-    width: 40vw;    /* Largeur du bouton */
-    max-width: 700px;
+    width: 40vw;
 }
 .search-button { /* Bouton recherche */
-    border: 2px solid green;
     width: 100%;   /* Largeur du bouton */
     height: 4vh;    /* Hauteur du bouton*/
     border-radius: 20px;    /* Bords arrondis */
-    font-family: 'Signika Negative', sans-serif;    /* Police */
     text-align: center; /* Placeholder centré */
     opacity: 0.8;   /* Opacité */
 }
 .search-submit {
-    border: 2px solid pink;
     position: absolute;
+    border: 2px solid burlywood;
+    width: 50px;
+    height: 100%;
     right: 0;
     border: 0.1px solid; /* Bordure du bouton */
     border-radius: 50%; /* Arrondi le bouton */
@@ -55,54 +75,26 @@ body {
 
 
 
-/* === Media Query === */
-@media screen and (max-width: 771px) {  /* Jusqu'à 767px */
 
-    /* === Header === */
-    .header__container {
-        background-image: url(../images/header/banniereBig.jpg);
-        background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
-        background-position: bottom; /* fixe le fond par le bas */
-        height: 25vh; /* Hauteur du fond d'écran */
-        width: 100vw; /* Largeur de toute la page */
-    }
+
+
+/* === Media Query === */
+@media screen and (max-width: 775px) {  /* Jusqu'à 767px */
     .header__nav-down, .header__nav-up {
         display: none;
     }
-    .header__nav__down-button > a {
-    padding: 2%;
-    }
+
 }
 
 /* =============================================================== */
 /* =============================================================== */
 /* =============================================================== */
-@media screen and (min-width: 772px) {      /* Entre 768px et 1023px */
+@media screen and (min-width: 776px) {      /* Entre 768px et 1023px */
 
-    /* === Header === */
-    .header__container {
-            background-image: url(../images/header/banniere.jpg);
-            background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
-            background-position: bottom; /* fixe le fond par le bas */
-            height: 25vh; /* Hauteur du fond d'écran */
-            width: 100vw; /* Largeur de toute la page */
-        }
-        .header__nav__down-button > a {
-            height: 6vh;  /* Hauteur de la boite texte */
-            font-size: 0.9em;   /* Taille de la police */
-        }
-        .header__nav__down-button > img {
-        min-width: 100px; /* Taille mini des pancartes */
-        max-height: 6vh;  /* Taille de la pancarte */
-        }
-        .search-submit {
-        height: 4vh;/* Taille de la pancarte */
-        width: 4vw; /* Taille de la pancarte */
-        max-width: 40px; /* Taille max de la pancarte */
-        }
-        .header__nav__down-button > a {
-        padding: 2.5%;
-        }
+.search_difficult, .search_difficult-link, .header__link {
+    font-size: 0.7em;
+}
+
 }
 
 /* =============================================================== */
@@ -110,31 +102,14 @@ body {
 /* =============================================================== */
 @media screen and (min-width: 1200px) {      /* A partir de 1024px */
 
-/* === Header === */
-    .header__container {
-        background-image: url(../images/header/banniereMini.jpg);
-        background-size: cover; /* Taille du fond (couvre la fenetre, sans modifier le ratio */
-        background-position: bottom; /* fixe le fond par le bas */
-        height: 25vh; /* Hauteur du fond d'écran */
-        width: 100vw; /* Largeur de toute la page */
+    .search_difficult, .search_difficult-link, .header__link {
+        font-size: 0.9em;
     }
-    .header__nav__down-button > a {
-        height: 9vh; /* Hauteur de la boite texte */
-        font-size: 1.2em;   /* Taille de la police */
 
-    }
-    .header__nav__down-button > img {
-    min-width: 120px; /* Taille mini des pancartes */
-    max-height: 9vh;  /* Taille de la pancarte */
-    }
-    .header__nav__down-button > a {
-    padding: 3%;
-    }
-}
+
+
 
 
 @media screen and (min-width: 1500px) {
-    .header__nav__down-button > a {
-        padding: 4%;
-        }
+
 }

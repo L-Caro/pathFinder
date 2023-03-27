@@ -1,6 +1,6 @@
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: grey;
+    background-color: #717575;
 }
 
 /* === === Page Home === === */
@@ -112,7 +112,6 @@ article:hover .trek-home_resume {
 /* == Difficulté == */
 .trek-home_difficult {
     width: 25%;
-
     left: 0;
     border-radius: 8px 0 8px 0;
 }
@@ -130,28 +129,48 @@ article:hover .trek-home_resume {
 }
 
 /* === Header === */
+/* == Container */
 .trek_header {
     position: relative;
 }
+/* == Arrière plan == */
 .trek_header-img {
     width: 100%;
+    border-bottom: 1px solid black;
 }
+/* == Titre et détails */
 .trek_header-text {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: 5%;
+    left: 5%;
+    width: 60%;
+    height: 20%;
 }
+/* = Titre = */
+.trek_title {
+    padding: 5px 10px;
+    width: fit-content;
+    background-color: rgba(79, 79, 79, 0.6);
+    border: 2px solid black;
+    border-radius: 24px;
+    font-weight: 700;
+    font-style: italic;
+}
+/* == Tags == */
 .header_tag {
-    /* display: flex; */
     position: absolute;
-    top: 0;
-    right: 0;
-    list-style: none;
+    top: 5%;
+    left: 3%;
+    height: 30%;
 }
+.trek_tag {
+    height: 20%;
+}
+/* == Icone favori == */
 .header_favorite-icon {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    top: 5%;
+    right: 5%;
     width: 40px;
 }
 
@@ -159,6 +178,12 @@ article:hover .trek-home_resume {
 /* == Container == */
 .trek_main {
     display: flex;
+}
+/* == Localisation et massif == */
+.trek_localisation {
+    margin: 2% 4% 0;
+    width: fit-content;
+    border-bottom: 2px rgb(68, 68, 68) solid;
 }
 /* == Organisation des infos == */
 .trek_main-text {
@@ -235,27 +260,12 @@ article:hover .trek-home_resume {
     align-items: center;
     margin-bottom: 3%;
 }
-/* = Tags = */
+/* Organisation des tags */
 .photos_tags {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 10px;
-}
-.photos_tag {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 15px 10px 0;
-    font-weight: 700;
-    padding: 5px 10px;
-    border-radius: 9px;
-}
-.photo_icone {
-    align-items: center;
-    padding-right: 5px;
-    width: 35px;
-    height: 25px;
 }
 /* = Retour = */
 .photos_back {
@@ -349,6 +359,24 @@ article:hover .trek-home_resume {
 }
 
 /* === Icones des tags === */
+/* == Configuration des tags == */
+.tag, .trek_difficult {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 15px 10px 0;
+    margin: 0 15px 10px 0;
+    width: fit-content;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 9px;
+}
+.tag_icone {
+    align-items: center;
+    padding-right: 5px;
+    width: 35px;
+    height: 25px;
+}
 /* == couleur des tags == */
 .Cascade, .Lac {
     background-color: rgb(17, 126, 235);
@@ -396,10 +424,32 @@ article {
 }
 
 /* === === Page Trek === === */
+/* === Header === */
+/* == Tags == */
+.trek_tag, .trek_difficult {
+    font-size: 0.7em;
+}
+.trek_tag_icone {
+    width: 15px;
+    height: 10px;
+}
+/* == Titre et détails */
+/* = Titre = */
+.trek_title {
+    font-size: 1em;
+}
+/* == Icone favori == */
+.header_favorite-icon {
+    width: 40px;
+}
 /* === Main === */
 /* == Container == */
 .trek_main {
     flex-direction: column;
+}
+/* == Localisation et massif == */
+.trek_localisation {
+    font-size: 0.8em;
 }
 /* == Organisation des infos == */
 /* = Description = */
@@ -475,10 +525,32 @@ article {
 }
 
 /* === === Page Trek === === */
+/* === Header === */
+/* == Tags == */
+.trek_tag, .trek_difficult {
+    font-size: 0.8em;
+}
+.trek_tag_icone {
+    width: 20px;
+    height: 15px;
+}
+/* == Titre et détails */
+/* = Titre = */
+.trek_title {
+    font-size: 1.7em;
+}
+/* == Icone favori == */
+.header_favorite-icon {
+    width: 50px;
+}
 /* === Main === */
 /* == Container == */
 .trek_main {
     flex-direction: column;
+}
+/* == Localisation et massif == */
+.trek_localisation {
+    font-size: 0.9em;
 }
 /* === Photos === */
 /* == Groupe photos == */
@@ -529,10 +601,32 @@ article {
 }
 
 /* === === Page Trek === === */
+/* === Header === */
+/* == Tags == */
+.trek_tag, .trek_difficult {
+    font-size: 1em;
+}
+.trek_tag_icone {
+    width: 25px;
+    height: 20px;
+}
+/* == Titre et détails */
+/* = Titre = */
+.trek_title {
+    font-size: 2.6em;
+}
+/* == Icone favori == */
+.header_favorite-icon {
+    width: 60px;
+}
 /* === Main === */
 /* == Container == */
 .trek_main {
     flex-direction: row;
+}
+/* == Localisation et massif == */
+.trek_localisation {
+    font-size: 1em;
 }
 /* == Organisation des infos == */
 .trek_main-text {

@@ -6,64 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/images/favicon.png" type="image/png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/trek.css" />
     <% if (locals.meta) { %>
-    <title>Rando : <%= headTitle %></title>
+    <title>Rando : <%= meta %></title>
     <% } else { %>
     <title>Blog rando</title>
     <% } %>
   </head>
   <body>
     <header class="header__container">
-      <div class="header__nav-up">
-        <ul>
-          <li>Dark</li>
-          <li>loge</li>
-          <ul>
-            Réseau
-            <li>FB</li>
-            <li>insta</li>
-          </ul>
-        </ul>
-      </div>
-
-      <!-- === A inserer dans le header === -->
-      <!-- <a href="/">Accueil</a>
-      <a href="/controller2">controller2</a>
-      <a href="/controller3">controller3</a>
-
-      <% if (locals.user && locals.user.role === 'admin') { %>
-      <a href="/admin">Admin</a>
-      <% } %> <% if (locals.user) { %>
-      <a href="/profil">Mon profil</a>
-      <a href="/logout">Se déconnecter</a>
-      <% } else { %>
-      <a href="/signup">S'inscrire</a>
-      <a href="/login">Se connecter</a>
-      <% } %> -->
-      <!-- === Fin de à inserer === -->
-
-      <nav class="header__nav-down">
-          <a class="header__nav-down__link" href="/">Toutes les randos</a>
-          <a class="header__nav-down__link" href="#">Chercher par tag</a>
-          <div class="header__nav__down-search">
-            <div class="header__nav__down-search-buttons">
-              <input
-                class="search-button"
-                type="text"
-                name="search"
-                id="search"
-                placeholder="Rechercher une rando"/>
+        <nav class="header_up">
+          <div class="header__left">
+            <a class="header__link" href="/">Acceuil</a>
+            <a class="header__link">Portfolio</a>
+            <a class="header__link">GitHub du projet</a>
+          </div>
+          <div class="header__right">
+            <a class="header__link" href="#">Mes randos</a>
+              <% if (locals.user) { %>
+                <a class="header__link" href="/profil">Mon profil</a>
+                <a class="header__link" href="/logout">Se déconnecter</a>
+                <% } else { %>
+                  <a class="header__link" href="/signup">S'inscrire</a>
+                  <a class="header__link" href="/login">Se connecter</a>
+              <% } %>
+          </div>
+        </nav>
+        <div class="header_down">
+          <a class="header__link" href="#">Rechercher par tag</a>
+          
+          <div class="header__search">
+            <div class="header__search-button">
+              <input class="search-button" type="text" name="search" id="search" placeholder="Rechercher une rando"/>
               <button class="search-submit" type="submit">✔️</button>
             </div>
           </div>
-          <a class="header__nav-down__link" href="#">Mes randos</a>
-          <a class="header__nav-down__link" href="#">Ajouter une rando</a>
-      </nav>
+          <a class="header__link" href="#">Rechercher par difficulté</a>
+        </div>
     </header>
+  </body>
+</html>
+    <!-- <div class="divers">
+      Tri par type (famil, rando, trail)
+      Recherche par mots clés
+      Recherche par massif
+      Recherche par difficulté
+      Recherche par Tag
+  </div> -->

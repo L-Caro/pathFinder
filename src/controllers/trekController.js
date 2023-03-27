@@ -30,7 +30,7 @@ const trekController = {
                     console.trace(err);
                     return res.status(500).send('Erreur lors de la récupération des photos')
                 }
-            res.render('trek', { trek, photos: files }); // Envoie à la page EJS de la variable files| Trek c'est les infos écrites
+            res.render('trek', { trek, photos: files, meta: trek.name }); // Envoie à la page EJS de la variable files| Trek c'est les infos écrites
         });
         } catch (error) {
             console.trace(error);

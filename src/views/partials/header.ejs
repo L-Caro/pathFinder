@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/trek.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
     <% if (locals.meta) { %>
     <title>pathFinder : <%= meta %></title>
     <% } else { %>
@@ -32,7 +33,7 @@
           </div>
           <div class="header__right">
             <% if (locals.user) { %>
-                <a class="header__link" href="#">Mes randos</a>
+                <a class="header__link" href="/bookmark">Mes randos</a>
                 <a class="header__link" href="/profil">Mon profil</a>
                 <a class="header__link" href="/logout">Se déconnecter</a>
                 <% } else { %>
@@ -64,7 +65,7 @@
                 </div>
                 <div class="small__menu__log">
                   <% if (locals.user) { %>
-                    <a class="header__small__link" href="#">Mes randos</a>
+                    <a class="header__small__link" href="/bookmark">Mes randos</a>
                     <a class="header__small__link" href="/profil">Mon profil</a>
                     <a class="header__small__link" href="/logout">Se déconnecter</a>
                   <% } else { %>

@@ -1,6 +1,16 @@
 const session = require("express-session");
+const pgSession = require('connect-pg-simple')(session);
+const { Client } = require("pg");
+
+const client = new Client(process.env.PG_url);
+client.connect();
 
 const sessionMiddleware = session({
+  store: new pgSession({
+    pool : client,                // Instance de connexion à la BDD
+    tableName : 'user_sessions',   // Use another table-name than the default "session" one
+    createTableIfMissing : true
+  }),
   secret: process.env.SECRET_SESSION, // Quand on gènère l'ID de la session, on utilise un seed different afin de rendre plus difficile de deviner les uuid de session
   resave: false, // Pas la peine de réenregistrer la session s'il n'y a pas eu de changement dans l'objet
   saveUninitialized: true, // Enregistre les infos de la session même s'il n'y a rien dedans
@@ -9,19 +19,5 @@ const sessionMiddleware = session({
    maxAge: 30 * 24 * 60 * 60 * 1000 // 30 jours
   } 
 });
-// Toutes nos requêtes à notre app passent par la.
-// Ce middleware :
-// - il regarde si l'utilisateur transmet un cookie avec la sessionId.
-//  - SI NON (première connexion au site) :
-//    - il créé une SESSION (en mémoire RAM du serveur) : une boite qui contient des information.
-//      - il choisit un ID pour cette session.
-//    - il envoie l'ID de la session qu'il vient de créer au client (en passant par le header `Set-Cookie: sid=<cookie-value>;`)
-//  - SI OUI (seconde connexion au site)
-//    - On récupère la session dans la RAM
-//    - et on greffe la session dans `req` (req.session)
-//    - Si bien qu'on peut manipuler `req.session` dans le reste de l'application
-
-// En plus, il rajoute qqch sur req :
-// req.onSend(() => { saveSession(); })
 
 module.exports = sessionMiddleware;

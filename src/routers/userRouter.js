@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const userController = require("../controllers/admin/userController.js");
-
+const bookmarkController = require('../controllers/bookmarkController.js');
 
 const router = Router();
 
@@ -15,5 +15,10 @@ router.get('/logout', userController.actionLogout);
 
 router.get('/profil', userController.renderProfilPage);
 
+
+// Gestion des favoris
+router.get('/bookmark', bookmarkController.renderBookmarkPage);
+router.get('/bookmark/add/:id', bookmarkController.addOnBookmark);
+router.get('/bookmark/delete/:id', bookmarkController.deleteFromBookmark);
 
 module.exports = router;

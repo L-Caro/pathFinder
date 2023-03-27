@@ -1,0 +1,11 @@
+.form-label {
+    text-align: center;
+}
+
+.form-input {
+    width: 36%;
+    height: 50px;
+    border-radius: 24px;
+    margin: 0 auto 2%;
+    text-align: center;
+}

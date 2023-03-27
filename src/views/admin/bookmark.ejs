@@ -1,7 +1,11 @@
-<%- include('partials/header') %>
+<%- include('../partials/header') %>
 
 <div class="container-home">
-    <% treks.forEach(trek => { %>
+            <%  if (session === undefined) { %>
+                    <p>Rien dans les favoris</p>
+                <%  } else { %>
+        <% for (const trek of treks) { %>
+            <%    if (session.includes(trek.id)) { %>
         <article class="trek-home">
             <a href="/trek/<%= trek.id %>"><img class="trek-home_background" src="/images/assets/miniature/<%= trek.id %>.jpg" alt="cover">
                 <div class="trek-home_content">
@@ -14,7 +18,8 @@
                 </div>
             </a>
         </article>
-    <% }) %>
+    <% } %>
+    <% }} %>
 </div>
 
-<%- include('partials/footer') %>
+<%- include('../partials/footer') %>

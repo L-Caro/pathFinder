@@ -12,7 +12,11 @@
         <div class="trek_header-text">
             <p class="trek_title"><%= trek.name %></p>
         </div>
-        <div class="header_favorite-icon"><img src="/images/trek/bookmark_empty.png" title="Ajouter aux favoris" alt="favori" srcset=""></div>
+        <% if (!session.includes(trek.id)){ %>
+            <a href="/bookmark/add/<%= trek.id %>" class="header_favorite-icon"><img src="/images/trek/bookmark_empty.png" title="Ajouter aux favoris" alt="favori" srcset=""></a>
+        <% } else { %>
+            <a href="/bookmark/delete/<%= trek.id %>" class="header_favorite-icon"><img src="/images/trek/bookmark_full.png" title="Retirer des favoris" alt="favori" srcset=""></a>
+        <% } %>
     </div>
     <p class="trek_localisation"><%= trek.summit.name %> > <%= trek.start_point %></p>
     <div class="trek_main">

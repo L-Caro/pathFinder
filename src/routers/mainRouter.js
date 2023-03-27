@@ -1,7 +1,6 @@
 const express = require('express');
 const mainController = require('../controllers/mainController.js');
 const trekController = require('../controllers/trekController.js');
-const controller3 = require('../controllers/controller3.js');
 // ...
 
 const router = express.Router();

@@ -1,4 +1,6 @@
-.header__container {
+/* === === Menu large === === */
+/* === Container === */
+.header__large {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -12,8 +14,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 6vh;
+}
+.header_down {
+    border-top: 1px dotted burlywood;
+    justify-content: center;
 }
 
+/* == Barre supérieur */
 .header__left, .header__right {
     display: flex;
     align-items: center;
@@ -28,33 +36,32 @@
     justify-content: right;
 }
 
+/* == Lien du menu supérieur == */
 .header__link {
     display: flex;
-    margin: 0 2%;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin: 0 2%;
     width: 25%;
-    height: 80%;
+    height: 65%;
     border: 1px solid burlywood;
+    border-radius: 25px;
     text-align: center;
 }
 .header__link:visited {
 color: burlywood;
 }
-
-
-.header_down {
-    height: 6vh;
-    border-top: 1px dotted burlywood; ;
+/* == Lien du menu inférieur == */
+.search_link {
+    width: 20%
 }
-
-
 
 /* == Menu recherche == */
+/* = Bloc recherche = */
 .header__search {
     position: relative;
-    width: 40vw;
 }
+/* = Bouton recherche = */
 .search-button { /* Bouton recherche */
     width: 100%;   /* Largeur du bouton */
     height: 4vh;    /* Hauteur du bouton*/
@@ -62,54 +69,169 @@ color: burlywood;
     text-align: center; /* Placeholder centré */
     opacity: 0.8;   /* Opacité */
 }
+/* = Bouton valider = */
 .search-submit {
     position: absolute;
-    border: 2px solid burlywood;
+    right: 0;
     width: 50px;
     height: 100%;
-    right: 0;
-    border: 0.1px solid; /* Bordure du bouton */
+    border: 2px solid burlywood;
     border-radius: 50%; /* Arrondi le bouton */
     opacity: 0.8;   /* Opacité */
 } 
 
-
-
-
-
-
 /* === Media Query === */
-@media screen and (max-width: 775px) {  /* Jusqu'à 767px */
-    .header__nav-down, .header__nav-up {
-        display: none;
-    }
-
+@media screen and (max-width: 775px) {  /* Jusqu'à 775px */
+/* === === Menu large === === */
+/* === Container === */
+.header__large {
+    display: none;
 }
 
-/* =============================================================== */
-/* =============================================================== */
-/* =============================================================== */
-@media screen and (min-width: 776px) {      /* Entre 768px et 1023px */
+/* === === Menu small === === */
+/* === Menu burger === */
+/* == Menu latéral == */
+.sidenav {
+    height: 100vh;                      /* Prend toute la hauteur */
+    width: 100vw;                       /* Prend toute la largeur */
+    position: fixed;                    /* Menu fixed */
+    z-index: 2;                         /* Menu par dessus tout le reste */
+    top: 0;                             /* Menu tout en haut */
+    left: -150vw;                       /* Menu caché par défaut */
+    background-color: #242325;        /* Couleur de fond */ 
+    padding-top: 5%rem;                 /* 5% de padding par rapport au top */
+    transition: left .7s ease-out;      /* Transition de 0.7s avec ralentissement à la fin */
+}
+/* = Position du menu ouvert = */
+.sidenav.active {
+    left: 0;
+}
+/* = Bouton de fermeture = */
+.sidenav .close {
+position: absolute;
+top: 0;
+right: 8%;
+font-size: 4rem;
+text-decoration: none;
+}
+.sidenav .close:visited {
+    color: burlywood;
+}
+/* = Placement des liens dans le burger = */
+.header__small__menus {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15%;
+    height: 70%;
+}
+/* = Lien du burger = */
+.header__small__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    height: 45%;
+    border: 1px solid burlywood;
+    border-radius: 25px;
+    color: burlywood;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.header__small__link:visited {
+    color: burlywood;
+}
+.small__menu__git, .small__menu__log {
+    width: 35%;
+}
 
-.search_difficult, .search_difficult-link, .header__link {
+/* === Gestion de la barre supérieur */
+/* == Position barre supérieur == */
+.header__small__up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3% 3% 0 3%;
+}
+.small__search__title {
+    color: burlywood;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 700;
+}
+/* == Apparence du bouton burger == */
+.burger-icon {
+    height: 5vh;
+    margin-right: 10px;
+}
+.small__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 5px;
+    width: 26%;
+    height: 100%;
+    border: 1px solid burlywood;
+    border-radius: 20px;
+    color: burlywood;
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+.burger-icon span {
+    display: block;
+    width: 2.5rem;
+    height: .4rem;
+    background-color: #242325;
+    margin: 10% 1%;
+}
+
+/* === Gestion de la barre inférieur */
+/* == Position barre inférieur == */
+.header__small__down {
+    padding-bottom: 1%;
+    border-bottom: 2px dotted #242325;
+}
+.header__search {
+    width: 60%;
+    margin: 3% auto;
+}
+}
+/* =============================================================== */
+@media screen and (min-width: 776px) {      /* Entre 776px et 1200px */
+/* === === Menu small === === */
+/* === Container === */
+.header__small {
+    display: none;
+}
+
+/* === === Menu large === === */
+/* === Container === */
+/* == Lien du menu supérieur == */
+.header__link {
     font-size: 0.7em;
 }
+/* == Menu recherche == */
+/* = Bloc recherche = */
+.header__search {
+    width: 40vw;
+}
+/* = Bouton recherche = */
+.search-button { /* Bouton recherche */
 
+}
 }
 
 /* =============================================================== */
-/* =============================================================== */
-/* =============================================================== */
-@media screen and (min-width: 1200px) {      /* A partir de 1024px */
-
-    .search_difficult, .search_difficult-link, .header__link {
+@media screen and (min-width: 1200px) {      /* A partir de 1200px */
+/* === === Menu large === === */
+/* === Container === */
+/* == Lien du menu supérieur == */
+.header__link {
         font-size: 0.9em;
     }
-
-
-
-
-
-@media screen and (min-width: 1500px) {
-
 }

@@ -17,22 +17,22 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/trek.css" />
     <% if (locals.meta) { %>
-    <title>Rando : <%= meta %></title>
+    <title>pathFinder : <%= meta %></title>
     <% } else { %>
-    <title>Blog rando</title>
+    <title>pathFinder</title>
     <% } %>
   </head>
   <body>
-    <header class="header__container">
+    <header class="header__large">
         <nav class="header_up">
           <div class="header__left">
-            <a class="header__link" href="/">Acceuil</a>
+            <a class="header__link" href="/">Accueil</a>
             <a class="header__link">Portfolio</a>
             <a class="header__link">GitHub du projet</a>
           </div>
           <div class="header__right">
-            <a class="header__link" href="#">Mes randos</a>
-              <% if (locals.user) { %>
+            <% if (locals.user) { %>
+                <a class="header__link" href="#">Mes randos</a>
                 <a class="header__link" href="/profil">Mon profil</a>
                 <a class="header__link" href="/logout">Se déconnecter</a>
                 <% } else { %>
@@ -42,7 +42,7 @@
           </div>
         </nav>
         <div class="header_down">
-          <a class="header__link" href="#">Rechercher par tag</a>
+          <a class="header__link search_link" href="#">Rechercher par tag</a>
           
           <div class="header__search">
             <div class="header__search-button">
@@ -50,15 +50,51 @@
               <button class="search-submit" type="submit">✔️</button>
             </div>
           </div>
-          <a class="header__link" href="#">Rechercher par difficulté</a>
+          <a class="header__link search_link" href="#">Rechercher par difficulté</a>
         </div>
     </header>
+    <div class="header__small">
+      <label id="mySidenav" class="sidenav">                        <!-- id pour javascript | class pour CSS --> 
+        <a id="closeBtn" href="#" class="close">&times;</a>     <!-- petite croix de fermeture -->
+              <div class="header__small__menus">
+                <div class="small__menu__git">
+                  <a href="/" class="header__small__link">Accueil</a>
+                  <a class="header__small__link">Portfolio</a>
+                  <a class="header__small__link">GitHub du projet</a>
+                </div>
+                <div class="small__menu__log">
+                  <% if (locals.user) { %>
+                    <a class="header__small__link" href="#">Mes randos</a>
+                    <a class="header__small__link" href="/profil">Mon profil</a>
+                    <a class="header__small__link" href="/logout">Se déconnecter</a>
+                  <% } else { %>
+                    <a class="header__small__link" href="/signup">S'inscrire</a>
+                    <a class="header__small__link" href="/login">Se connecter</a>
+                  <% } %>
+                </div>
+              </div>
+      </label>
+      <!-- Icone burger -->
+      <div class="header__small__up">
+        <a href="#" class="burger-icon" id="openBtn">
+          <span class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </a>
+        <p class="small__search__title">Recherche par :</p>
+        <a class="small__link" href="#">Tag</a>
+        <a class="small__link" href="#">&#9207; Difficulté &#9207;</a>
+      </div>
+      <div class="header__small__down">
+        <div class="header__search">
+          <div class="header__search-button">
+            <input class="search-button" type="text" name="search" id="search" placeholder="Rechercher une rando"/>
+            <button class="search-submit" type="submit">✔️</button>
+          </div>
+        </div>
+      </div>
+      </div>
   </body>
 </html>
-    <!-- <div class="divers">
-      Tri par type (famil, rando, trail)
-      Recherche par mots clés
-      Recherche par massif
-      Recherche par difficulté
-      Recherche par Tag
-  </div> -->

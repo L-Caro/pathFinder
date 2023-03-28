@@ -6,7 +6,7 @@ const { Sequelize } = require('sequelize');
 const sequelize = new Sequelize(process.env.PG_URL, {
   
   dialect: "postgres",
-  // logging: false, // Permet de ne pas afficher les requete en console.
+  logging: false, // Permet de ne pas afficher les requete en console.
   query: {
     // raw: true
   },

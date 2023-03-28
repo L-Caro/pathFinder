@@ -1,0 +1,93 @@
+/* == Menu déroulant large == */
+  /* Liens de la barre de menu sur header */
+  nav a {
+    display: block;                                     /* Fait en sorte que les liens li du sous menu soient en bloc*/
+    text-decoration: none;
+    color: #303030;
+    font-weight: 700;
+    /* text-shadow: 0px 0px 4px #333; */
+  }
+/* couleur liens sous menu */
+  .header-large__sub-menu1 a,
+  .header-large__sub-menu2 a,
+  .header-large__sub-menu3 a,
+  .header-large__sub-menu4 a {
+    text-shadow: 0px 0px 4px rgb(87, 86, 86);
+}
+/* couleur liens sous menu en hover */
+  .header-large__sub-menu1 a:hover,
+  .header-large__sub-menu2 a:hover,
+  .header-large__sub-menu3 a:hover,
+  .header-large__sub-menu4 a:hover {
+    text-shadow: 0px 0px 4px #333;
+    font-weight: 700;
+}
+/* Placement de ▼ à la fin des menus */
+.menu-arrow > a::after {
+  content: " ▼";
+  font-size: 1rem;
+}
+/* Cacher les sous menus par défaut */
+.header-large__sub-menu1, 
+.header-large__sub-menu2, 
+.header-large__sub-menu3, 
+.header-large__sub-menu4 {
+  display: none;                                    /* Cache les sous menus par défaut */
+}
+/* position et placement de la fenetre sous menu */
+nav > ul li:hover .header-large__sub-menu1,
+nav > ul li:hover .header-large__sub-menu2,
+nav > ul li:hover .header-large__sub-menu3,
+nav > ul li:hover .header-large__sub-menu4 {     
+  display: flex;                                    /* Mise en forme des colonnes + Les sous-menus apparaissent au hover sur le lien */
+  position: absolute;                               /* Pour que les sous menus commencent à gauche */
+  left: 0;                                        
+  padding-top: 1.5rem;                        /* Le temps de parcourir les 1.5rem, le sous menu disparait */
+  width: 100vw;                                     /* Largeur des sous menus (tout l'écran) */
+  height: 90vh;                                     /* Hauteur des sous menus (jusqu'en bas) */
+}
+/* placement des sous menu */
+.header-large__sub-menu1 li{
+  display: flex;                                    /* en colonne de 33% pour toute la largeur*/
+  justify-content: space-around;
+  position: relative;
+  width: 33%;
+}
+.header-large__sub-menu2 li {
+  display: flex;                                    /* en colonne de 33% pour toute la largeur*/
+  justify-content: space-around;
+  position: relative;
+  width: 33%;
+}
+.header-large__sub-menu3 li {
+  display: flex;                                    /* en colonne de 33% pour toute la largeur*/
+  justify-content: space-around;
+  position: relative;
+  width: 33%;
+}
+.header-large__sub-menu4 li {
+  display: flex;                                    /* en colonne de 33% pour toute la largeur*/
+  justify-content: space-around;
+  position: relative;
+  width: 33%;
+}
+/* placement du titre dans chaque sous menu */
+  .header-large__sub-menu1 a,
+  .header-large__sub-menu2 a,
+  .header-large__sub-menu3 a,
+  .header-large__sub-menu4 a {
+    padding: 1rem;                              /* Largeur à 100% avec leger padding */
+    width: 100%;
+    text-align: center;
+    color: #222020;
+    opacity: .5;
+    font-size: 1.7rem;
+  }
+  /* action quand hover sur fenetre de sous menu */
+  .header-large__sub-menu1 a:hover,
+  .header-large__sub-menu2 a:hover,
+  .header-large__sub-menu3 a:hover,
+  .header-large__sub-menu4 a:hover {
+    background-color: #fff000;          /* A supprimer quand les projets auront des photos*/
+    opacity: 1;
+    color: #303030;

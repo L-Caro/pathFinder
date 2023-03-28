@@ -12,7 +12,7 @@
         <div class="trek_header-text">
             <p class="trek_title"><%= trek.name %></p>
         </div>
-        <% if (!session.includes(trek.id)){ %>
+        <% if (!session || !session.includes(trek.id)){ %>
             <a href="/bookmark/add/<%= trek.id %>" class="header_favorite-icon"><img src="/images/trek/bookmark_empty.png" title="Ajouter aux favoris" alt="favori" srcset=""></a>
         <% } else { %>
             <a href="/bookmark/delete/<%= trek.id %>" class="header_favorite-icon"><img src="/images/trek/bookmark_full.png" title="Retirer des favoris" alt="favori" srcset=""></a>
@@ -26,9 +26,9 @@
                     <p class="main-text-head_length"><img src="/images/trek/distance.png" alt="regle"><%= trek.distance / 1000%> km</p>
                     <p class="main-text-head_time-length"><img src="/images/trek/chronometre.png" alt="regle"><%= trek.time_length %></p>
                     <p class="main-text-head_boucle"><img src="/images/trek/boucle.png" alt="boucle"> <%= trek.boucle %></p>
-                    <p class="main-text-head_denivele"><img src="/images/trek/denivele.png" alt="dénivelé"><%= trek.denivele %>m</p>
-                    <p class="main-text-head_min"><img src="/images/trek/min_altitude.png" alt="altitude mini"><%= trek.min_height %>m</p>
-                    <p class="main-text-head_max"><img src="/images/trek/max_altitude.png" alt="altitude maxi"><%= trek.max_height %>m</p>
+                    <p class="main-text-head_denivele"><img src="/images/trek/denivele.png" alt="dénivelé"><%= trek.denivele %>m D+</p>
+                    <p class="main-text-head_min"><img src="/images/trek/min_altitude.png" alt="altitude mini"><%= trek.min_height %>m Min</p>
+                    <p class="main-text-head_max"><img src="/images/trek/max_altitude.png" alt="altitude maxi"><%= trek.max_height %>m Max</p>
                 </div>
                 <p class="trek_main-text_title-description">Description :</p>
                 <p class="trek_main-text_description"><%= trek.description %></p>

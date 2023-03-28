@@ -42,38 +42,90 @@
               <% } %>
           </div>
         </nav>
-        <div class="header_down">
-          <a class="header__link search_link" href="#">Rechercher par tag</a>
-          
-          <div class="header__search">
-            <div class="header__search-button">
-              <input class="search-button" type="text" name="search" id="search" placeholder="Rechercher une rando"/>
-              <button class="search-submit" type="submit">✔️</button>
+          <div class="header_down">
+            <div class="header__menu_dropdown dropdown__link">
+              <a class="hover__link" href="#">&#9207; Filter par tag &#9207;</a>
+              <div class="dropdown">
+                <label for="type-promenade">
+                  <input type="radio" name="hike_type" id="type-promenade">
+                  Promenade</label>
+                <label for="type-familiale">
+                  <input type="radio" name="hike_type" id="type-familiale">
+                  Familiale</label>
+                <label for="type-randonnee">
+                  <input type="radio" name="hike_type" id="type-randonnee">
+                  Randonnée</label>
+                <label for="type-trail">
+                  <input type="radio" name="hike_type" id="type-trail">
+                  Trail</label>
+                <label for="type-bivouac">
+                  <input type="radio" name="" id="type-bivouac">
+                  Bivouac</label>
+                <label for="type-lac">
+                  <input type="radio" name="" id="type-lac">
+                  Lac</label>
+                <label for="type-neige">
+                  <input type="radio" name="" id="type-neige">
+                  Neige</label>
+                <label for="type-cascade">
+                  <input type="radio" name="" id="type-cascade">
+                  Cascade</label>
+                <label for="type-coucheDeSoleil">
+                  <input type="radio" name="" id="type-coucheDeSoleil">
+                  Sunset</label>
+                <label for="type-defi">
+                  <input type="radio" name="" id="type-defi">
+                  Défi fou</label>
+              </div>
+            </div>
+            <div class="header__search">
+              <div class="header__search-button">
+                <input class="search-button" type="text" name="search" id="search" placeholder="Rechercher une rando"/>
+                <button class="search-submit" type="submit">✔️</button>
+              </div>
+            </div>
+            <div class="header__menu_dropdown dropdown__link">
+              <a class="hover__link" href="#">&#9207; Filtrer par difficulté &#9207;</a>
+              <div class="dropdown">
+                <label for="very-easy">
+                  <input type="radio" name="difficult" id="very-easy">
+                  Très facile</label>
+                <label for="easy">
+                  <input type="radio" name="difficult" id="easy">
+                  Facile</label>
+                <label for="moderate">
+                  <input type="radio" name="difficult" id="moderate">
+                  Modérée</label>
+                  <label for="hard">
+                    <input type="radio" name="difficult" id="hard">
+                    Difficile</label>
+                  <label for="very-hard">
+                    <input type="radio" name="difficult" id="very-hard">
+                    Très difficile</label>
+              </div>
             </div>
           </div>
-          <a class="header__link search_link" href="#">Rechercher par difficulté</a>
-        </div>
     </header>
     <div class="header__small">
       <label id="mySidenav" class="sidenav">                        <!-- id pour javascript | class pour CSS --> 
         <a id="closeBtn" href="#" class="close">&times;</a>     <!-- petite croix de fermeture -->
-              <div class="header__small__menus">
-                <div class="small__menu__git">
-                  <a href="/" class="header__small__link">Accueil</a>
-                  <a class="header__small__link">Portfolio</a>
-                  <a href="https://github.com/L-Caro/Blog-rando" target="_blank" class="header__small__link">GitHub du projet</a>
-                </div>
-                <div class="small__menu__log">
-                  <% if (locals.user) { %>
-                    <a class="header__small__link" href="/bookmark">Mes randos</a>
-                    <a class="header__small__link" href="/profil">Mon profil</a>
-                    <a class="header__small__link" href="/logout">Se déconnecter</a>
-                  <% } else { %>
-                    <a class="header__small__link" href="/signup">S'inscrire</a>
-                    <a class="header__small__link" href="/login">Se connecter</a>
-                  <% } %>
-                </div>
-              </div>
+          <div class="header__small__menus">
+            <div class="small__menu__git">
+              <a href="/" class="header__small__link">Accueil</a>
+              <a class="header__small__link">Portfolio</a>
+              <a href="https://github.com/L-Caro/Blog-rando" target="_blank" class="header__small__link">GitHub du projet</a>
+            </div>
+            <div class="small__menu__log">
+              <% if (locals.user) { %>
+                <a class="header__small__link" href="/bookmark">Mes randos</a>
+                <a class="header__small__link" href="/profil">Mon profil</a>
+                <a class="header__small__link" href="/logout">Se déconnecter</a>
+              <% } else { %>
+                <a class="header__small__link" href="/signup">S'inscrire</a>
+                <a class="header__small__link" href="/login">Se connecter</a>
+              <% } %>
+            </div>
+          </div>
       </label>
       <!-- Icone burger -->
       <div class="header__small__up">
@@ -84,9 +136,61 @@
             <span></span>
           </span>
         </a>
-        <p class="small__search__title">Recherche par :</p>
-        <a class="small__link" href="#">Tag</a>
-        <a class="small__link" href="#">&#9207; Difficulté &#9207;</a>
+          <div class="header__menu_dropdown small__dropdown__link">
+            <a class="hover__link" href="#">&#9207; Tag &#9207;</a>
+            <div class="dropdown">
+              <label for="promenade">
+                <input type="radio" name="hike_type" id="promenade">
+                Promenade</label>
+              <label for="familiale">
+                <input type="radio" name="hike_type" id="familiale">
+                Familiale</label>
+              <label for="randonnee">
+                <input type="radio" name="hike_type" id="randonnee">
+                Randonnée</label>
+              <label for="trail">
+                <input type="radio" name="hike_type" id="trail">
+                Trail</label>
+              <label for="bivouac">
+                <input type="radio" name="" id="bivouac">
+                Bivouac</label>
+              <label for="lac">
+                <input type="radio" name="" id="lac">
+                Lac</label>
+              <label for="neige">
+                <input type="radio" name="" id="neige">
+                Neige</label>
+              <label for="cascade">
+                <input type="radio" name="" id="cascade">
+                Cascade</label>
+              <label for="coucheDeSoleil">
+                <input type="radio" name="" id="coucheDeSoleil">
+                Sunset</label>
+              <label for="defi">
+                <input type="radio" name="" id="defi">
+                Défi fou</label>
+            </div>
+          </div>
+          <div class="header__menu_dropdown small__dropdown__link">
+            <a class="hover__link" href="#">&#9207; Difficulté &#9207;</a>
+            <div class="dropdown">
+              <label for="tresfacile">
+                <input type="radio" name="difficult" id="tresfacile">
+                Très facile</label>
+              <label for="facile">
+                <input type="radio" name="difficult" id="facile">
+                Facile</label>
+              <label for="moderee">
+                <input type="radio" name="difficult" id="moderee">
+                Modérée</label>
+                <label for="difficile">
+                  <input type="radio" name="difficult" id="difficile">
+                  Difficile</label>
+                <label for="tresdifficile">
+                  <input type="radio" name="difficult" id="tresdifficile">
+                  Très difficile</label>
+            </div>
+          </div>
       </div>
       <div class="header__small__down">
         <div class="header__search">
@@ -96,6 +200,4 @@
           </div>
         </div>
       </div>
-      </div>
-  </body>
-</html>
+    </div>

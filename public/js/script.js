@@ -23,6 +23,7 @@ window.addEventListener('resize', function() {
     window.removeEventListener('resize', adjustMainRightHeight);
   }
 });
+// == == //
 
 
 
@@ -42,3 +43,6 @@ function closeNav() {
   sidenav.classList.remove("active");
 }
 // == == //
+
+
+

@@ -22,7 +22,7 @@ const mainController = {
             ]
         });
         try {
-           res.render('home', { treks });
+           res.render('home', { treks, meta: "Accueil" });
         } catch (error) {
             console.trace(error);
             res.status(500).render("error/500");

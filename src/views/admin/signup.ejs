@@ -2,7 +2,7 @@
 
 <main class="container py-4">
 
-  <h1>Inscription</h1>
+  <h1 class="admin_title">Inscription</h1>
 
   <!-- ! On utilise la méthode locals si la condition du controller n'est pas remplie -->
   <!-- ! Dans ce cas la, un champ n'est pas rempli -->
@@ -14,7 +14,7 @@
   <% } %>
   
   
-    <form action="/signup" method="POST">
+    <form class="admin_form" action="/signup" method="POST">
       <label class="form-label" for="firstname">Prénom</label>
       <input class="form-input" type="firstname" id="firstname" name="firstname" placeholder="Prénom">
   
@@ -30,7 +30,7 @@
       <label class="form-label" for="confirmation">Mot de passe</label>
       <input class="form-input" type="password" id="confirmation" name="confirmation" placeholder="*********">
       
-      <input class="btn btn-primary d-block my-4 mx-auto" type="submit" value="S'inscrire">
+      <input class="form-valid" type="submit" value="S'inscrire">
     </form>
   
   </main>

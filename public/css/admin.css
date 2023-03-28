@@ -1,28 +1,53 @@
-/* === === Page favoris === === */
-.bookmark_title, .bookmark_nothing {
+/* === === Page favoris et inscription/connexion === === */
+.admin_title {
     text-align: center;
     font-size: 2em;
     font-weight: 700;
     margin: 4%;
 }
-.bookmark_nothing {
+.admin_text {
+    text-align: center;
     font-size: 1.3em;
     font-style: italic;
+    margin-top: 3%;
+    color: black;
 }
 
-
-
-
-/* === === Page connexion et inscription === === */
-
+.admin_form {
+    display: flex;
+    flex-direction: column;
+}
 .form-label {
     text-align: center;
+    font-weight: 700;
+    font-size: 1.1em;
 }
 
 .form-input {
-    width: 36%;
+    width: 35%;
     height: 50px;
     border-radius: 24px;
     margin: 0 auto 2%;
     text-align: center;
+}
+
+.form-valid {
+    width: 35%;
+    margin: 0 auto;
+    border-radius: 24px;
+    height: 50px;
+    background-color: burlywood;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+/* === === Erreur 404 === === */
+.admin_text > a:visited {
+    color: black;
+}
+
+.error_img {
+    display: block;
+    margin: 4% auto;
+    width: 40%;
 }

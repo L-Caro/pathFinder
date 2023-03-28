@@ -1,8 +1,9 @@
 <%- include('../partials/header') %>
 
+<h1 class="bookmark_title">Mes favoris</h1>
 <div class="container-home">
-            <%  if (session === undefined) { %>
-                    <p>Rien dans les favoris</p>
+            <%  if (session === undefined || session.length <= 0) { %>
+                    <p class="bookmark_nothing">Vous n'avez aucune randonnée dans les favoris actuellement</p>
                 <%  } else { %>
         <% for (const trek of treks) { %>
             <%    if (session.includes(trek.id)) { %>

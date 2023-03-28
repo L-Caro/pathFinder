@@ -1,3 +1,20 @@
+/* === === Page favoris === === */
+.bookmark_title, .bookmark_nothing {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 4%;
+}
+.bookmark_nothing {
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+
+
+
+/* === === Page connexion et inscription === === */
+
 .form-label {
     text-align: center;
 }

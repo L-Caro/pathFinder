@@ -4,12 +4,12 @@ const { User } = require("../../models/index");
 
 const userController = {
   renderSignupPage(req, res) {
-    res.render("admin/signup");
+    res.render("admin/signup", { meta: "Inscription" });
   },
   renderLoginPage(req, res) {
     const successMessage = req.session.message;
     req.session.message = null;
-    res.render("admin/login", { successMessage });
+    res.render("admin/login", { meta: "Connexion", successMessage });
   },
   renderProfilPage(req, res) {
     // On vérif que le user est connecté (via la session)

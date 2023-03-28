@@ -163,7 +163,7 @@ article:hover .trek-home_resume {
     left: 3%;
     height: 30%;
 }
-.trek_tag {
+.trek_tag, .trek_difficult {
     height: 20%;
 }
 /* == Icone favori == */

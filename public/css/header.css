@@ -87,10 +87,11 @@ color: burlywood;
     display: none;      /* Caché par défaut */
     position: absolute; /* Position absolu par rapport à son parent (header__menu-dropdown) */
     top:100%;           /* 100% plus bas que son parent, donc juste dessous le lien */
+    padding: 15px 15px 0 15px; /* Permet surtout de rapprocher les coches du textes dans les liens en display flex */
+    width: 100%;        /* Fait la largeur du lien dessus */
     z-index: 1;         /* Au dessus de tout le reste quand display none disparu */
     background-color: #242325; /* Couleur de fond */
-    width: 100%;        /* Fait la largeur du lien dessus */
-    padding: 15px; /* Permet surtout de rapprocher les coches du textes dans les liens en display flex */
+    border-radius: 15px;
 }
 /* = Bouton "tag" et "difficulte" = */
 .dropdown__link {
@@ -124,6 +125,10 @@ color: burlywood;
 /* = Coches boutons radio = */
 input {
     margin-right: 15px; /* Ecarte le texte du bouton radio */
+}
+.type-end {
+    padding-bottom: 15px;
+    border-bottom: 1px dotted burlywood;
 }
 
 .header__menu_dropdown {

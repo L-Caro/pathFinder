@@ -3,15 +3,10 @@ require('dotenv').config();
 
 // Les dépendances
 const express = require('express');
-const error404 = require('./src/middleware/error/404.js');
-const log = require('./src/middleware/admin/log'); // infos log visiteurs
-const userConnect = require('./src/middleware/admin/userConnect');
-const sessionMiddleware = require('./src/middleware/session');
+const middlewares = require('./src/middleware/index');
 
 // Les routers
-const mainRouter = require('./src/routers/mainRouter');
-const userRouter = require('./src/routers/userRouter')
-const adminRouter = require('./src/routers/adminRouter');
+const router = require('./src/routers');
 
 // Création de l'application
 const app = express();
@@ -21,10 +16,10 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 // Setup de la logique de session
-app.use(sessionMiddleware);
+app.use(middlewares.sessionMiddleware);
 
 // Setup du profil de connexion
-app.use(userConnect);
+app.use(middlewares.userConnect);
 
 // Setup du dossier static
 app.use(express.static('public')); // fichiers statique
@@ -33,16 +28,16 @@ app.use(express.static('public')); // fichiers statique
 app.use(express.urlencoded({ extended: true }));  // Lecture du payload
 
 // Setup de l'enregistrement des log
-// app.use(log); // Décommenter pour utiliser l'enregistrement des log
+// app.use(middlewares.log); // Décommenter pour utiliser l'enregistrement des log
 
 
 // ===---- Routes ----===
-app.use(mainRouter);
-app.use(userRouter);
-app.use(adminRouter);
+app.use(router.main);
+app.use(router.user);
+app.use(router.admin);
 
 // ===---- 404 ----===
-app.use(error404);
+app.use(middlewares.notFound);
 
 
 //Lancement de l'application

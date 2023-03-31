@@ -146,12 +146,17 @@ input {
 /* === === Footer === === */
 footer {
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    justify-content: space-evenly;
     align-items: center;
-    height: 10%;
+    width: 100%;
+    height: 8%;
     min-height: 60px;
     background-color: #242325;
     font-weight: 700;
+    color: white;
+}
+.footer_link {
     color: white;
 }
 
@@ -270,7 +275,6 @@ text-decoration: none;
 /* == Position barre inférieur == */
 .header__small__down {
     height: 6vh;
-    padding-bottom: 1%;
     border-bottom: 2px dotted #242325;
 }
 .header__search {

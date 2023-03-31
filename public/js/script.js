@@ -1,5 +1,5 @@
 // Fonction pour la page trek
-// La partie droite (avec les photos) fait la taille de la partie gauch (avec le texte)
+// La partie droite (avec les photos) fait la taille de la partie gauche (avec le texte)
 function adjustMainRightHeight() {
   if (window.innerHeight > 1200) {
     const leftHeight = document.querySelector('.trek_main-text').clientHeight;
@@ -44,5 +44,15 @@ function closeNav() {
 }
 // == == //
 
+// Fonction pour positionner le footer en fixed/bottom 0 si la page fait moins de la hauteur de l'écran
+window.addEventListener('load', function() {
+  const footer = document.querySelector('footer');        // Element <footer>
+  const pageHeight = document.body.scrollHeight;          // Taille de la page totale (avec le scroll)
+  const windowHeight = window.innerHeight;                // Taille de la fenêtre
+  if (pageHeight <= windowHeight) {                       // Si la taille du scroll est inférieur ou égale à la taille de la fenêtre
+    footer.style.position = 'fixed';                      // On positionne le footer en fixed et bottom 0
+    footer.style.bottom = '0';
+  }
+});
 
 

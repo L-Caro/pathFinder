@@ -1,4 +1,9 @@
 /* === === Page favoris et inscription/connexion === === */
+.container-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .admin_title {
     text-align: center;
     font-size: 2em;

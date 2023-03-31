@@ -21,11 +21,11 @@ const userController = {
   },
   async actionSignup(req, res) {
     //* On recup les infos du formulaire
-    const { firstname, lastname, email, password, confirmation } = req.body;
+    const { firstname, password, confirmation } = req.body;
 
     //! ===== VALIDATION DES DONNEES ====
     //* 1- On vérifie que tout est bien renseigné
-    if (!firstname || !lastname || !email || !password || !confirmation) {
+    if (!firstname || !password || !confirmation) {
       return res.render("admin/signup", {
         errorMessage: "Veuillez renseigner tous les champs",
       });
@@ -46,43 +46,37 @@ const userController = {
       });
     }
 
-    //* 4- Validation de type pour l'email
-    if (!validator.isEmail(email)) {
-      return res.render("admin/signup", {
-        errorMessage: "Veuillez renseigner une adresse email valide",
-      });
-    }
-
     //* 5- Vérif l'email est libre en DB
-    const existingUser = await User.findOne({ where: { email: email } });
+    const existingUser = await User.findOne({ where: { firstname: firstname } });
     if (existingUser) {
       return res.render("admin/signup", {
-        errorMessage: "Cette adresse email est déjà utilisée.",
+        errorMessage: "Ce pseudo est déjà utilisé.",
       });
     }
 
     //? ===== INSERTION DU USER ====
     // PS : parti pris : après le signup, l'utilisateur doit TOUT DE MEME se LOGIN manuellement.
 
-    //* 1- On hash le mot de passe grace à bcrypt
+    //* 7- On hash le mot de passe grace à bcrypt
     const saltRounds = parseInt(process.env.SALT_ROUNDS); // Généralement 10 et planqué pour éviter que qqun tombe sur le code.
     const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     //* 8- Enrigstrement du nouvel user en DB
-    await User.create({ firstname, lastname, email, password: hashedPassword });
+    await User.create({ firstname, password: hashedPassword });
 
     //* 9- On redirige sur la page de connexion
     // On redirige vers la page de login pour que l'utilisateur fraichement inscrit puisse se connecter
     req.session.message =
-      "Vous êtes bien enregistré. Veuillez maintenant vous authentifier.";
+      `Vous êtes bien enregistré.
+      Veuillez maintenant vous authentifier.`;
     res.redirect("/login");
   },
   async actionLogin(req, res) {
     //* On récupère les inputs (email, password)
-    const { email, password } = req.body;
+    const { firstname, password } = req.body;
 
     //* 1. On peut vérifier la présence de l'email et du password
-    if (!email || !password) {
+    if (!firstname || !password) {
       res.render("admin/login", {
         errorMessage: "Identifiant ou mot de passe incorrect.",
       });
@@ -91,7 +85,7 @@ const userController = {
 
     //* 2. On récupère l'utilisateur par son email dans la BDD (avec son mot de passe hashé).
     const user = await User.findOne({
-      where: { email },
+      where: { firstname },
       // attributes: ["id", "password"]
     });
 
@@ -126,6 +120,18 @@ const userController = {
     req.session.userId = null;
     res.redirect("/");
   },
+  async actionDelete(req, res) {
+    const id = res.locals.user.id;
+    const user = await User.findByPk(id);
+    try {
+      await user.destroy();
+      req.session.message =`Votre compte a bien été supprimé`;
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Server Error");
+    }
+  }
 };
 
 module.exports = userController;

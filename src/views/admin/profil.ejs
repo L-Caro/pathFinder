@@ -3,14 +3,17 @@
 <main class="admin_form">
   <h1 class="admin_title">Mon profil</h1>
 
-  <label class="form-label" for="firstname">Prénom</label>
+  <label class="form-label" for="firstname">Pseudo</label>
   <input class="form-input" type="text" disabled id="firstname" value="<%= user.firstname %>">
 
-  <label class="form-label" for="lastname">Nom</label>
-  <input class="form-input" type="text" disabled id="lastname" value="<%= user.lastname %>">
+  <label class="form-label" for="created">Compte créé le</label>
+  <input class="form-input" type="text" disabled id="created" value="<%= user.created_at.toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %>">
 
-  <label class="form-label" for="email">Email</label>
-  <input class="form-input" type="text" disabled id="email" value = "<%= user.email %>">
-</mainadmin_form>
+
+  <form class="admin_form" action="/profil" method="POST">
+    <input class="form-button form-button-delete" type="submit" value="Supprimer le compte">
+  </form>
+
+</main>
 
 <%- include("../partials/footer") %>

@@ -22,7 +22,6 @@ const bookmarkController = {
             });
         const session = req.session.bookmark;
         try {
-            console.log(JSON.stringify(session, null, 2));
             res.render("admin/bookmark", {session, treks, meta: "Favoris"});
         } catch (error) {
             console.trace(error)

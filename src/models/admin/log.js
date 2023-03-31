@@ -27,7 +27,7 @@ Log.init(
   },
   {
     sequelize,
-    tableName: "log", // Remplacer les `___` par le nom de la class à creer
+    tableName: "log_table", // Remplacer les `___` par le nom de la class à creer
   }
 );
 

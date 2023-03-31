@@ -86,7 +86,7 @@ color: burlywood;
 .dropdown {
     display: none;      /* Caché par défaut */
     position: absolute; /* Position absolu par rapport à son parent (header__menu-dropdown) */
-    top:100%;           /* 100% plus bas que son parent, donc juste dessous le lien */
+    top:110%;           /* 100% plus bas que son parent, donc juste dessous le lien */
     padding: 15px 15px 0 15px; /* Permet surtout de rapprocher les coches du textes dans les liens en display flex */
     width: 100%;        /* Fait la largeur du lien dessus */
     z-index: 1;         /* Au dessus de tout le reste quand display none disparu */
@@ -113,9 +113,12 @@ color: burlywood;
     align-items: center;
     justify-content: center;
     width: 100%;            /* Le lien prend toute la cellule */
-    height: 100%;
+    height: 110%;
     color: burlywood;
   }
+.dropdown label:hover {
+    color: white;
+}
 /* == Positionnement des liens du menu déroulant == */
 .dropdown label {
     display: flex;      /* Permet de positionner les coches et textes sur la gauche */
@@ -140,7 +143,35 @@ input {
     display: block;
 }
 
+/* === === Footer === === */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    min-height: 60px;
+    background-color: #242325;
+    font-weight: 700;
+    color: white;
+}
 
+/* === === LOCALS MESSAGE === === */
+.locals-message {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px 20px;
+    width: fit-content;
+    border-radius: 24px;
+    font-weight: 700;
+    color: white;
+}
+.error {
+    background-color: red;
+}
+.succes {
+    background-color: green;
+}
 
 /* === Media Query === */
 @media screen and (max-width: 775px) {  /* Jusqu'à 775px */
@@ -246,8 +277,6 @@ text-decoration: none;
     width: 60%;
     margin: 3% auto;
 }
-}
-
 /* === Recherche === */
 /* == Bouton "tag" et "difficulte" == */
 .small__dropdown__link {
@@ -260,6 +289,15 @@ text-decoration: none;
     font-size: 0.8em;
     text-align: center;
 }
+
+/* === Locals === */
+.locals-message {
+    font-size: 0.7em;
+    padding: 20px 0;
+}
+}
+
+
 /* =============================================================== */
 @media screen and (min-width: 776px) {      /* Entre 776px et 1200px */
 /* === === Menu small === === */

@@ -22,7 +22,9 @@ const mainController = {
             ]
         });
         try {
-           res.render('home', { treks, meta: "Accueil" });
+            const successMessage = req.session.message;
+            req.session.message = null;
+            res.render('home', { treks, meta: "Accueil", successMessage});
         } catch (error) {
             console.trace(error);
             res.status(500).render("error/500");

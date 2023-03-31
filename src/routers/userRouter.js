@@ -15,6 +15,8 @@ router.get('/logout', userController.actionLogout);
 
 router.get('/profil', userController.renderProfilPage);
 
+router.post('/profil', userController.actionDelete);
+
 
 // Gestion des favoris
 router.get('/bookmark', bookmarkController.renderBookmarkPage);

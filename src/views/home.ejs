@@ -1,5 +1,11 @@
 <%- include('partials/header') %>
 
+<% if (successMessage) { %>
+    <div class="locals-message succes">
+      <%= successMessage %>
+    </div>
+  <% } %>
+
 <div class="container-home">
     <% treks.forEach(trek => { %>
         <article class="trek-home">

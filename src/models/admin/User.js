@@ -5,12 +5,6 @@ class User extends Model {}
 
 User.init({
   firstname: {
-    type: DataTypes.STRING
-  },
-  lastname: {
-    type: DataTypes.STRING
-  },
-  email: {
     type: DataTypes.STRING,
     allowNull: false
   },
@@ -24,7 +18,7 @@ User.init({
   }
 }, {
   sequelize,
-  tableName: "user"
+  tableName: "user_table"
 });
 
 

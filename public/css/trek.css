@@ -3,6 +3,7 @@ body {
     background-color: #717575;
 }
 
+
 /* === === Page Home === === */
 /* === Organisation de la page === */
 .container-treks {
@@ -305,6 +306,39 @@ article:hover .trek-home_resume {
     margin: 2% auto;
 }
 
+/* === === Gestion des modals de photos === === */
+/* === Boîte principale === */
+.modal {
+    display: none; /* Masquez la boîte de dialogue par défaut */
+    position: fixed; /* Positionnement absolu */
+    left: 0;
+    top: 0;
+    z-index: 1; /* Placez la boîte de dialogue en haut de tous les autres éléments */
+    width: 100%; /* Largeur totale */
+    height: 100%; /* Hauteur totale */
+  }
+
+/* === Style de la photo agrandie === */
+#modal-image {
+    display: block; /* Afficher l'image */
+    position: absolute; /* Centre l'image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+}
+
+/* Style de l'élément de fond de la boîte de dialogue modale */
+#modal-background {
+    position: fixed;
+    z-index: -1; /* Pour qu'il reste en dessous de la boîte de dialogue */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Couleur de fond avec opacité à 0.8 */
+  }
+
 
 /* === === Gestion des icones déscriptifs avec leur texte === === */
 /* === Icones déscriptif (duree, dstance...) === */
@@ -500,6 +534,13 @@ border: hidden;
 .photos_tag, .photos_back {
     font-size: 1.1em;
 }
+
+
+/* === === Gestion des modals de photos === === */
+/* === Style de la photo agrandie === */
+#modal-image {
+    width: 95%;
+}
 }
 
 /* =============================================================== */
@@ -592,7 +633,13 @@ article {
 /* == Groupe photos == */
 .photos_photos {
     grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+/* === === Gestion des modals de photos === === */
+/* === Style de la photo agrandie === */
+#modal-image {
+    width: 85%;
+}
 }
 
 /* =============================================================== */
@@ -673,4 +720,23 @@ display: block;
 .photos_photos {
     grid-template-columns: repeat(3, 1fr);
 }
+
+/* === === Gestion des modals de photos === === */
+/* === Boîte principale === */
+.modal {
+    display: none; /* Masquez la boîte de dialogue par défaut */
+    position: fixed; /* Positionnement absolu */
+    left: 0;
+    top: 0;
+    z-index: 1; /* Placez la boîte de dialogue en haut de tous les autres éléments */
+    width: 100%; /* Largeur totale */
+    height: 100%; /* Hauteur totale */
+  }
+
+/* === === Gestion des modals de photos === === */
+/* === Style de la photo agrandie === */
+#modal-image {
+    width: 75%;
 }
+}
+

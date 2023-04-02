@@ -1,4 +1,10 @@
 /* === === Menu large === === */
+.navbar-fixed {
+    position: 'fixed';
+top: "0";
+opacity: '0.7';
+z-index: 5;
+}
 /* === Container === */
 .header__large {
     display: flex;

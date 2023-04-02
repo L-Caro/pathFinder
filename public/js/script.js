@@ -55,4 +55,59 @@ window.addEventListener('load', function() {
   }
 });
 
+// == == //
 
+
+// Fonction pour aggrandir les images dans un modal
+// Récupérez toutes les balises d'image dans un tableau
+const images = document.getElementsByClassName('photo-link');
+
+// Parcourir le tableau et ajoutez un gestionnaire d'événements de clic à chaque image
+for (let i = 0; i < images.length; i++) {
+  images[i].addEventListener('click', function(e) {
+    e.preventDefault();
+    const src = this.src; // La source de la photo est la source de la boucle
+
+    // Définissez la source de l'image agrandie dans la boîte de dialogue modale
+    document.getElementById('modal-image').src = src;
+
+    // Afficher la boîte de dialogue modale
+    document.getElementById('myModal').style.display = "block";
+  });
+}
+
+// Pour fermer l'aggrandissement de la photo, on click nimporte ou en dehors de la photo
+
+// Ajoutez un gestionnaire d'événements de clic à l'élément de fond de la boîte de dialogue modale
+document.getElementById('modal-background').addEventListener('click', function() {
+  document.getElementById('myModal').style.display = "none";
+});
+
+// == == //
+
+
+
+/*
+
+// Récupérer la barre de navigation
+const navbar = document.querySelector(".header__small");
+
+let prevScrollpos = window.scrollY;
+
+// Fonction pour détecter le défilement vers le haut
+window.onscroll = function() {
+  let currentScrollPos = window.scrollY;
+  if (prevScrollpos > currentScrollPos) {
+    // Afficher la barre de navigation
+    navbar.style.position = 'fixed';
+    navbar.style.top = "0";
+    navbar.style.left = "0";
+    navbar.style.right = "0";
+    navbar.style.opacity = '0.7';
+  } else if(prevScrollpos === currentScrollPos) {
+    // Masquer la barre de navigation
+    navbar.style.position = 'relative'
+  }
+  prevScrollpos = currentScrollPos;
+}
+*/

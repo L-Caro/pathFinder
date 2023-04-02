@@ -17,7 +17,7 @@ const userController = {
     if (!user) {
       return res.status(401).render("error/401");
     }
-    res.render("admin/profil");
+    res.render("admin/profil", { meta: "Mon profil" });
   },
   async actionSignup(req, res) {
     //* On recup les infos du formulaire

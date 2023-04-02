@@ -1,5 +1,5 @@
 {
-  "name": "_base-d'un-projet-vide-sous-sequelize",
+  "name": "pathFinder",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "db:reset": "npm run db:create && npm run db:populate"
   },
   "keywords": [],
-  "author": "",
+  "author": "Lionel Caro",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",

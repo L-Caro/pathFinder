@@ -47,18 +47,23 @@
             <a class="main_photos_link" href="/trek/<%= trek.id %>/photos">Voir toutes les photos</a>
             <div class="main_photos">
                 <% for (const photo of photos) { %>
-                    <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img class="main_photos_photo desktop-link" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="Photo rando"></a>
+                    <a href="/images/assets/<%= trek.id %>/L/<%= photo %>"><img class="main_photos_photo desktop-link photo-link" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="Photo rando"></a>
                 <% } %>
             </div>
             <div class="main_photos-bis">
                 <% for (const photo of photos) { %>
-                    <a href="/images/assets/<%= trek.id %>/M/<%= photo %>"><img class="main_photos_photo mobile-link" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="Photo rando"></a>
+                    <a href="/images/assets/<%= trek.id %>/M/<%= photo %>"><img class="main_photos_photo mobile-link photo-link" src="/images/assets/<%= trek.id %>/XS/<%= photo %>" alt="Photo rando"></a>
                 <% } %>
             </div>
+
+            <!-- Boîte de dialogue modale -->
+            <div id="myModal" class="modal">
+                <img id="modal-image" src="">
+                <div id="modal-background"></div>
+            </div>
+            <!-- Fin boîte de dialogue modale -->
         </aside>
     </div>
-
-
 </div>
 
 

@@ -66,10 +66,10 @@ const images = document.getElementsByClassName('photo-link');
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener('click', function(e) {
     e.preventDefault();
-    const src = this.src; // La source de la photo est la source de la boucle
+    const src = this.parentNode.getAttribute('href'); // La source de la photo est la source de la boucle
 
     // Définissez la source de l'image agrandie dans la boîte de dialogue modale
-    document.getElementById('modal-image').src = src;
+    document.getElementById('modal-image').setAttribute('src', src);
 
     // Afficher la boîte de dialogue modale
     document.getElementById('myModal').style.display = "block";

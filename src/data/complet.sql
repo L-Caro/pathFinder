@@ -1,42 +1,3 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 9.6.22
--- Dumped by pg_dump version 9.6.22
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
---
-
-CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
-
-
---
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
---
-
-COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
-
-
-SET default_tablespace = '';
-
-SET default_with_oids = false;
-
---
--- Name: difficulty; Type: TABLE; Schema: public; Owner: vnqx7326
---
 
 CREATE TABLE public.difficulty (
     id integer NOT NULL,
@@ -46,10 +7,10 @@ CREATE TABLE public.difficulty (
 );
 
 
-ALTER TABLE public.difficulty OWNER TO vnqx7326;
+ALTER TABLE public.difficulty OWNER TO lcaro;
 
 --
--- Name: difficulty_id_seq; Type: SEQUENCE; Schema: public; Owner: vnqx7326
+-- Name: difficulty_id_seq; Type: SEQUENCE; Schema: public; Owner: lcaro
 --
 
 CREATE SEQUENCE public.difficulty_id_seq
@@ -60,17 +21,17 @@ CREATE SEQUENCE public.difficulty_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.difficulty_id_seq OWNER TO vnqx7326;
+ALTER TABLE public.difficulty_id_seq OWNER TO lcaro;
 
 --
--- Name: difficulty_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: vnqx7326
+-- Name: difficulty_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: lcaro
 --
 
 ALTER SEQUENCE public.difficulty_id_seq OWNED BY public.difficulty.id;
 
 
 --
--- Name: log_table; Type: TABLE; Schema: public; Owner: vnqx7326
+-- Name: log_table; Type: TABLE; Schema: public; Owner: lcaro
 --
 
 CREATE TABLE public.log_table (
@@ -83,10 +44,10 @@ CREATE TABLE public.log_table (
 );
 
 
-ALTER TABLE public.log_table OWNER TO vnqx7326;
+ALTER TABLE public.log_table OWNER TO lcaro;
 
 --
--- Name: log_table_id_seq; Type: SEQUENCE; Schema: public; Owner: vnqx7326
+-- Name: log_table_id_seq; Type: SEQUENCE; Schema: public; Owner: lcaro
 --
 
 CREATE SEQUENCE public.log_table_id_seq
@@ -97,17 +58,17 @@ CREATE SEQUENCE public.log_table_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.log_table_id_seq OWNER TO vnqx7326;
+ALTER TABLE public.log_table_id_seq OWNER TO lcaro;
 
 --
--- Name: log_table_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: vnqx7326
+-- Name: log_table_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: lcaro
 --
 
 ALTER SEQUENCE public.log_table_id_seq OWNED BY public.log_table.id;
 
 
 --
--- Name: summit; Type: TABLE; Schema: public; Owner: vnqx7326
+-- Name: summit; Type: TABLE; Schema: public; Owner: lcaro
 --
 
 CREATE TABLE public.summit (
@@ -118,10 +79,10 @@ CREATE TABLE public.summit (
 );
 
 
-ALTER TABLE public.summit OWNER TO vnqx7326;
+ALTER TABLE public.summit OWNER TO lcaro;
 
 --
--- Name: summit_id_seq; Type: SEQUENCE; Schema: public; Owner: vnqx7326
+-- Name: summit_id_seq; Type: SEQUENCE; Schema: public; Owner: lcaro
 --
 
 CREATE SEQUENCE public.summit_id_seq
@@ -132,17 +93,17 @@ CREATE SEQUENCE public.summit_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.summit_id_seq OWNER TO vnqx7326;
+ALTER TABLE public.summit_id_seq OWNER TO lcaro;
 
 --
--- Name: summit_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: vnqx7326
+-- Name: summit_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: lcaro
 --
 
 ALTER SEQUENCE public.summit_id_seq OWNED BY public.summit.id;
 
 
 --
--- Name: tag; Type: TABLE; Schema: public; Owner: vnqx7326
+-- Name: tag; Type: TABLE; Schema: public; Owner: lcaro
 --
 
 CREATE TABLE public.tag (
@@ -153,10 +114,10 @@ CREATE TABLE public.tag (
 );
 
 
-ALTER TABLE public.tag OWNER TO vnqx7326;
+ALTER TABLE public.tag OWNER TO lcaro;
 
 --
--- Name: tag_has_trek; Type: TABLE; Schema: public; Owner: vnqx7326
+-- Name: tag_has_trek; Type: TABLE; Schema: public; Owner: lcaro
 --
 
 CREATE TABLE public.tag_has_trek (
@@ -168,10 +129,10 @@ CREATE TABLE public.tag_has_trek (
 );
 
 
-ALTER TABLE public.tag_has_trek OWNER TO vnqx7326;
+ALTER TABLE public.tag_has_trek OWNER TO lcaro;
 
 --
--- Name: tag_has_trek_id_seq; Type: SEQUENCE; Schema: public; Owner: vnqx7326
+-- Name: tag_has_trek_id_seq; Type: SEQUENCE; Schema: public; Owner: lcaro
 --
 
 CREATE SEQUENCE public.tag_has_trek_id_seq
@@ -182,17 +143,17 @@ CREATE SEQUENCE public.tag_has_trek_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.tag_has_trek_id_seq OWNER TO vnqx7326;
+ALTER TABLE public.tag_has_trek_id_seq OWNER TO lcaro;
 
 --
--- Name: tag_has_trek_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: vnqx7326
+-- Name: tag_has_trek_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: lcaro
 --
 
 ALTER SEQUENCE public.tag_has_trek_id_seq OWNED BY public.tag_has_trek.id;
 
 
 --
--- Name: tag_id_seq; Type: SEQUENCE; Schema: public; Owner: vnqx7326
+-- Name: tag_id_seq; Type: SEQUENCE; Schema: public; Owner: lcaro
 --
 
 CREATE SEQUENCE public.tag_id_seq
@@ -203,17 +164,17 @@ CREATE SEQUENCE public.tag_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.tag_id_seq OWNER TO vnqx7326;
+ALTER TABLE public.tag_id_seq OWNER TO lcaro;
 
 --
--- Name: tag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: vnqx7326
+-- Name: tag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: lcaro
 --
 
 ALTER SEQUENCE public.tag_id_seq OWNED BY public.tag.id;
 
 
 --
--- Name: trek; Type: TABLE; Schema: public; Owner: vnqx7326
+-- Name: trek; Type: TABLE; Schema: public; Owner: lcaro
 --
 
 CREATE TABLE public.trek (
@@ -238,10 +199,10 @@ CREATE TABLE public.trek (
 );
 
 
-ALTER TABLE public.trek OWNER TO vnqx7326;
+ALTER TABLE public.trek OWNER TO lcaro;
 
 --
--- Name: trek_id_seq; Type: SEQUENCE; Schema: public; Owner: vnqx7326
+-- Name: trek_id_seq; Type: SEQUENCE; Schema: public; Owner: lcaro
 --
 
 CREATE SEQUENCE public.trek_id_seq
@@ -252,59 +213,59 @@ CREATE SEQUENCE public.trek_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.trek_id_seq OWNER TO vnqx7326;
+ALTER TABLE public.trek_id_seq OWNER TO lcaro;
 
 --
--- Name: trek_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: vnqx7326
+-- Name: trek_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: lcaro
 --
 
 ALTER SEQUENCE public.trek_id_seq OWNED BY public.trek.id;
 
 
 --
--- Name: difficulty id; Type: DEFAULT; Schema: public; Owner: vnqx7326
+-- Name: difficulty id; Type: DEFAULT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.difficulty ALTER COLUMN id SET DEFAULT nextval('public.difficulty_id_seq'::regclass);
 
 
 --
--- Name: log_table id; Type: DEFAULT; Schema: public; Owner: vnqx7326
+-- Name: log_table id; Type: DEFAULT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.log_table ALTER COLUMN id SET DEFAULT nextval('public.log_table_id_seq'::regclass);
 
 
 --
--- Name: summit id; Type: DEFAULT; Schema: public; Owner: vnqx7326
+-- Name: summit id; Type: DEFAULT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.summit ALTER COLUMN id SET DEFAULT nextval('public.summit_id_seq'::regclass);
 
 
 --
--- Name: tag id; Type: DEFAULT; Schema: public; Owner: vnqx7326
+-- Name: tag id; Type: DEFAULT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.tag ALTER COLUMN id SET DEFAULT nextval('public.tag_id_seq'::regclass);
 
 
 --
--- Name: tag_has_trek id; Type: DEFAULT; Schema: public; Owner: vnqx7326
+-- Name: tag_has_trek id; Type: DEFAULT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.tag_has_trek ALTER COLUMN id SET DEFAULT nextval('public.tag_has_trek_id_seq'::regclass);
 
 
 --
--- Name: trek id; Type: DEFAULT; Schema: public; Owner: vnqx7326
+-- Name: trek id; Type: DEFAULT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.trek ALTER COLUMN id SET DEFAULT nextval('public.trek_id_seq'::regclass);
 
 
 --
--- Data for Name: difficulty; Type: TABLE DATA; Schema: public; Owner: vnqx7326
+-- Data for Name: difficulty; Type: TABLE DATA; Schema: public; Owner: lcaro
 --
 
 INSERT INTO public.difficulty VALUES (1, 'Très facile', '2023-04-01 11:11:53.278619+02', NULL);
@@ -315,27 +276,27 @@ INSERT INTO public.difficulty VALUES (5, 'Très difficile', '2023-04-01 11:11:53
 
 
 --
--- Name: difficulty_id_seq; Type: SEQUENCE SET; Schema: public; Owner: vnqx7326
+-- Name: difficulty_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lcaro
 --
 
 SELECT pg_catalog.setval('public.difficulty_id_seq', 1, false);
 
 
 --
--- Data for Name: log_table; Type: TABLE DATA; Schema: public; Owner: vnqx7326
+-- Data for Name: log_table; Type: TABLE DATA; Schema: public; Owner: lcaro
 --
 
 
 
 --
--- Name: log_table_id_seq; Type: SEQUENCE SET; Schema: public; Owner: vnqx7326
+-- Name: log_table_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lcaro
 --
 
 SELECT pg_catalog.setval('public.log_table_id_seq', 1, false);
 
 
 --
--- Data for Name: summit; Type: TABLE DATA; Schema: public; Owner: vnqx7326
+-- Data for Name: summit; Type: TABLE DATA; Schema: public; Owner: lcaro
 --
 
 INSERT INTO public.summit VALUES (1, '2023-04-01 11:11:53.282551+02', NULL, 'Massif des Aiguilles Rouges');
@@ -351,14 +312,14 @@ INSERT INTO public.summit VALUES (10, '2023-04-01 11:11:53.282551+02', NULL, 'Ma
 
 
 --
--- Name: summit_id_seq; Type: SEQUENCE SET; Schema: public; Owner: vnqx7326
+-- Name: summit_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lcaro
 --
 
 SELECT pg_catalog.setval('public.summit_id_seq', 1, false);
 
 
 --
--- Data for Name: tag; Type: TABLE DATA; Schema: public; Owner: vnqx7326
+-- Data for Name: tag; Type: TABLE DATA; Schema: public; Owner: lcaro
 --
 
 INSERT INTO public.tag VALUES (1, 'Lac', '2023-04-01 11:11:53.286377+02', NULL);
@@ -371,10 +332,15 @@ INSERT INTO public.tag VALUES (7, 'Bivouac', '2023-04-01 11:11:53.286377+02', NU
 INSERT INTO public.tag VALUES (8, 'Défi fou', '2023-04-01 11:11:53.286377+02', NULL);
 INSERT INTO public.tag VALUES (9, 'Couché de soleil', '2023-04-01 11:11:53.286377+02', NULL);
 INSERT INTO public.tag VALUES (10, 'Familiale', '2023-04-01 11:11:53.286377+02', NULL);
+INSERT INTO public.tag VALUES (11, 'Très facile', '2023-04-01 11:11:53.286377+02', NULL);
+INSERT INTO public.tag VALUES (12, 'Facile', '2023-04-01 11:11:53.286377+02', NULL);
+INSERT INTO public.tag VALUES (13, 'Modérée', '2023-04-01 11:11:53.286377+02', NULL);
+INSERT INTO public.tag VALUES (14, 'Difficile', '2023-04-01 11:11:53.286377+02', NULL);
+INSERT INTO public.tag VALUES (15, 'Très difficile', '2023-04-01 11:11:53.286377+02', NULL);
 
 
 --
--- Data for Name: tag_has_trek; Type: TABLE DATA; Schema: public; Owner: vnqx7326
+-- Data for Name: tag_has_trek; Type: TABLE DATA; Schema: public; Owner: lcaro
 --
 
 INSERT INTO public.tag_has_trek VALUES (1, 4, 1, '2023-04-01 11:11:53.358491+02', NULL);
@@ -471,24 +437,77 @@ INSERT INTO public.tag_has_trek VALUES (91, 5, 52, '2023-04-01 11:11:53.358491+0
 INSERT INTO public.tag_has_trek VALUES (92, 8, 52, '2023-04-01 11:11:53.358491+02', NULL);
 INSERT INTO public.tag_has_trek VALUES (93, 2, 52, '2023-04-01 11:11:53.358491+02', NULL);
 INSERT INTO public.tag_has_trek VALUES (94, 5, 53, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (95, 13, 1, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (96, 12, 2, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (97, 12, 3, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (98, 12, 4, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (99, 12, 5, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (100, 13, 6, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (101, 12, 7, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (102, 14, 8, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (103, 14, 9, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (104, 13, 10, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (105, 13, 11, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (106, 13, 12, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (107, 13, 13, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (108, 14, 14, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (109, 14, 15, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (110, 12, 16, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (111, 14, 17, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (112, 13, 18, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (113, 14, 19, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (114, 14, 20, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (115, 14, 21, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (116, 13, 22, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (117, 13, 23, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (118, 13, 24, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (119, 11, 25, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (120, 11, 26, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (121, 12, 27, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (122, 14, 28, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (123, 13, 29, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (124, 11, 30, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (125, 14, 31, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (126, 14, 32, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (127, 14, 33, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (128, 12, 34, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (129, 13, 35, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (130, 11, 36, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (131, 12, 37, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (132, 13, 38, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (133, 11, 39, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (134, 12, 40, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (135, 12, 41, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (136, 12, 42, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (137, 12, 43, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (138, 12, 44, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (139, 15, 45, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (140, 15, 46, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (141, 11, 47, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (142, 15, 48, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (143, 15, 49, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (144, 15, 50, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (145, 15, 51, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (146, 15, 52, '2023-04-01 11:11:53.358491+02', NULL);
+INSERT INTO public.tag_has_trek VALUES (147, 15, 53, '2023-04-01 11:11:53.358491+02', NULL);
 
 
 --
--- Name: tag_has_trek_id_seq; Type: SEQUENCE SET; Schema: public; Owner: vnqx7326
+-- Name: tag_has_trek_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lcaro
 --
 
 SELECT pg_catalog.setval('public.tag_has_trek_id_seq', 94, true);
 
 
 --
--- Name: tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: vnqx7326
+-- Name: tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lcaro
 --
 
 SELECT pg_catalog.setval('public.tag_id_seq', 1, false);
 
 
 --
--- Data for Name: trek; Type: TABLE DATA; Schema: public; Owner: vnqx7326
+-- Data for Name: trek; Type: TABLE DATA; Schema: public; Owner: lcaro
 --
 
 INSERT INTO public.trek VALUES (1, 'L''Aiguillette des Houches', 'En boucle', '3 heures et 20 minutes', 'Houches', '45.908071, 6.821835', 'https://www.visugpx.com/download.php?id=g1M87XvUXq
@@ -957,14 +976,14 @@ La descente commence ensuite, avec le Col du Pralere et Notre-Dame du Pralere co
 
 
 --
--- Name: trek_id_seq; Type: SEQUENCE SET; Schema: public; Owner: vnqx7326
+-- Name: trek_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lcaro
 --
 
 SELECT pg_catalog.setval('public.trek_id_seq', 53, true);
 
 
 --
--- Name: difficulty difficulty_pkey; Type: CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: difficulty difficulty_pkey; Type: CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.difficulty
@@ -972,7 +991,7 @@ ALTER TABLE ONLY public.difficulty
 
 
 --
--- Name: log_table log_table_pkey; Type: CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: log_table log_table_pkey; Type: CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.log_table
@@ -980,7 +999,7 @@ ALTER TABLE ONLY public.log_table
 
 
 --
--- Name: summit summit_pkey; Type: CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: summit summit_pkey; Type: CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.summit
@@ -988,7 +1007,7 @@ ALTER TABLE ONLY public.summit
 
 
 --
--- Name: tag_has_trek tag_has_trek_pkey; Type: CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: tag_has_trek tag_has_trek_pkey; Type: CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.tag_has_trek
@@ -996,7 +1015,7 @@ ALTER TABLE ONLY public.tag_has_trek
 
 
 --
--- Name: tag_has_trek tag_has_trek_tag_id_trek_id_key; Type: CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: tag_has_trek tag_has_trek_tag_id_trek_id_key; Type: CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.tag_has_trek
@@ -1004,7 +1023,7 @@ ALTER TABLE ONLY public.tag_has_trek
 
 
 --
--- Name: tag tag_pkey; Type: CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: tag tag_pkey; Type: CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.tag
@@ -1012,7 +1031,7 @@ ALTER TABLE ONLY public.tag
 
 
 --
--- Name: trek trek_pkey; Type: CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: trek trek_pkey; Type: CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.trek
@@ -1020,7 +1039,7 @@ ALTER TABLE ONLY public.trek
 
 
 --
--- Name: tag_has_trek tag_has_trek_tag_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: tag_has_trek tag_has_trek_tag_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.tag_has_trek
@@ -1028,7 +1047,7 @@ ALTER TABLE ONLY public.tag_has_trek
 
 
 --
--- Name: tag_has_trek tag_has_trek_trek_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: tag_has_trek tag_has_trek_trek_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.tag_has_trek
@@ -1036,7 +1055,7 @@ ALTER TABLE ONLY public.tag_has_trek
 
 
 --
--- Name: trek trek_difficulty_id; Type: FK CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: trek trek_difficulty_id; Type: FK CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.trek
@@ -1044,7 +1063,7 @@ ALTER TABLE ONLY public.trek
 
 
 --
--- Name: trek trek_summit_id; Type: FK CONSTRAINT; Schema: public; Owner: vnqx7326
+-- Name: trek trek_summit_id; Type: FK CONSTRAINT; Schema: public; Owner: lcaro
 --
 
 ALTER TABLE ONLY public.trek
@@ -1052,48 +1071,50 @@ ALTER TABLE ONLY public.trek
 
 
 --
--- Name: TABLE difficulty; Type: ACL; Schema: public; Owner: vnqx7326
+-- Name: TABLE difficulty; Type: ACL; Schema: public; Owner: lcaro
 --
 
-GRANT ALL ON TABLE public.difficulty TO vnqx7326_pathfinder;
-
-
---
--- Name: TABLE log_table; Type: ACL; Schema: public; Owner: vnqx7326
---
-
-GRANT ALL ON TABLE public.log_table TO vnqx7326_pathfinder;
+GRANT ALL ON TABLE public.difficulty TO lcaro;
 
 
 --
--- Name: TABLE summit; Type: ACL; Schema: public; Owner: vnqx7326
+-- Name: TABLE log_table; Type: ACL; Schema: public; Owner: lcaro
 --
 
-GRANT ALL ON TABLE public.summit TO vnqx7326_pathfinder;
-
-
---
--- Name: TABLE tag; Type: ACL; Schema: public; Owner: vnqx7326
---
-
-GRANT ALL ON TABLE public.tag TO vnqx7326_pathfinder;
+GRANT ALL ON TABLE public.log_table TO lcaro;
 
 
 --
--- Name: TABLE tag_has_trek; Type: ACL; Schema: public; Owner: vnqx7326
+-- Name: TABLE summit; Type: ACL; Schema: public; Owner: lcaro
 --
 
-GRANT ALL ON TABLE public.tag_has_trek TO vnqx7326_pathfinder;
+GRANT ALL ON TABLE public.summit TO lcaro;
 
 
 --
--- Name: TABLE trek; Type: ACL; Schema: public; Owner: vnqx7326
+-- Name: TABLE tag; Type: ACL; Schema: public; Owner: lcaro
 --
 
-GRANT ALL ON TABLE public.trek TO vnqx7326_pathfinder;
+GRANT ALL ON TABLE public.tag TO lcaro;
+
+
+--
+-- Name: TABLE tag_has_trek; Type: ACL; Schema: public; Owner: lcaro
+--
+
+GRANT ALL ON TABLE public.tag_has_trek TO lcaro;
+
+
+--
+-- Name: TABLE trek; Type: ACL; Schema: public; Owner: lcaro
+--
+
+GRANT ALL ON TABLE public.trek TO lcaro;
 
 
 --
 -- PostgreSQL database dump complete
 --
+
+
 

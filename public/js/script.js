@@ -79,15 +79,18 @@ for (let i = 0; i < images.length; i++) {
 // Pour fermer l'aggrandissement de la photo, on click nimporte ou en dehors de la photo
 
 // Ajoutez un gestionnaire d'événements de clic à l'élément de fond de la boîte de dialogue modale
-document.getElementById('modal-background').addEventListener('click', function() {
+const modalBackgroundElement = document.getElementById('modal-background')
+if (modalBackgroundElement !== null) {
+modalBackgroundElement.addEventListener('click', function() {
   document.getElementById('myModal').style.display = "none";
 });
+}
 
 // == == //
 
 
-
 /*
+
 
 // Récupérer la barre de navigation
 const navbar = document.querySelector(".header__small");
@@ -111,3 +114,29 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 */
+
+
+const radioInputs = document.querySelectorAll('[slot="radio"]');
+
+function filterTreksByTag() {
+  // Récupérer les tags sélectionnés
+  const selectedTags = Array.from(radioInputs)
+    .filter(input => input.checked)
+    .map(input => input.getAttribute('value'));
+console.log(selectedTags);
+  // Filtrer les treks par les tags sélectionnés
+  const filteredTreks = treks.filter(trek =>
+    selectedTags.every(tag => trek.tags.includes(tag))
+  );
+
+  // Mettre à jour l'affichage des treks
+  // ...
+}
+
+// Ajouter un événement sur chaque input radio
+radioInputs.forEach(input => {
+  input.addEventListener('change', filterTreksByTag);
+});
+
+
+

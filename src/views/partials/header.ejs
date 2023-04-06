@@ -61,35 +61,45 @@ worker-src 'none';">
               <a class="hover__link" href="#">&#9207; Filter par tag &#9207;</a>
               <div class="dropdown">
                 <label for="type-promenade">
-                  <input type="radio" name="hike_type" id="type-promenade">
+                  <input type="radio" slot="radio" name="hike_type" id="type-promenade" value="6">
+                  <span class="slider"></span>
                   Promenade</label>
                 <label for="type-familiale">
-                  <input type="radio" name="hike_type" id="type-familiale">
+                  <input type="radio" slot="radio" name="hike_type" id="type-familiale" value="10">
+                  <span class="slider"></span>
                   Familiale</label>
                 <label for="type-randonnee">
-                  <input type="radio" name="hike_type" id="type-randonnee">
+                  <input type="radio" slot="radio" name="hike_type" id="type-randonnee" value="4">
+                  <span class="slider"></span>
                   Randonnée</label>
                 <label class="type-end" for="type-trail">
-                  <input type="radio" name="hike_type" id="type-trail">
+                  <input type="radio" slot="radio" name="hike_type" id="type-trail" value="5">
+                  <span class="slider"></span>
                   Trail</label>
 
                 <label for="type-bivouac">
-                  <input type="radio" name="" id="type-bivouac">
+                  <input type="checkbox" slot="radio" name="" id="type-bivouac" value="7">
+                  <span class="slider"></span>
                   Bivouac</label>
                 <label for="type-lac">
-                  <input type="radio" name="" id="type-lac">
+                  <input type="checkbox" slot="radio" name="" id="type-lac" value="1">
+                  <span class="slider"></span>
                   Lac</label>
                 <label for="type-neige">
-                  <input type="radio" name="" id="type-neige">
+                  <input type="checkbox" slot="radio" name="" id="type-neige" value="2">
+                  <span class="slider"></span>
                   Neige</label>
                 <label for="type-cascade">
-                  <input type="radio" name="" id="type-cascade">
+                  <input type="checkbox" slot="radio" name="" id="type-cascade" value="3">
+                  <span class="slider"></span>
                   Cascade</label>
                 <label for="type-coucheDeSoleil">
-                  <input type="radio" name="" id="type-coucheDeSoleil">
+                  <input type="checkbox" slot="radio" name="" id="type-coucheDeSoleil" value="9">
+                  <span class="slider"></span>
                   Sunset</label>
                 <label for="type-defi">
-                  <input type="radio" name="" id="type-defi">
+                  <input type="checkbox" slot="radio" name="" id="type-defi" value="8">
+                  <span class="slider"></span>
                   Défi fou</label>
               </div>
             </div>
@@ -103,20 +113,25 @@ worker-src 'none';">
               <a class="hover__link" href="#">&#9207; Filtrer par difficulté &#9207;</a>
               <div class="dropdown">
                 <label for="very-easy">
-                  <input type="radio" name="difficult" id="very-easy">
+                  <input type="radio" slot="radio" name="difficult" id="very-easy" value="11">
+                  <span class="slider"></span>
                   Très facile</label>
                 <label for="easy">
-                  <input type="radio" name="difficult" id="easy">
+                  <input type="radio" slot="radio" name="difficult" id="easy" value="12">
+                  <span class="slider"></span>
                   Facile</label>
                 <label for="moderate">
-                  <input type="radio" name="difficult" id="moderate">
+                  <input type="radio" slot="radio" name="difficult" id="moderate" value="13">
+                  <span class="slider"></span>
                   Modérée</label>
-                  <label for="hard">
-                    <input type="radio" name="difficult" id="hard">
-                    Difficile</label>
-                  <label for="very-hard">
-                    <input type="radio" name="difficult" id="very-hard">
-                    Très difficile</label>
+                <label for="hard">
+                  <input type="radio" slot="radio" name="difficult" id="hard" value="14">
+                  <span class="slider"></span>
+                  Difficile</label>
+                <label for="very-hard">
+                  <input type="radio" slot="radio" name="difficult" id="very-hard" value="15">
+                  <span class="slider"></span>
+                  Très difficile</label>
               </div>
             </div>
           </div>

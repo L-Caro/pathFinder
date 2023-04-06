@@ -127,23 +127,45 @@ color: burlywood;
 }
 /* == Positionnement des liens du menu déroulant == */
 .dropdown label {
-    display: flex;      /* Permet de positionner les coches et textes sur la gauche */
+    display: flex;          /* Permet de positionner les coches et textes sur la gauche */
     justify-content: left;
     margin-bottom: 10px;
   }
-/* = Coches boutons radio = */
-input {
-    margin-right: 15px; /* Ecarte le texte du bouton radio */
+
+/* = Coches bouton checkbox et radio = */
+label { /* Permet de gerer le placement des coches plus tard */
+    position: relative;
+    display: grid;
 }
-.type-end {
+input[type="checkbox"], input[type="radio"] {
+    opacity: 0;             /* On masque les boutons par défaut */
+    margin-right: 15px;     /* Ecarte le texte du bouton radio */
+}
+.type-end { /* Fin de la partie radio */
     padding-bottom: 15px;
     border-bottom: 1px dotted burlywood;
 }
 
 .header__menu_dropdown {
-    position: relative; /* Le menu déroulant ne s'ouvre plus en désactivant */
+    position: relative;     /* Le menu déroulant ne s'ouvre plus en désactivant */
 }
 
+.slider:before { /* Bouton coche personnalisé, avant le clic */
+    position: absolute;                     /* Position absolue de son parent, le switch */
+    content: "";                            /* Mettre un contenu vide pour faire apparaitre la coche */
+    height: 12px;                           /* Taille du bouton coche */
+    width: 12px;
+    border-radius: 50%;                     /* Le rendre arrondi */
+    top: 50%;                               /* Placement du bouton coche */
+    left: 0;
+    transform: translateY(-50%);
+    border: 2px solid burlywood;          /* Bordure du bouton coche */
+    background-color: #242325;            /* Couleur de fond du bouton coche */
+  }
+
+  input:checked + .slider:before { /* bouton coche checked */
+    background-color: burlywood;          /* Couleur de fond du bouton coche */
+  }
 /* === Ouverture du menu déroulant === */
 .hover__link:hover + .dropdown, .dropdown:hover {
     display: block;

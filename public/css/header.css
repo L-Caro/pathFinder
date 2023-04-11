@@ -153,8 +153,8 @@ input[type="checkbox"], input[type="radio"] {
 .slider:before { /* Bouton coche personnalisé, avant le clic */
     position: absolute;                     /* Position absolue de son parent, le switch */
     content: "";                            /* Mettre un contenu vide pour faire apparaitre la coche */
-    height: 12px;                           /* Taille du bouton coche */
-    width: 12px;
+    height: 11px;                           /* Taille du bouton coche */
+    width: 11px;
     border-radius: 50%;                     /* Le rendre arrondi */
     top: 50%;                               /* Placement du bouton coche */
     left: 0;

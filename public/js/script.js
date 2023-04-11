@@ -128,8 +128,16 @@ console.log(selectedTags);
   const filteredTreks = treks.filter(trek =>
     selectedTags.every(tag => trek.tags.includes(tag))
   );
-
+  fetch('/home?tags=' + selectedTags.join(','))
+    .then(response => response.json())
+    .then(data => {
+      console.log(response);
+      console.log(data);
+      // Mettre à jour l'affichage des treks avec les données reçues du serveur
+      // ...
+    })
   // Mettre à jour l'affichage des treks
+  // voir plus bas dans les commentaires
   // ...
 }
 
@@ -140,3 +148,74 @@ radioInputs.forEach(input => {
 
 
 
+/* Pour envoyer la requête GET au contrôleur, vous pouvez utiliser l'API Fetch. Vous pouvez modifier la fonction filterTreksByTag pour inclure la requête Fetch et envoyer les tags sélectionnés au serveur. Voici un exemple de code :
+
+
+function filterTreksByTag() {
+  // Récupérer les tags sélectionnés
+  const selectedTags = Array.from(radioInputs)
+    .filter(input => input.checked)
+    .map(input => input.getAttribute('value'));
+  
+  // Envoyer la requête GET avec les tags sélectionnés
+  fetch('/treks?tags=' + selectedTags.join(','))
+    .then(response => response.json())
+    .then(data => {
+      // Mettre à jour l'affichage des treks avec les données reçues du serveur
+      // ...
+    })
+    .catch(error => {
+      console.error(error);
+    });
+}
+
+// Ajouter un événement sur chaque input radio
+radioInputs.forEach(input => {
+  input.addEventListener('change', filterTreksByTag);
+});
+Dans cet exemple, la requête GET est envoyée à l'URL /treks avec les tags sélectionnés en tant que paramètre de requête tags. La réponse du serveur est convertie en JSON à l'aide de la méthode response.json(), puis la fonction de rappel est appelée avec les données reçues du serveur. Vous pouvez mettre à jour l'affichage des treks avec ces données.
+
+*/
+
+/*
+sauf qu'au chargement de la page, je veux que tous les treks soit affichés. Je ne peux pas mettre hidden
+
+Dans ce cas, vous pouvez stocker tous les treks dans une variable au chargement de la page, puis lorsque les tags sont sélectionnés, vous pouvez filtrer la liste des treks et mettre à jour l'affichage en supprimant les éléments qui ne correspondent pas aux critères sélectionnés.
+
+Voici un exemple de code qui utilise cette approche :
+
+javascript
+Copy code
+// Stocker tous les treks dans une variable au chargement de la page
+let allTreks = [...document.querySelectorAll('.trek')];
+
+// Fonction de filtrage des treks par tag
+function filterTreksByTag() {
+  // Récupérer les tags sélectionnés
+  const selectedTags = Array.from(radioInputs)
+    .filter(input => input.checked)
+    .map(input => input.value);
+
+  // Filtrer les treks par les tags sélectionnés
+  let filteredTreks = allTreks;
+  if (selectedTags.length > 0) {
+    filteredTreks = filteredTreks.filter(trek =>
+      selectedTags.every(tag => trek.dataset.tags.includes(tag))
+    );
+  }
+
+  // Mettre à jour l'affichage des treks
+  const treksContainer = document.querySelector('.treks-container');
+  treksContainer.innerHTML = '';
+  filteredTreks.forEach(trek => {
+    treksContainer.appendChild(trek);
+  });
+}
+
+// Ajouter un événement sur chaque input radio
+const radioInputs = document.querySelectorAll('[data-role="tag-selector"]');
+radioInputs.forEach(input => {
+  input.addEventListener('change', filterTreksByTag);
+});
+Ici, la variable allTreks contient tous les éléments de trek lors du chargement de la page. Lorsque les tags sont sélectionnés, la liste des treks est filtrée et stockée dans filteredTreks. Ensuite, l'affichage des treks est mis à jour en vidant le conteneur de trek et en ajoutant uniquement les treks qui correspondent aux critères sélectionnés. La fonction filterTreksByTag est appelée chaque fois qu'un tag est sélectionné ou désélectionné.
+*/

@@ -1,5 +1,5 @@
 const validator = require("validator");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 const { User } = require("../../models/index");
 
 const userController = {
@@ -59,7 +59,7 @@ const userController = {
 
     //* 7- On hash le mot de passe grace à bcrypt
     const saltRounds = parseInt(process.env.SALT_ROUNDS); // Généralement 10 et planqué pour éviter que qqun tombe sur le code.
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    // const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     //* 8- Enrigstrement du nouvel user en DB
     await User.create({ firstname, password: hashedPassword });
@@ -98,7 +98,7 @@ const userController = {
     }
 
     //* 4. On compare le 'password' (fourni par le user) avec le mot de passe hashé (stockée en BDD) ('user.password')
-    const isMatching = await bcrypt.compare(password, user.password);
+    // const isMatching = await bcrypt.compare(password, user.password);
 
     //* 5. Si différent
     if (!isMatching) {

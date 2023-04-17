@@ -94,7 +94,7 @@ color: burlywood;
 /* === Menu déroulant === */
 /* == Liens du menu déroulant == */
 .dropdown {
-    display: block;      /* Caché par défaut */
+    display: none;      /* Caché par défaut */
     position: absolute; /* Position absolu par rapport à son parent (header__menu-dropdown) */
     top:110%;           /* 100% plus bas que son parent, donc juste dessous le lien */
     padding: 15px 15px 0 15px; /* Permet surtout de rapprocher les coches du textes dans les liens en display flex */

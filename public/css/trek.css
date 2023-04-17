@@ -442,6 +442,13 @@ article:hover .trek-home_resume {
     background-color: rgb(5, 93, 5);
 }
 
+.trek_tag + .facile,
+.trek_tag + .Facile,
+.trek_tag + .Modérée,
+.trek_tag + .Difficile,
+.trek_tag + .difficile {
+    display: none;
+}
 
 
 /* === === === Media Query === === === */

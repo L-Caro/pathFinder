@@ -16,7 +16,7 @@ const mainController = {
                 },
                 {
                     association: 'tags',
-                    attributes: ['name'],
+                    attributes: ['name', 'id'],
                     through: { attributes: [] },
                 }
             ]

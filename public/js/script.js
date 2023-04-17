@@ -23,12 +23,10 @@ window.addEventListener('resize', function() {
     window.removeEventListener('resize', adjustMainRightHeight);
   }
 });
+
+
 // == == //
-
-
-
 // Menu burger du header
-// == Menu burger == //
 let sidenav = document.getElementById("mySidenav");
 let openBtn = document.getElementById("openBtn");
 let closeBtn = document.getElementById("closeBtn");
@@ -42,10 +40,11 @@ function openNav() {
 function closeNav() {
   sidenav.classList.remove("active");
 }
-// == == //
 
+
+// == == //
 // Fonction pour positionner le footer en fixed/bottom 0 si la page fait moins de la hauteur de l'écran
-window.addEventListener('load', function() {
+function footerPosition() {
   const footer = document.querySelector('footer');        // Element <footer>
   const pageHeight = document.body.scrollHeight;          // Taille de la page totale (avec le scroll)
   const windowHeight = window.innerHeight;                // Taille de la fenêtre
@@ -53,11 +52,11 @@ window.addEventListener('load', function() {
     footer.style.position = 'fixed';                      // On positionne le footer en fixed et bottom 0
     footer.style.bottom = '0';
   }
-});
+};
+window.addEventListener('load', footerPosition);
+
 
 // == == //
-
-
 // Fonction pour aggrandir les images dans un modal
 // Récupérez toutes les balises d'image dans un tableau
 const images = document.getElementsByClassName('photo-link');
@@ -77,7 +76,6 @@ for (let i = 0; i < images.length; i++) {
 }
 
 // Pour fermer l'aggrandissement de la photo, on click nimporte ou en dehors de la photo
-
 // Ajoutez un gestionnaire d'événements de clic à l'élément de fond de la boîte de dialogue modale
 const modalBackgroundElement = document.getElementById('modal-background')
 if (modalBackgroundElement !== null) {
@@ -86,150 +84,76 @@ modalBackgroundElement.addEventListener('click', function() {
 });
 }
 
-// == == //
+// Gestion des inputs radio / checkbox
+const radioInputs = document.querySelectorAll('[slot="radio"]');
+// Récupérer tous les boutons radio dans une variable
+const checkboxInputs = document.querySelectorAll('[slot="checkbox"]');
+// Récupérer tous les boutons checkbox dans une variable
+const allInputs = [...radioInputs, ...checkboxInputs];
 
-
-
-// const radioInputs = document.querySelectorAll('[slot="radio"]');
-
-// function filterTreksByTag() {
-//   // Récupérer les tags sélectionnés
-//   const selectedTags = Array.from(radioInputs)
-//     .filter(input => input.checked)
-//     .map(input => input.getAttribute('value'));
-// console.log(selectedTags);
-//   // Filtrer les treks par les tags sélectionnés
-//   const filteredTreks = treks.filter(trek =>
-//     selectedTags.every(tag => trek.tags.includes(tag))
-//   );
-//   fetch('/home?tags=' + selectedTags.join(','))
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(response);
-//       console.log(data);
-//       // Mettre à jour l'affichage des treks avec les données reçues du serveur
-//       // ...
-//     })
-//   // Mettre à jour l'affichage des treks
-//   // voir plus bas dans les commentaires
-//   // ...
-// }
-
-// // Ajouter un événement sur chaque input radio
-// radioInputs.forEach(input => {
-//   input.addEventListener('change', filterTreksByTag);
-// });
-
-
-
-/* Pour envoyer la requête GET au contrôleur, vous pouvez utiliser l'API Fetch. 
-Vous pouvez modifier la fonction filterTreksByTag pour inclure la requête Fetch et envoyer les tags sélectionnés au serveur. 
-Voici un exemple de code :
-
+// == Fonction recherche par Tag == //
+// Récupérer tous les treks dans une variable
+let allTreks = document.querySelectorAll('.trek-home');
 
 function filterTreksByTag() {
-  // Récupérer les tags sélectionnés
-  const selectedTags = Array.from(radioInputs)
+  // == Récupérer les tags sélectionnés
+  const selectedTags = Array.from(allInputs)
+    // On transforme le nodeList en tableau avec Array.from
     .filter(input => input.checked)
-    .map(input => input.getAttribute('value'));
+    // On filtre le tableau pour ne garder que les inputs qui sont cochés
+    .map(input => input.getAttribute('value'))
+    // On récupère la valeur de chaque input
+    
+  // == Filtrer les treks par les tags sélectionnés
+  let filteredTreks = [...allTreks];
+  // On copie le tableau allTreks dans filteredTreks
   
-  // Envoyer la requête GET avec les tags sélectionnés
-  fetch('/treks?tags=' + selectedTags.join(','))
-    .then(response => response.json())
-    .then(data => {
-      // Mettre à jour l'affichage des treks avec les données reçues du serveur
-      // ...
-    })
-    .catch(error => {
-      console.error(error);
-    });
-}
-
-// Ajouter un événement sur chaque input radio
-radioInputs.forEach(input => {
-  input.addEventListener('change', filterTreksByTag);
-});
-Dans cet exemple, la requête GET est envoyée à l'URL /treks avec les tags sélectionnés en tant que paramètre de requête tags. 
-La réponse du serveur est convertie en JSON à l'aide de la méthode response.json(), puis la fonction de rappel est appelée avec les données reçues du serveur. 
-Vous pouvez mettre à jour l'affichage des treks avec ces données.
-
-*/
-
-/*
-sauf qu'au chargement de la page, je veux que tous les treks soit affichés. Je ne peux pas mettre hidden
-
-Dans ce cas, vous pouvez stocker tous les treks dans une variable au chargement de la page, 
-puis lorsque les tags sont sélectionnés, vous pouvez filtrer la liste des treks et mettre à jour 
-l'affichage en supprimant les éléments qui ne correspondent pas aux critères sélectionnés.
-
-Voici un exemple de code qui utilise cette approche :
-
-```
-Stocker tous les treks dans une variable au chargement de la page
-let allTreks = [...document.querySelectorAll('.trek')];
-
-// Fonction de filtrage des treks par tag
-function filterTreksByTag() {
-  // Récupérer les tags sélectionnés
-  const selectedTags = Array.from(radioInputs)
-    .filter(input => input.checked)
-    .map(input => input.value);
-
-  // Filtrer les treks par les tags sélectionnés
-  let filteredTreks = allTreks;
   if (selectedTags.length > 0) {
+    // Si au moins un tag est sélectionné
     filteredTreks = filteredTreks.filter(trek =>
-      selectedTags.every(tag => trek.dataset.tags.includes(tag))
-    );
+    // On filtre le tableau filteredTreks pour ne garder que les treks qui ont les tags sélectionnés
+      selectedTags.every(tag => trek.dataset.setTag.split(' ').includes(tag))
+      // Le dataset permet de récupérer les données personnalisées de l'élément 
+      // Le split permet de transformer le string en tableau, sinon pour 13 il y aura les tags 13 mais aussi 1 et 3.
+      );
   }
 
-  // Mettre à jour l'affichage des treks
-  const treksContainer = document.querySelector('.treks-container');
+  // == Mettre à jour l'affichage des treks
+  const treksContainer = document.querySelector('.container-treks');
+  // Récupérer le conteneur des treks
   treksContainer.innerHTML = '';
+  // Vider le conteneur des treks
+
+  if (filteredTreks.length === 0) {
+    // Si aucun trek ne correspond aux tags sélectionnés
+    const noTrek = document.createElement('div');
+    // Créer un élément div
+    noTrek.classList.add('no-trek');
+    // Ajouter une classe à l'élément
+    noTrek.innerHTML = 'Aucune sortie ne correspond à votre recherche';
+    // Ajouter du contenu à l'élément
+    treksContainer.appendChild(noTrek);
+    // Ajouter l'élément au conteneur des treks
+  } else {
   filteredTreks.forEach(trek => {
     treksContainer.appendChild(trek);
+    // Pour chaque trek dans la variable filteredTreks, on ajoute le trek au conteneur des treks
   });
 }
-
-// Ajouter un événement sur chaque input radio
-const radioInputs = document.querySelectorAll('[data-role="tag-selector"]');
-radioInputs.forEach(input => {
-  input.addEventListener('change', filterTreksByTag);
-});
-```
-Ici, la variable allTreks contient tous les éléments de trek lors du chargement de la page. Lorsque les tags sont sélectionnés, la liste des treks est filtrée et stockée dans filteredTreks. Ensuite, l'affichage des treks est mis à jour en vidant le conteneur de trek et en ajoutant uniquement les treks qui correspondent aux critères sélectionnés. La fonction filterTreksByTag est appelée chaque fois qu'un tag est sélectionné ou désélectionné.
-*/
-
-
-
-
-
-
-
-
-
-/*
-
-
-// Récupérer la barre de navigation
-const navbar = document.querySelector(".header__small");
-
-let prevScrollpos = window.scrollY;
-
-// Fonction pour détecter le défilement vers le haut
-window.onscroll = function() {
-  let currentScrollPos = window.scrollY;
-  if (prevScrollpos > currentScrollPos) {
-    // Afficher la barre de navigation
-    navbar.style.position = 'fixed';
-    navbar.style.top = "0";
-    navbar.style.left = "0";
-    navbar.style.right = "0";
-    navbar.style.opacity = '0.7';
-  } else if(prevScrollpos === currentScrollPos) {
-    // Masquer la barre de navigation
-    navbar.style.position = 'relative'
-  }
-  prevScrollpos = currentScrollPos;
 }
-*/
+
+
+// Ajouter un écouteur d'événement sur chaque input radio
+allInputs.forEach(input => {
+  input.addEventListener('change', () => {
+    filterTreksByTag();
+    // Quand l'input change de statut, on appelle la fonction filterTreksByTag
+    footerPosition();
+  });
+});
+
+
+// Appeler filterTreksByTag lorsque la page est chargée
+window.addEventListener('load', filterTreksByTag);
+// Quand la page est chargée, on appelle la fonction filterTreksByTag
+// Ce qui a pour effet de garder les cases cochées et la sélection des treks

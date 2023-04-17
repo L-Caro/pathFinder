@@ -1,3 +1,7 @@
+input[type="checkbox"] { -webkit-appearance: checkbox; }
+input[type="radio"] { -webkit-appearance: radio; }
+
+
 /* === === Menu large === === */
 .navbar-fixed {
     position: 'fixed';
@@ -90,7 +94,7 @@ color: burlywood;
 /* === Menu déroulant === */
 /* == Liens du menu déroulant == */
 .dropdown {
-    display: none;      /* Caché par défaut */
+    display: block;      /* Caché par défaut */
     position: absolute; /* Position absolu par rapport à son parent (header__menu-dropdown) */
     top:110%;           /* 100% plus bas que son parent, donc juste dessous le lien */
     padding: 15px 15px 0 15px; /* Permet surtout de rapprocher les coches du textes dans les liens en display flex */
@@ -142,8 +146,8 @@ input[type="checkbox"], input[type="radio"] {
     margin-right: 15px;     /* Ecarte le texte du bouton radio */
 }
 .type-end { /* Fin de la partie radio */
-    padding-bottom: 15px;
-    border-bottom: 1px dotted burlywood;
+    padding-top: 7px;
+    border-top: 1px dotted burlywood;
 }
 
 .header__menu_dropdown {
@@ -161,11 +165,14 @@ input[type="checkbox"], input[type="radio"] {
     transform: translateY(-50%);
     border: 2px solid burlywood;          /* Bordure du bouton coche */
     background-color: #242325;            /* Couleur de fond du bouton coche */
-  }
+}
 
-  input:checked + .slider:before { /* bouton coche checked */
-    background-color: burlywood;          /* Couleur de fond du bouton coche */
-  }
+input:checked + .slider:before { /* bouton coche checked */
+  background-color: burlywood;          /* Couleur de fond du bouton coche */
+}
+
+
+
 /* === Ouverture du menu déroulant === */
 .hover__link:hover + .dropdown, .dropdown:hover {
     display: block;

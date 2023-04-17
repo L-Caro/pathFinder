@@ -7,7 +7,7 @@
   <% } %>
 <div class="container-treks">
     <% treks.forEach(trek => { %>
-        <article class="trek-home">
+        <article class="trek-home" data-set-tag="<%= trek.tags.map(tag => tag.id).join(' ') %>">
             <a href="/trek/<%= trek.id %>"><img class="trek-home_background" src="/images/assets/miniature/<%= trek.id %>.jpg" alt="cover">
                 <div class="trek-home_content">
                     <p class="trek-home_name"><%= trek.name %></p>

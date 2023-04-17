@@ -129,8 +129,8 @@ article:hover .trek-home_resume {
     max-width: 1500px;
 }
 .no-trek {
-    color: black;;
-    font-size: 1.5rem;
+    padding-top: 2em;
+    color: black;
     font-weight: 700;
 }
 
@@ -470,6 +470,9 @@ article {
 }
 
 /* === === Page Trek === === */
+.no-trek {
+    font-size: 0.9rem;
+}
 /* === Header === */
 /* == Tags == */
 .trek_tag, .trek_difficult {
@@ -582,6 +585,9 @@ article {
 }
 
 /* === === Page Trek === === */
+.no-trek {
+    font-size: 1.5rem;
+}
 /* === Header === */
 /* == Tags == */
 .trek_tag, .trek_difficult {

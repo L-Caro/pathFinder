@@ -11,7 +11,7 @@ const sessionMiddleware = session({
     tableName : 'user_sessions',   // Use another table-name than the default "session" one
     createTableIfMissing : true
   }),
-  secret: process.env.SECRET_SESSION, // Quand on gènère l'ID de la session, on utilise un seed different afin de rendre plus difficile de deviner les uuid de session
+  secret: 'sapristi', // Quand on gènère l'ID de la session, on utilise un seed different afin de rendre plus difficile de deviner les uuid de session
   resave: false, // Pas la peine de réenregistrer la session s'il n'y a pas eu de changement dans l'objet
   saveUninitialized: true, // Enregistre les infos de la session même s'il n'y a rien dedans
   cookie: { 

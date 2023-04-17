@@ -94,7 +94,7 @@ color: burlywood;
 /* === Menu déroulant === */
 /* == Liens du menu déroulant == */
 .dropdown {
-    display: none;      /* Caché par défaut */
+    display: block;      /* Caché par défaut */
     position: absolute; /* Position absolu par rapport à son parent (header__menu-dropdown) */
     top:110%;           /* 100% plus bas que son parent, donc juste dessous le lien */
     padding: 15px 15px 0 15px; /* Permet surtout de rapprocher les coches du textes dans les liens en display flex */
@@ -154,7 +154,7 @@ input[type="checkbox"], input[type="radio"] {
     position: relative;     /* Le menu déroulant ne s'ouvre plus en désactivant */
 }
 
-.slider:before { /* Bouton coche personnalisé, avant le clic */
+.slider { /* Bouton coche personnalisé, avant le clic */
     position: absolute;                     /* Position absolue de son parent, le switch */
     content: "";                            /* Mettre un contenu vide pour faire apparaitre la coche */
     height: 11px;                           /* Taille du bouton coche */
@@ -167,10 +167,9 @@ input[type="checkbox"], input[type="radio"] {
     background-color: #242325;            /* Couleur de fond du bouton coche */
 }
 
-input:checked + .slider:before { /* bouton coche checked */
-  background-color: burlywood;          /* Couleur de fond du bouton coche */
+input:checked + .slider { /* bouton coche checked */
+    background-color: burlywood;            /* Couleur de fond du bouton coche */
 }
-
 
 
 /* === Ouverture du menu déroulant === */

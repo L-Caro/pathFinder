@@ -2,7 +2,7 @@ const session = require("express-session");
 const pgSession = require('connect-pg-simple')(session);
 const { Client } = require("pg");
 
-const client = new Client(process.env.PG_url);
+const client = new Client(process.env.PG_URL);
 client.connect();
 
 const sessionMiddleware = session({

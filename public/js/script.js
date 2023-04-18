@@ -1,4 +1,4 @@
-// Fonction pour la page trek
+// == Fonction de redimensionnement pour la page trek ==
 // La partie droite (avec les photos) fait la taille de la partie gauche (avec le texte)
 function adjustMainRightHeight() {
   if (window.innerHeight > 1200) {
@@ -24,7 +24,8 @@ window.addEventListener('resize', function() {
   }
 });
 
-
+// =====================================================================
+// =====================================================================
 // == == //
 // Menu burger du header
 let sidenav = document.getElementById("mySidenav");
@@ -41,7 +42,8 @@ function closeNav() {
   sidenav.classList.remove("active");
 }
 
-
+// =====================================================================
+// =====================================================================
 // == == //
 // Fonction pour positionner le footer en fixed/bottom 0 si la page fait moins de la hauteur de l'écran
 function footerPosition() {
@@ -55,7 +57,8 @@ function footerPosition() {
 };
 window.addEventListener('load', footerPosition);
 
-
+// =====================================================================
+// =====================================================================
 // == == //
 // Fonction pour aggrandir les images dans un modal
 // Récupérez toutes les balises d'image dans un tableau
@@ -84,6 +87,8 @@ modalBackgroundElement.addEventListener('click', function() {
 });
 }
 
+// =====================================================================
+// =====================================================================
 // Gestion des inputs radio / checkbox
 const radioInputs = document.querySelectorAll('[slot="radio"]');
 // Récupérer tous les boutons radio dans une variable
@@ -91,6 +96,8 @@ const checkboxInputs = document.querySelectorAll('[slot="checkbox"]');
 // Récupérer tous les boutons checkbox dans une variable
 const allInputs = [...radioInputs, ...checkboxInputs];
 
+// =====================================================================
+// =====================================================================
 // == Fonction recherche par Tag == //
 // Récupérer tous les treks dans une variable
 let allTreks = document.querySelectorAll('.trek-home');
@@ -142,7 +149,6 @@ function filterTreksByTag() {
 }
 }
 
-
 // Ajouter un écouteur d'événement sur chaque input radio
 allInputs.forEach(input => {
   input.addEventListener('change', () => {
@@ -152,8 +158,21 @@ allInputs.forEach(input => {
   });
 });
 
-
 // Appeler filterTreksByTag lorsque la page est chargée
 window.addEventListener('load', filterTreksByTag);
 // Quand la page est chargée, on appelle la fonction filterTreksByTag
 // Ce qui a pour effet de garder les cases cochées et la sélection des treks
+
+
+// =====================================================================
+// =====================================================================
+// == Fonction recherche par nom == //
+/*
+      if (text) {
+        for (const card of cards) {
+          if (card.name.toLowerCase().includes(text.toLowerCase())) {
+            result.push(card);
+          }
+        }
+      }
+*/

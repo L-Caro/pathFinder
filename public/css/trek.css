@@ -18,7 +18,6 @@ article {
     margin: 1%;
     overflow: hidden; /* Cache le résumé */
     max-width: 650px;
-    height: 250px;
 }
 article:hover .trek-home_resume {
     bottom: 0; /* Quand on survole l'image, le résumé prend sa place à bottom: 0 au lieu de -90 */
@@ -458,6 +457,7 @@ article:hover .trek-home_resume {
 article {
     width: 90%;
     margin-bottom: 20px; /* Espacement vertical des articles */
+    height: 200px;
 }
 /* === Gestion du contenu === */
 /* == Contenu générique == */
@@ -565,6 +565,7 @@ border: hidden;
 article {
     width: 47%;
     min-width: 480px;
+    height: 250px;
 }
 /* === Gestion du contenu === */
 /* == Contenu générique == */

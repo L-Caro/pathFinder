@@ -6,7 +6,12 @@
         <div class="header_tag">
             <p class="trek_difficult <%= trek.difficulty.name %>"><%= trek.difficulty.name %></p>
             <% for (const tag of trek.tags) { %>
-                <p class="tag trek_tag <%= tag.name %>"><img class="tag_icone trek_tag_icone" src="/images/tags/<%= tag.name %>.png">  <%= tag.name %></p>
+                <p class="tag trek_tag <%= tag.name %>">
+                    <% if (tag.name !== 'Très facile' && tag.name !== 'Facile' && tag.name !== 'Modérée' && tag.name !== 'Difficile' && tag.name !== 'Très difficile') { %> 
+                    <img class="tag_icone trek_tag_icone" src="/images/tags/<%= tag.name %>.png">  
+                    <% } %>
+                    <%= tag.name %>
+                </p>
             <% } %>
         </div>
         <div class="trek_header-text">
@@ -66,5 +71,5 @@
     </div>
 </div>
 
-
+<script src="/js/trek.js"></script>
 <%- include('partials/footer') %>

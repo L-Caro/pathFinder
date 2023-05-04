@@ -1,6 +1,6 @@
 const { Trek } = require("../models/index");
-const path = require('path');
-const fs = require("fs");
+const { Sequelize } = require('sequelize');
+
 
 const mainController = {
     async homePage(req, res){
@@ -19,7 +19,8 @@ const mainController = {
                     attributes: ['name', 'id'],
                     through: { attributes: [] },
                 }
-            ]
+            ],
+            order: Sequelize.literal('random()') // Tri aléatoire sur la page d’accueil
         });
         try {
             const successMessage = req.session.message;
@@ -34,23 +35,3 @@ const mainController = {
 
 
 module.exports = mainController;
-
-
-    // const selectedTags = req.query.tags ? req.query.tags.split(',') : [];
-  
-    // let query = 'SELECT * FROM treks';
-  
-    // if (selectedTags.length > 0) {
-    //   query += ' INNER JOIN tag_has_trek ON treks.id = tag_has_trek.trek_id';
-    //   query += ' WHERE tag_has_trek.tag_id IN (' + selectedTags.map(tagId => parseInt(tagId)).join(',') + ')';
-    //   query += ' GROUP BY treks.id';
-    // }
-  
-    // db.query(query, (error, results) => {
-    //   if (error) {
-    //     console.log(error);
-    //     res.status(500).send('Error retrieving treks from database');
-    //   } else {
-    //     res.render('treks', { treks: results });
-    //   }
-    // });

@@ -1,6 +1,5 @@
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #717575;
 }
 
 
@@ -218,6 +217,9 @@ article:hover .trek-home_resume {
     justify-content: space-evenly;
     align-items: center;
     margin: 15px 0;
+}
+.main-foot_map {
+    opacity: 0.72;
 }
 
 /* === Photos === */
@@ -452,6 +454,10 @@ article:hover .trek-home_resume {
 
 /* === === === Media Query === === === */
 @media screen and (max-width: 775px) {      /* Jusqu'à 775px */
+/* === === Globals === === */
+body {
+background-color: #b4b5b5;
+}
 /* === === Page Home === === */
 /* === Gestion de l'article */
 article {
@@ -560,6 +566,10 @@ border: hidden;
 
 /* =============================================================== */
 @media screen and (min-width: 776px) {      /* A partir de 776px */
+/* === === Globals === === */
+body {
+background-color: #717575;
+}
 /* === === Page Home === === */
 /* === Gestion de l'article */
 article {

@@ -1,7 +1,13 @@
 input[type="checkbox"] { -webkit-appearance: checkbox; }
 input[type="radio"] { -webkit-appearance: radio; }
 
-
+/* === === Globals === === */
+a {
+    color: burlywood;
+}
+.main-container {
+    margin-top: 12vh;                   /*! Permet de décaler le container de la taille de la navBar qui est fixed */
+}
 /* === === Menu large === === */
 .navbar-fixed {
     position: 'fixed';
@@ -14,11 +20,16 @@ z-index: 5;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 99vw; /* Largeur de toute la page */
     height: 12vh;
     background-color: #242325;
     color : burlywood;
     font-weight: 700;
+    z-index: 10;
 }
 .header_up, .header_down {
     display: flex;
@@ -85,12 +96,18 @@ color: burlywood;
     position: absolute;
     top: 0;
     right: 0;
-    width: 50px;
-    height: 100%;
-    border: 0.5px solid transparent;
-    border-radius: 20px; /* Arrondi le bouton */
+    background: transparent;
+    border: transparent;
+    width: 60px;
+    height:100%;
     cursor: pointer;
 } 
+.search-submit img {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
 
 /* === Menu déroulant === */
 /* == Liens du menu déroulant == */
@@ -99,7 +116,7 @@ color: burlywood;
     position: absolute; /* Position absolu par rapport à son parent (header__menu-dropdown) */
     top:110%;           /* 100% plus bas que son parent, donc juste dessous le lien */
     padding: 15px 15px 0 15px; /* Permet surtout de rapprocher les coches du textes dans les liens en display flex */
-    width: 100%;        /* Fait la largeur du lien dessus */
+    width: 40vw;        /* largeur */
     z-index: 1;         /* Au dessus de tout le reste quand display none disparu */
     background-color: #242325; /* Couleur de fond */
     border-radius: 15px;
@@ -184,7 +201,8 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 8%;
+    height: 15%;
+    max-height: 120px;
     min-height: 60px;
     background-color: #242325;
     font-weight: 700;
@@ -192,6 +210,13 @@ footer {
 }
 .footer_link {
     color: white;
+}
+footer p {
+    text-align: center;
+}
+
+.footer_contact {
+    padding-bottom: 3%;
 }
 
 /* === === LOCALS MESSAGE === === */
@@ -216,7 +241,7 @@ footer {
 @media screen and (max-width: 775px) {  /* Jusqu'à 775px */
 /* === === Menu large === === */
 /* === Container === */
-.header__large {
+.header__large, .header_up, .header_down {
     display: none;
 }
 
@@ -224,6 +249,13 @@ footer {
 /* === Menu burger === */
 /* == Menu latéral == */
 .header__small {
+    display: flex;
+    flex-direction: column;
+    position: fixed;                                              /* Positionnement fixe */
+    top: 0;                                                       /* Positionnement tout en haut */
+    left: 0;                                                      /* Positionnement tout à gauche */
+    right: 0;     
+    z-index: 10;
     background-color: #242325;
 }
 .sidenav {
@@ -231,7 +263,7 @@ footer {
     width: 100vw;                       /* Prend toute la largeur */
     position: fixed;                    /* Menu fixed */
     z-index: 2;                         /* Menu par dessus tout le reste */
-    top: 0;                             /* Menu tout en haut */
+    top: 6vh;                             /* Menu tout en haut */
     left: -150vw;                       /* Menu caché par défaut */
     background-color: #242325;        /* Couleur de fond */ 
     padding-top: 5%rem;                 /* 5% de padding par rapport au top */
@@ -243,31 +275,24 @@ footer {
 }
 /* = Bouton de fermeture = */
 .sidenav .close {
-position: absolute;
-top: 0;
-right: 8%;
-font-size: 4rem;
-text-decoration: none;
-}
-.sidenav .close:visited {
-    color: burlywood;
+  display: none;
 }
 /* = Placement des liens dans le burger = */
 .header__small__menus {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin-top: 15%;
-    height: 70%;
+    margin-top: 10%;
+    height: 70vh;
 }
 /* = Lien du burger = */
 .header__small__link {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5%;
-    height: 45%;
+    margin: 10px auto;
+    height: 52%;
     border: 1px solid burlywood;
     border-radius: 25px;
     color: burlywood;
@@ -289,36 +314,171 @@ text-decoration: none;
     justify-content: space-between;
     align-items: center;
     margin: auto 10px;
+    padding-top: 5px;
     height: 6vh;
 }
 
-/* == Apparence du bouton burger == */
+/*? == Apparence du bouton burger == */
 .burger-icon {
-    height: 3vh;
-    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 100%;
 }
-.burger-icon span {
-    display: block;
+  .burger-icon_bar {
+    background: transparent;
+  cursor: pointer;
+  border: 0;
+  }
+  .burger-icon span {
+    display: block;                                               /* Affichage en block */
+    position: relative;
+    width: 2.5rem;                                                /* Largeur de 2.5rem */
+    height: .5rem;                                                /* Hauteur de .5rem */
+    background-color: burlywood;                                  /* Couleur de fond */
+    margin: 15% 1%;   
+    transition: all 0.3s;
+  
+  }
+  button.active span:nth-child(1) {
+            animation: ease 0.7s top-close forwards;
+  }
+  button.active span:nth-child(2) {
+            animation: ease 0.7s scaled-close forwards;
+  }
+  button.active span:nth-child(3) {
+            animation: ease 0.7s bottom-close forwards;
+  }
+  @keyframes top {
+    0% {
+      top: 0.72rem;
+      transform: rotate(45deg);
+    }
+    50% {
+      top: 0.72rem;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 0;
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes bottom {
+    0% {
+      bottom: 0.72rem;
+      transform: rotate(-45deg);
+    }
+    50% {
+      bottom: 0.72rem;
+      transform: rotate(0);
+    }
+    100% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+  }
+  
+  @keyframes scaled {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes top-close {
+    0% {
+      top: 0;
+      transform: rotate(0);
+    }
+    50% {
+      top: .75rem;
+      transform: rotate(0);
+    }
+    100% {
+      top: 0.85rem;
+      transform: rotate(45deg);
+    }
+  }
+  
+  @keyframes bottom-close {
+    0% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+    50% {
+      bottom: 0.75rem;
+      transform: rotate(0);
+    }
+    100% {
+      bottom: 0.85rem;
+      transform: rotate(-45deg);
+    }
+  }
+  
+  @keyframes scaled-close {
+    50% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  .burger-icon span:nth-child(1) {
+    animation: ease 0.7s top forwards;
+  }
+  
+  .burger-icon span:nth-child(2) {
+    animation: ease 0.7s scaled forwards;
+  }
+  
+  .burger-icon span:nth-child(3) {
+    animation: ease 0.7s bottom forwards;
+  }
+/* == Acceuil == */
+.header__home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 100%;
+}
+.header__home img {
     width: 2.5rem;
-    height: .5rem;
-    background-color: #717575;
-    margin: 15% 1%;
-}
+    display: block;
 
+}
 /* === Gestion de la barre inférieur */
 /* == Position barre inférieur == */
 .header__small__down {
     height: 6vh;
     border-bottom: 2px dotted #242325;
+    padding-top: 0.5vh;
 }
 .header__search {
-    width: 60%;
-    margin: 3% auto;
+    width: 65%;
+    margin: 0% auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.header__search-button {
+    height: 4vh;
+}
+.search-submit {
+    height: 4vh;
 }
 /* === Recherche === */
 /* == Bouton "tag" et "difficulte" == */
 .small__dropdown__link {
-    width: 45%;
+    width: 30%;
     height: 4vh;
     border: 1px solid burlywood;
     border-radius: 25px;
@@ -331,7 +491,7 @@ text-decoration: none;
 /* === Locals === */
 .locals-message {
     font-size: 0.7em;
-    padding: 20px 0;
+    padding: 20px 30px;
 }
 }
 
@@ -340,7 +500,7 @@ text-decoration: none;
 @media screen and (min-width: 776px) {      /* Entre 776px et 1200px */
 /* === === Menu small === === */
 /* === Container === */
-.header__small {
+.header__small, .header__small__up, .header__small__down, .sidenav {
     display: none;
 }
 

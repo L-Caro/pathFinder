@@ -125,3 +125,48 @@ inputMobileSearch.addEventListener('focus', () => {
 inputMobileSearch.addEventListener('blur', () => {
   footerElement.style.display = "flex";
 });
+
+
+//? Fonction pour masque la section recherche sur desktop quand pas sur page d'accueil
+document.addEventListener("DOMContentLoaded", function() {
+  const currentUrl = window.location.pathname;
+  const regex = /^\/trek\//;
+  const navbarDesktop = document.querySelector('.header_down');
+  if (regex.test(currentUrl)) {
+    navbarDesktop.classList.add('isHeaderInvisible');
+  } else {
+    navbarDesktop.classList.remove('isHeaderInvisible');
+  }
+});
+
+//? Fonction pour masque la section recherche sur mobile quand pas sur page d'accueil
+document.addEventListener("DOMContentLoaded", function() {
+  const upperHeader = document.querySelector('.header__small__up');
+  const burgerElement = document.querySelector('.burger-icon');
+  const secondChild = burgerElement.nextSibling;
+
+
+  const currentUrl = window.location.pathname;
+  const links = document.querySelectorAll('.small__dropdown__link');
+  const regex = /^\/trek\//;
+  const navbarMobile = document.querySelector('.header__small__down');
+
+
+
+
+  if (regex.test(currentUrl)) {
+    navbarMobile.classList.add('isHeaderInvisible');
+    links.forEach(link => {
+      link.classList.add('isHeaderInvisible');
+    });
+    const headerTitle = document.createElement('h2');
+    headerTitle.classList.add('small__header_title');
+    headerTitle.textContent = "PathFinder";
+    upperHeader.insertBefore(headerTitle, secondChild);
+
+  } else {
+    navbarMobile.classList.remove('isHeaderInvisible');
+    headerTitle.remove();
+  }
+});
+

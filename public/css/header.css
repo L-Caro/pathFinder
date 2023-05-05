@@ -361,8 +361,8 @@ footer p {
 }
 .burger-icon_bar {
   background: transparent;
-cursor: pointer;
-border: 0;
+  cursor: pointer;
+  border: 0;
 }
 .burger-icon span {
   display: block;                                               /* Affichage en block */

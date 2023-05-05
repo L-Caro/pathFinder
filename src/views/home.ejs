@@ -1,6 +1,14 @@
 <%- include('partials/header') %>
 
 <div class="main-container">
+    <div class="home__up">
+    <h1 class="home__title">Liste de sorties</h1>
+    <br />
+    <p class="home__description">Voici une liste de randonnées ou balades triée aléatoirement parmi environ cinquante sorties différentes faites dans la région de Haute-Savoie.</p>
+    <p class="home__description">Grâce à la barre de recherche juste au dessus, vous pouvez rechercher une sortie plus précisément.</p>
+    <p class="home__description">Plus de détails sont disponible en les selectionnant.</p>
+    <p class="home__description">Bonne visite.</p>
+    </div>
     <div class="container-treks">
         <% treks.forEach(trek => { %>
             <article class="trek-home" data-set-tag="<%= trek.tags.map(tag => tag.id).join(' ') %>">

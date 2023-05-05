@@ -11,6 +11,36 @@ body {
     margin: 2%;
     justify-content: center;
 }
+/* === En tête === */
+/* == Contenant == */
+.home__up {
+    display: block;
+    margin: 150px auto 20px auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
+    background-color: #373737;
+    color: #FFFFFF;
+    opacity: 0.7;
+    line-height: 1.8rem;
+}
+/* == Titre principal == */
+.home__title {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+/* == Desription == */
+.home__description {
+    text-align: justify;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+}
+
 /* === Gestion de l'article === */
 article {
     position: relative;
@@ -44,6 +74,7 @@ article:hover .trek-home_resume {
     transition: bottom 0.3s ease-in-out; /* Transition de l'apparition du résumé */
     pointer-events: none; /* Permet de toujours avoir la main sur l'image pour son opacité */
     background-color: black;
+    text-align: justify;
     opacity: 0.6;
     font-size: 0.7em;
 }
@@ -459,6 +490,18 @@ body {
 background-color: #b4b5b5;
 }
 /* === === Page Home === === */
+/* === Contenant === */
+.home__up {
+    width: 85%;
+}
+/* === Titre principal === */
+.home__title {
+    font-size: 2em;
+}
+/* === Desription === */
+.home__description {
+    font-size: 0.8em;
+}
 /* === Gestion de l'article */
 article {
     width: 90%;
@@ -571,6 +614,18 @@ body {
 background-color: #717575;
 }
 /* === === Page Home === === */
+/* === Contenant === */
+.home__up {
+    width: 75%;
+}
+/* === Titre principal === */
+.home__title {
+    font-size: 2.3em;
+}
+/* === Desription === */
+.home__description {
+    font-size: 1.2em;
+}
 /* === Gestion de l'article */
 article {
     width: 47%;

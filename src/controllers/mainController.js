@@ -23,9 +23,7 @@ const mainController = {
             order: Sequelize.literal('random()') // Tri aléatoire sur la page d’accueil
         });
         try {
-            const successMessage = req.session.message;
-            req.session.message = null;
-            res.render('home', { treks, meta: "Accueil", successMessage});
+            res.render('home', { treks, meta: "Accueil" });
         } catch (error) {
             console.trace(error);
             res.status(500).render("error/500");

@@ -43,7 +43,7 @@ function updatePosition() {                                                     
 
 // =====================================================================
 // =====================================================================
-// == Fonction pour aggrandir les images dans un modal == //
+// == Fonction pour agrandir les images dans un modal == //
 const images = document.getElementsByClassName('photo-link');                         // Récupérez toutes les balises d'image dans un tableau
 
 for (let i = 0; i < images.length; i++) {                                             // Parcourir le tableau et ajoutez un gestionnaire d'événements de clic à chaque image
@@ -55,7 +55,7 @@ for (let i = 0; i < images.length; i++) {                                       
   });
 }
 
-// Pour fermer l'aggrandissement de la photo, on click nimporte ou en dehors de la photo
+// Pour fermer l'agrandissement de la photo, on click n'importe ou en dehors de la photo
 const modalBackgroundElement = document.getElementById('modal-background')            // Récupérez l'élément de fond de la boîte de dialogue modale
 if (modalBackgroundElement !== null) {                                                // Si l'élément de fond de la boîte de dialogue modale n'est pas nul
 modalBackgroundElement.addEventListener('click', function() {                         // Ajoutez un gestionnaire d'événements de clic à l'élément de fond de la boîte de dialogue modale
@@ -75,7 +75,7 @@ const navBarElement = document.querySelector('.header__large');
 
 
 window.addEventListener('scroll', () => {                                     // Au scroll
-  if (window.scrollY < lastScroll || window.scrollY <= 10) {                          //! On compare la position du scroll actuel avec la position du scroll précédent ou si la position est inférieure à 10px (tout en haut)
+  if (window.scrollY < lastScroll || window.scrollY <= 150) {                          //! On compare la position du scroll actuel avec la position du scroll précédent ou si la position est inférieure à 10px (tout en haut)
     navBarElement.style.transition = "opacity 0.5s";                                  //! Si la valeur est inférieure alors => Le scroll est vers le haut
     navBarElement.style.display = "flex";                                             //* On affiche la navBar
     setTimeout(() => {                                                                //* avec une transition de 0.2s
@@ -95,7 +95,7 @@ window.addEventListener('scroll', () => {                                     //
 lastScrollMobile = window.scrollY;
 
 window.addEventListener('scroll', () => {                                     // Au scroll
-  if (window.scrollY < lastScrollMobile || window.scrollY <= 10) {                    //! On compare la position du scroll actuel avec la position du scroll précédent ou si la position est inférieure à 10px (tout en haut)
+  if (window.scrollY < lastScrollMobile || window.scrollY <= 150) {                    //! On compare la position du scroll actuel avec la position du scroll précédent ou si la position est inférieure à 10px (tout en haut)
     navBarMobileElement.style.transition = "opacity 0.5s";                            //! Si la valeur est inférieure alors => Le scroll est vers le haut
     navBarMobileElement.style.display = "flex";                                       //* On affiche la navBar
     setTimeout(() => {                                                                //* avec une transition de 0.2s
@@ -111,4 +111,17 @@ window.addEventListener('scroll', () => {                                     //
   }, 500);                                                                              //* en passant par une opacité de 0.5 pour plus de fluidité
   }
   lastScrollMobile = window.scrollY;                                                  //! On enregistre la position du scroll actuel pour la prochaine comparaison
+});
+
+
+
+//? Fonction pour masquer le footer quand champs de saisie ouvert sur mobile
+
+const inputMobileSearch = document.querySelector('.search-mob-button');
+const footerElement = document.querySelector('footer');
+inputMobileSearch.addEventListener('focus', () => {
+  footerElement.style.display = "none";
+});
+inputMobileSearch.addEventListener('blur', () => {
+  footerElement.style.display = "flex";
 });

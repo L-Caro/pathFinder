@@ -45,16 +45,6 @@ worker-src 'none';">
             <a class="header__link">Portfolio</a>
             <a href="https://github.com/L-Caro/Blog-rando" target="_blank" class="header__link">GitHub du projet</a>
           </div>
-          <div class="header__right">
-            <% if (locals.user) { %>
-                <a class="header__link" href="/bookmark">Mes randos</a>
-                <a class="header__link" href="/profil">Mon profil</a>
-                <a class="header__link" href="/logout">Se déconnecter</a>
-                <% } else { %>
-                  <a class="header__link" href="/signup">S'inscrire</a>
-                  <a class="header__link" href="/login">Se connecter</a>
-              <% } %>
-          </div>
         </nav>
           <div class="header_down">
             <div class="header__menu_dropdown dropdown__link">
@@ -105,8 +95,8 @@ worker-src 'none';">
             </div>
             <div class="header__search">
               <div class="header__search-button">
-                <input class="search-button" type="text" name="search" id="search-desk" placeholder="Rechercher une rando"/>
-                <button class="search-submit" type="submit"><img src="/images/check.png" alt=""></button>
+                <input class="search-desk-button button" type="text" name="search" id="search-desk" placeholder="Rechercher une rando"/>
+                <button class="search-desk-submit submit" type="submit"><img src="/images/check.png" alt=""></button>
               </div>
             </div>
             <div class="header__menu_dropdown dropdown__link">
@@ -140,17 +130,7 @@ worker-src 'none';">
       <label id="mySidenav" class="sidenav">                        <!-- id pour javascript | class pour CSS --> 
         <a id="closeBtn" href="#" class="close">&times;</a>     <!-- petite croix de fermeture -->
           <div class="header__small__menus">
-            <div class="small__menu__log">
-              <% if (locals.user) { %>
-                <a class="header__small__link" href="/bookmark">Mes randos</a>
-                <a class="header__small__link" href="/profil">Mon profil</a>
-                <a class="header__small__link" href="/logout">Se déconnecter</a>
-              <% } else { %>
-                <a class="header__small__link" href="/signup">S'inscrire</a>
-                <a class="header__small__link" href="/login">Se connecter</a>
-              <% } %>
-            </div>
-            <div class="small__menu__git">
+          <div class="small__menu__git">
               <a class="header__small__link">Portfolio</a>
               <a href="https://github.com/L-Caro/Blog-rando" target="_blank" class="header__small__link">GitHub du projet</a>
           </div>
@@ -241,8 +221,8 @@ worker-src 'none';">
       <div class="header__small__down">
         <div class="header__search">
           <div class="header__search-button">
-            <input class="search-button" type="text" name="search" id="search-mob" placeholder="Rechercher une rando"/>
-            <button class="search-submit" type="submit"><img src="/images/check.png" alt="Valider"></button>
+            <input class="search-mob-button button" type="text" name="search" id="search-mob" placeholder="Rechercher une rando"/>
+            <button class="search-mob-submit submit" type="submit"><img src="/images/check.png" alt="Valider"></button>
           </div>
         </div>
       </div>

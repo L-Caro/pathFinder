@@ -6,8 +6,8 @@ a {
     color: burlywood;
 }
 .main-container {
-    margin-top: 12vh;                   /*! Permet de décaler le container de la taille de la navBar qui est fixed */
-}
+    margin-top: 140px;                   /*! Permet de décaler le container de la taille de la navBar qui est fixed */
+  }
 /* === === Menu large === === */
 .navbar-fixed {
     position: 'fixed';
@@ -25,7 +25,7 @@ z-index: 5;
     left: 0;
     right: 0;
     width: 99vw; /* Largeur de toute la page */
-    height: 12vh;
+    height: 140px;
     background-color: #242325;
     color : burlywood;
     font-weight: 700;
@@ -35,7 +35,7 @@ z-index: 5;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 6vh;
+    min-height: 70px;
 }
 .header_down {
     border-top: 1px dotted burlywood;
@@ -64,7 +64,7 @@ z-index: 5;
     align-items: center;
     margin: 0 2%;
     width: 25%;
-    height: 65%;
+    height: 45px;
     border: 1px solid burlywood;
     border-radius: 25px;
     text-align: center;
@@ -83,26 +83,30 @@ color: burlywood;
     position: relative;
 }
 /* = Bouton recherche = */
-.search-button { /* Bouton recherche */
+.button { /* Bouton recherche */
     padding-left: 10px;
     width: 100%;   /* Largeur du bouton */
-    height: 4vh;    /* Hauteur du bouton*/
     border-radius: 20px;    /* Bords arrondis */
     border: 0.5px solid transparent;
     text-align: left; /* Placeholder à gauche */
 }
+.search-desk-button {
+  height: 45px;
+}
 /* = Bouton valider = */
-.search-submit {
+.submit {
     position: absolute;
     top: 0;
     right: 0;
     background: transparent;
     border: transparent;
     width: 60px;
-    height:100%;
     cursor: pointer;
 } 
-.search-submit img {
+.search-desk-submit {
+    height: 45px;
+}
+.submit img {
     position: absolute;
     height: 100%;
     top: 0;
@@ -124,7 +128,7 @@ color: burlywood;
 /* = Bouton "tag" et "difficulte" = */
 .dropdown__link {
     width: 25%;         /* Largeur du bouton */
-    height: 65%;        /* Hauteur du bouton */
+    height: 45px;        /* Hauteur du bouton */
     border: 1px solid burlywood;
     border-radius: 25px;
     font-weight: 700;
@@ -203,7 +207,7 @@ footer {
     width: 100%;
     height: 15%;
     max-height: 120px;
-    min-height: 60px;
+    min-height: 70px;
     background-color: #242325;
     font-weight: 700;
     color: white;
@@ -241,6 +245,7 @@ footer p {
 @media screen and (max-width: 775px) {  /* Jusqu'à 775px */
 /* === === Menu large === === */
 /* === Container === */
+
 .header__large, .header_up, .header_down {
     display: none;
 }
@@ -303,7 +308,7 @@ footer p {
 .header__small__link:visited {
     color: burlywood;
 }
-.small__menu__git, .small__menu__log {
+.small__menu__git {
     width: 40%;
 }
 
@@ -315,7 +320,18 @@ footer p {
     align-items: center;
     margin: auto 10px;
     padding-top: 5px;
-    height: 6vh;
+    min-height: 70px;
+}
+/* == Bouton "tag" et "difficulte" == */
+.small__dropdown__link {
+  width: 30%;
+  height: 45px;
+  border: 1px solid burlywood;
+  border-radius: 25px;
+  color: burlywood;
+  font-weight: 700;
+  font-size: 0.8em;
+  text-align: center;
 }
 
 /*? == Apparence du bouton burger == */
@@ -457,7 +473,7 @@ footer p {
 /* === Gestion de la barre inférieur */
 /* == Position barre inférieur == */
 .header__small__down {
-    height: 6vh;
+    min-height: 70px;
     border-bottom: 2px dotted #242325;
     padding-top: 0.5vh;
 }
@@ -469,30 +485,14 @@ footer p {
     flex-direction: column;
     justify-content: flex-start;
 }
-.header__search-button {
-    height: 4vh;
-}
-.search-submit {
-    height: 4vh;
-}
-/* === Recherche === */
-/* == Bouton "tag" et "difficulte" == */
-.small__dropdown__link {
-    width: 30%;
-    height: 4vh;
-    border: 1px solid burlywood;
-    border-radius: 25px;
-    color: burlywood;
-    font-weight: 700;
-    font-size: 0.8em;
-    text-align: center;
+.search-mob-button {
+    height: 45px;
 }
 
-/* === Locals === */
-.locals-message {
-    font-size: 0.7em;
-    padding: 20px 30px;
+.search-mob-submit {
+    height: 45px;
 }
+
 }
 
 
@@ -516,9 +516,6 @@ footer p {
     width: 40vw;
 }
 /* = Bouton recherche = */
-.search-button { /* Bouton recherche */
-
-}
 }
 
 /* =============================================================== */

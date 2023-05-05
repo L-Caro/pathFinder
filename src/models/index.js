@@ -1,7 +1,3 @@
-// Remplacer le class1 par les modeles de classe disponible
-const Log = require('./admin/log')
-const User = require('./admin/User')
-
 const Difficulty = require('./Difficulty')
 const Summit = require('./Summit')
 const Trek = require('./Trek');
@@ -51,8 +47,6 @@ Trek.belongsTo(Difficulty, {
 
 
 module.exports = {
-    Log,
-    User,
     Trek,
     Difficulty,
     Summit,

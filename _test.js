@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { Tag } = require('./src/models'); // On choisit la table à tester à la place des `___`
+const { Tag } = require('../pathFinder/src/models'); // On choisit la table à tester à la place des `___`
 
 
 async function runTests() {

@@ -15,11 +15,6 @@ const app = express();
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
-// Setup de la logique de session
-app.use(middlewares.sessionMiddleware);
-
-// Setup du profil de connexion
-app.use(middlewares.userConnect);
 
 // Setup du dossier static
 app.use(express.static('public')); // fichiers statique
@@ -27,14 +22,9 @@ app.use(express.static('public')); // fichiers statique
 // Setup body parser
 app.use(express.urlencoded({ extended: true }));  // Lecture du payload
 
-// Setup de l'enregistrement des log
-// app.use(middlewares.log); // Décommenter pour utiliser l'enregistrement des log
-
 
 // ===---- Routes ----===
 app.use(router.main);
-app.use(router.user);
-app.use(router.admin);
 
 // ===---- 404 ----===
 app.use(middlewares.notFound);
